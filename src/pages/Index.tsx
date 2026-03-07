@@ -649,10 +649,12 @@ const Index = () => {
         >
           {/* Header */}
           <motion.div variants={fadeUp} className="text-center mb-8">
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-foreground mb-3">
-              Escolha Seu Jogo Favorito e
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-foreground mb-2">
+              Escolha Seu Jogo Favorito
               <br />
-              <span className="text-gradient-primary italic">Jogue Para Sempre!</span>
+              <span className="text-gradient-primary italic">e Comece a Jogar em 1 Clique</span>
+            </h2>
+            <p className="text-muted-foreground text-sm sm:text-base">+100 jogos prontos para instalar no Android e iPhone</p>
             </h2>
           </motion.div>
 
