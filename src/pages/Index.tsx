@@ -655,7 +655,6 @@ const Index = () => {
               <span className="text-gradient-primary italic">e Comece a Jogar em 1 Clique</span>
             </h2>
             <p className="text-muted-foreground text-sm sm:text-base">+100 jogos prontos para instalar no Android e iPhone</p>
-            </h2>
           </motion.div>
 
           {/* Trust badges */}
