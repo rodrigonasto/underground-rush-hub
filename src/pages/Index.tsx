@@ -1,10 +1,10 @@
-import { useState, useMemo, useEffect, useRef } from "react";
+import { useState, useMemo, useEffect, useRef, useCallback, lazy, Suspense } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import nfsCover from "@/assets/nfs-cover.png";
 import nfsCoverWebp from "@/assets/nfs-cover.webp";
+import nfsCover from "@/assets/nfs-cover.png";
+import packImageWebp from "@/assets/pack-image.webp";
 import packImage from "@/assets/pack-image-v2.png";
-import logoFooter from "@/assets/logo-jogosmobileclub.png";
 import { Download, Check, X, Smartphone, ShieldCheck, Zap, Star, Search, ChevronRight, Sparkles, ArrowUp } from "lucide-react";
 import VTurbPlayer from "@/components/VTurbPlayer";
 import SEOHead from "@/components/SEOHead";
@@ -130,29 +130,28 @@ const categories = [
 ];
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0, 0, 0.2, 1] as const } },
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0, 0, 0.2, 1] as const } },
 };
 
 const stagger = {
-  visible: { transition: { staggerChildren: 0.1 } },
+  visible: { transition: { staggerChildren: 0.08 } },
 };
 
 const SocialProofBadge = () => {
-  const [count, setCount] = useState(Math.floor(Math.random() * 15) + 18);
+  const [count, setCount] = useState(() => Math.floor(Math.random() * 15) + 18);
 
   useEffect(() => {
+    let timer: ReturnType<typeof setTimeout>;
     const tick = () => {
       const delay = Math.random() * 8000 + 5000;
-      setTimeout(() => {
-        setCount(prev => {
-          const bump = Math.random() > 0.15 ? 1 : 0;
-          return Math.min(52, prev + bump);
-        });
+      timer = setTimeout(() => {
+        setCount(prev => Math.min(52, prev + (Math.random() > 0.15 ? 1 : 0)));
         tick();
       }, delay);
     };
     tick();
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -166,6 +165,23 @@ const SocialProofBadge = () => {
   );
 };
 
+const PackImage = () => (
+  <div className="rounded-xl overflow-hidden mb-6">
+    <picture>
+      <source srcSet={packImageWebp} type="image/webp" />
+      <img
+        src={packImage}
+        alt="Pack com todos os jogos"
+        className="w-full"
+        loading="lazy"
+        decoding="async"
+        width={600}
+        height={400}
+      />
+    </picture>
+  </div>
+);
+
 const TutorialSection = () => {
   const [platform, setPlatform] = useState<"android" | "ios">(() => {
     const ua = navigator.userAgent || "";
@@ -173,16 +189,12 @@ const TutorialSection = () => {
   });
 
   return (
-    <motion.section
+    <section
       id="tutorial"
       className="px-5 pb-14 pt-4"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      variants={stagger}
     >
       <div className="container max-w-lg mx-auto">
-        <motion.div variants={fadeUp} className="text-center mb-8">
+        <div className="text-center mb-8">
           <span className="inline-flex items-center gap-1.5 text-primary text-[11px] font-semibold uppercase tracking-widest mb-3">
             <Sparkles className="w-3.5 h-3.5" /> Tutorial
           </span>
@@ -192,10 +204,10 @@ const TutorialSection = () => {
           <p className="text-muted-foreground text-sm mt-2">
             Escolha seu sistema para ver o tutorial correto.
           </p>
-        </motion.div>
+        </div>
 
         {/* Platform Tabs */}
-        <motion.div variants={fadeUp} className="grid grid-cols-2 gap-3 mb-6">
+        <div className="grid grid-cols-2 gap-3 mb-6">
           <button
             onClick={() => setPlatform("android")}
             className={`flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm transition-all ${
@@ -216,7 +228,7 @@ const TutorialSection = () => {
           >
             <span className="text-xl">🍎</span> iPhone
           </button>
-        </motion.div>
+        </div>
 
         {/* Android Content */}
         <div style={{ display: platform === "android" ? "block" : "none" }}>
@@ -240,7 +252,7 @@ const TutorialSection = () => {
           </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 
@@ -290,7 +302,7 @@ const Index = () => {
             </div>
           </motion.div>
 
-          {/* Cover */}
+          {/* Cover - LCP element */}
           <motion.div variants={fadeUp} className="w-full max-w-sm mx-auto mb-8">
             <picture>
               <source srcSet={nfsCoverWebp} type="image/webp" />
@@ -341,13 +353,7 @@ const Index = () => {
 
       {/* ─── SOCIAL PROOF ─── */}
       <section className="px-5 pb-10">
-        <motion.div
-          className="container max-w-lg mx-auto"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeUp}
-        >
+        <div className="container max-w-lg mx-auto">
           <div className="flex items-center justify-center gap-1 mb-1.5">
             {[...Array(5)].map((_, i) => (
               <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
@@ -356,7 +362,7 @@ const Index = () => {
           <p className="text-center text-muted-foreground text-xs">
             <span className="text-foreground font-semibold">4.9/5</span> • Mais de 2.800 downloads essa semana
           </p>
-        </motion.div>
+        </div>
       </section>
 
       {/* ─── TUTORIAL ─── */}
@@ -367,39 +373,29 @@ const Index = () => {
         <div className="absolute inset-0 bg-grid-small opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-b from-card/80 to-background/80" />
 
-        <motion.div
-          className="container max-w-lg mx-auto text-center relative z-10"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={stagger}
-        >
-          <motion.div variants={fadeUp}>
-            <span className="inline-flex items-center gap-1.5 text-primary text-[11px] font-semibold uppercase tracking-widest mb-3">
-              <Download className="w-3.5 h-3.5" /> Download
-            </span>
-            <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
-              Download gratuito
-            </h2>
-            <p className="text-muted-foreground text-sm mb-8">
-              Clique abaixo para baixar o jogo.
-            </p>
-          </motion.div>
+        <div className="container max-w-lg mx-auto text-center relative z-10">
+          <span className="inline-flex items-center gap-1.5 text-primary text-[11px] font-semibold uppercase tracking-widest mb-3">
+            <Download className="w-3.5 h-3.5" /> Download
+          </span>
+          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
+            Download gratuito
+          </h2>
+          <p className="text-muted-foreground text-sm mb-8">
+            Clique abaixo para baixar o jogo.
+          </p>
 
-          <motion.div variants={fadeUp}>
-            <button
-              onClick={() => setDownloadModalOpen(true)}
-              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-primary text-primary-foreground font-bold text-base px-12 py-4 rounded-xl hover:brightness-110 transition-all glow-primary"
-            >
-              <Download className="w-5 h-5" />
-              Baixar agora
-              <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-            </button>
-            <p className="text-muted-foreground text-[11px] mt-4 flex items-center justify-center gap-1.5">
-              <ShieldCheck className="w-3.5 h-3.5 text-primary/70" /> Download seguro e gratuito
-            </p>
-          </motion.div>
-        </motion.div>
+          <button
+            onClick={() => setDownloadModalOpen(true)}
+            className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-primary text-primary-foreground font-bold text-base px-12 py-4 rounded-xl hover:brightness-110 transition-all glow-primary"
+          >
+            <Download className="w-5 h-5" />
+            Baixar agora
+            <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+          </button>
+          <p className="text-muted-foreground text-[11px] mt-4 flex items-center justify-center gap-1.5">
+            <ShieldCheck className="w-3.5 h-3.5 text-primary/70" /> Download seguro e gratuito
+          </p>
+        </div>
       </section>
 
       {/* ─── MODAL DE DOWNLOAD ─── */}
@@ -476,9 +472,7 @@ const Index = () => {
                 </p>
 
                 {/* Pack image */}
-                <div className="rounded-xl overflow-hidden mb-4">
-                  <img src={packImage} alt="Pack com todos os jogos" className="w-full" loading="lazy" decoding="async" />
-                </div>
+                <PackImage />
 
                 {/* Badges */}
                 <div className="grid grid-cols-2 gap-2 mb-4 p-3 rounded-xl glass-card">
@@ -539,16 +533,12 @@ const Index = () => {
       </Dialog>
 
       {/* ─── COMPARAÇÃO ─── */}
-      <motion.section
+      <section
         id="comparativo"
         className="px-5 py-14"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={stagger}
       >
         <div className="container max-w-lg mx-auto">
-          <motion.div variants={fadeUp} className="text-center mb-8">
+          <div className="text-center mb-8">
             <span className="inline-flex items-center gap-1.5 text-primary text-[11px] font-semibold uppercase tracking-widest mb-3">
               <Zap className="w-3.5 h-3.5" /> Comparativo
             </span>
@@ -558,9 +548,9 @@ const Index = () => {
             <p className="text-muted-foreground text-sm">
               Não quer instalar manualmente? Compare:
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div variants={fadeUp} className="rounded-2xl overflow-hidden glass-card">
+          <div className="rounded-2xl overflow-hidden glass-card">
             {/* Header */}
             <div className="grid grid-cols-2">
               <div className="bg-muted/50 p-3.5 text-center border-b border-r border-border">
@@ -600,45 +590,37 @@ const Index = () => {
                 <span className="text-[9px] text-primary block mt-0.5">Economize R$50</span>
               </div>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div variants={fadeUp}>
-            <button
-              onClick={() => scrollTo("premium")}
-              className="group w-full mt-6 inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm px-6 py-3.5 rounded-xl hover:brightness-110 transition-all glow-primary"
-            >
-              <Zap className="w-4 h-4" />
-              Quero a versão automática
-              <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-            </button>
-          </motion.div>
+          <button
+            onClick={() => scrollTo("premium")}
+            className="group w-full mt-6 inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm px-6 py-3.5 rounded-xl hover:brightness-110 transition-all glow-primary"
+          >
+            <Zap className="w-4 h-4" />
+            Quero a versão automática
+            <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+          </button>
         </div>
-      </motion.section>
+      </section>
 
       {/* ─── JOGOS DO PACK ─── */}
       <section id="jogos" className="relative px-5 py-14">
         <div className="absolute inset-0 bg-grid opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-b from-card/90 via-card/70 to-card/90" />
 
-        <motion.div
-          className="container max-w-2xl mx-auto relative z-10"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          variants={stagger}
-        >
+        <div className="container max-w-2xl mx-auto relative z-10">
           {/* Header */}
-          <motion.div variants={fadeUp} className="text-center mb-8">
+          <div className="text-center mb-8">
             <h2 className="text-2xl sm:text-4xl font-extrabold text-foreground mb-2">
               Escolha Seu Jogo Favorito
               <br />
               <span className="text-gradient-primary italic">e Comece a Jogar em 1 Clique</span>
             </h2>
             <p className="text-muted-foreground text-sm sm:text-base">+100 jogos prontos para instalar no Android e iPhone</p>
-          </motion.div>
+          </div>
 
           {/* Trust badges */}
-          <motion.div variants={fadeUp} className="grid grid-cols-3 gap-2 sm:gap-3 mb-10 max-w-md mx-auto">
+          <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-10 max-w-md mx-auto">
             {[
               { icon: "💰", label: "Pagamento", highlight: "Único" },
               { icon: "♾️", label: "Acesso", highlight: "Vitalício" },
@@ -650,10 +632,10 @@ const Index = () => {
                 <span className="text-xs font-bold text-primary">{item.highlight}</span>
               </div>
             ))}
-          </motion.div>
+          </div>
 
           {/* Search bar */}
-          <motion.div variants={fadeUp} className="relative mb-10">
+          <div className="relative mb-10">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             <input
               type="text"
@@ -662,11 +644,11 @@ const Index = () => {
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full glass-card rounded-xl pl-11 pr-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all"
             />
-          </motion.div>
+          </div>
 
           {/* Games grid */}
           {filteredCategories.length > 0 ? filteredCategories.map((cat) => (
-            <motion.div key={cat.label} className="mb-10 last:mb-0" variants={fadeUp}>
+            <div key={cat.label} className="mb-10 last:mb-0">
               <h3 className="text-sm font-bold text-foreground mb-4 flex items-center gap-2">
                 {cat.label}
                 <span className="h-px flex-1 bg-border" />
@@ -675,38 +657,33 @@ const Index = () => {
               <div className="grid grid-cols-4 sm:grid-cols-6 gap-2 sm:gap-2.5">
                 {cat.games.map((g) => (
                   <div key={g.name} className="group">
-                    <div className="aspect-[3/4] rounded-lg overflow-hidden border border-border/50 group-hover:border-primary/40 group-hover:glow-primary transition-all bg-muted">
-                      <img src={g.img} alt={g.name} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" width={120} height={160} />
+                    <div className="aspect-[3/4] rounded-lg overflow-hidden border border-border/50 group-hover:border-primary/40 transition-all bg-muted">
+                      <img src={g.img} alt={g.name} className="w-full h-full object-cover" loading="lazy" decoding="async" width={120} height={160} />
                     </div>
                     <p className="text-[9px] sm:text-[10px] text-muted-foreground text-center mt-1.5 truncate leading-tight">{g.name}</p>
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           )) : (
             <p className="text-muted-foreground text-sm text-center py-8">
               Nenhum jogo encontrado para "{searchQuery}"
             </p>
           )}
 
-          <motion.p variants={fadeUp} className="text-muted-foreground text-[10px] text-center mt-6">
+          <p className="text-muted-foreground text-[10px] text-center mt-6">
             E mais jogos adicionados toda semana!
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
       </section>
 
       {/* ─── PREMIUM ─── */}
-      <motion.section
+      <section
         id="premium"
         className="px-5 py-14"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={stagger}
       >
         <div className="container max-w-md mx-auto">
-          <motion.div
-            variants={fadeUp}
+          <div
             className="rounded-2xl p-6 sm:p-8 text-center relative overflow-hidden"
             style={{ background: "linear-gradient(180deg, hsl(142 72% 50% / 0.06), hsl(150 6% 8%))" }}
           >
@@ -748,9 +725,7 @@ const Index = () => {
               </p>
 
               {/* Pack image */}
-              <div className="rounded-xl overflow-hidden mb-6">
-                <img src={packImage} alt="Pack com todos os jogos" className="w-full" loading="lazy" decoding="async" />
-              </div>
+              <PackImage />
 
               {/* Badges pagamento e acesso */}
               <div className="grid grid-cols-2 gap-3 mb-6 p-4 rounded-xl glass-card">
@@ -808,30 +783,26 @@ const Index = () => {
                 Sem mensalidades. Sem taxas escondidas. Sem renovação. Você paga uma única vez e tem acesso completo e vitalício.
               </p>
             </div>
-          </motion.div>
+          </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* ─── FAQ ─── */}
-      <motion.section
+      <section
         className="relative px-5 py-14"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={stagger}
       >
         <div className="absolute inset-0 bg-grid-small opacity-20" />
         <div className="absolute inset-0 bg-gradient-to-b from-card/80 to-background/80" />
 
         <div className="container max-w-lg mx-auto relative z-10">
-          <motion.div variants={fadeUp} className="text-center mb-8">
+          <div className="text-center mb-8">
             <span className="inline-flex items-center gap-1.5 text-primary text-[11px] font-semibold uppercase tracking-widest mb-3">
               FAQ
             </span>
             <h2 className="text-xl sm:text-2xl font-bold text-foreground">
               Dúvidas frequentes
             </h2>
-          </motion.div>
+          </div>
 
           <div className="space-y-3">
             {[
@@ -839,23 +810,21 @@ const Index = () => {
               { q: "Preciso pagar para jogar?", a: "Não. O pagamento é só para quem quer instalação automática e o pack com +100 jogos." },
               { q: "O instalador automático é seguro?", a: "Sim, ele apenas automatiza a instalação para facilitar." },
               { q: "Quais jogos vêm no pack?", a: "GTA, God of War, NFS, Dragon Ball, Naruto, Spider-Man, Tekken, e muitos outros clássicos." },
-            ].map(({ q, a }, i) => (
-              <motion.div
+            ].map(({ q, a }) => (
+              <div
                 key={q}
-                variants={fadeUp}
                 className="rounded-xl glass-card p-5"
               >
                 <h3 className="text-sm font-semibold text-foreground mb-1.5">{q}</h3>
                 <p className="text-muted-foreground text-xs leading-relaxed">{a}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* ─── FOOTER ─── */}
       <footer className="px-5 py-10 border-t border-border flex flex-col items-center gap-4">
-        
         <p className="text-center text-muted-foreground text-[11px]">
           © 2026 JogosMobileClub. Todos os direitos reservados.
         </p>
