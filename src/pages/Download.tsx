@@ -380,6 +380,7 @@ const DownloadPage = () => {
       </section>
 
       {/* ─── FOOTER ─── */}
+      </main>
       <footer className="px-5 py-6 border-t border-border">
         <p className="text-center text-muted-foreground text-[10px]">
           Conteúdo criado para ajudar jogadores a baixar e instalar Need for Speed Underground no celular sem complicação.
