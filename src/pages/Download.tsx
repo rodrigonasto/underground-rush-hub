@@ -169,7 +169,7 @@ const DownloadPage = () => {
           {/* Platform Tabs */}
           <div className="grid grid-cols-2 gap-3 mb-6">
             <button
-              onClick={() => handlePlatformChange("android")}
+              onClick={() => setPlatform("android")}
               className={`flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm transition-all border ${
                 platform === "android"
                   ? "bg-primary text-primary-foreground border-primary"
