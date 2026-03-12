@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import { Download, ShieldCheck, ExternalLink, Star, Zap, Check, ChevronRight, ArrowUp } from "lucide-react";
 import packImage from "@/assets/pack-image-v2.png";
 import VTurbPlayer from "@/components/VTurbPlayer";
 import SEOHead from "@/components/SEOHead";
+
+const GameLibraryShowcase = lazy(() => import("@/components/GameLibraryShowcase"));
 
 const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
