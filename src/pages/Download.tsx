@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Download, ShieldCheck, ExternalLink, Star, Zap, Check, ChevronRight, ArrowUp } from "lucide-react";
 import packImage from "@/assets/pack-image-v2.png";
+import VTurbPlayer from "@/components/VTurbPlayer";
 
 const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
