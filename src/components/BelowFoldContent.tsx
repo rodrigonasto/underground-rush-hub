@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef, useMemo, lazy, Suspense } from "react";
 import { Download, Check, X, Smartphone, ShieldCheck, Zap, Star, Search, ChevronRight, Sparkles, ArrowUp } from "lucide-react";
 import GameCover from "@/components/GameCover";
-import packImageWebp from "@/assets/pack-image.webp";
-import packImage from "@/assets/pack-image-v2.png";
+import { CDN_BASE_URL } from "@/lib/cdn";
 import {
   Dialog,
   DialogContent,
@@ -70,20 +69,19 @@ interface BelowFoldContentProps {
   navigate: (path: string) => void;
 }
 
+const PACK_IMAGE_CDN = `${CDN_BASE_URL}/pack-image.webp`;
+
 const PackImage = () => (
   <div className="rounded-xl overflow-hidden mb-6">
-    <picture>
-      <source srcSet={packImageWebp} type="image/webp" />
-      <img
-        src={packImage}
-        alt="Pack com todos os jogos"
-        className="w-full"
-        loading="lazy"
-        decoding="async"
-        width={600}
-        height={400}
-      />
-    </picture>
+    <img
+      src={PACK_IMAGE_CDN}
+      alt="Pack com todos os jogos"
+      className="w-full"
+      loading="lazy"
+      decoding="async"
+      width={600}
+      height={400}
+    />
   </div>
 );
 

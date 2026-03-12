@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Download, ShieldCheck, ExternalLink, Star, Zap, Check, ChevronRight, ArrowUp } from "lucide-react";
-import packImageWebp from "@/assets/pack-image.webp";
-import packImage from "@/assets/pack-image-v2.png";
+import { CDN_BASE_URL } from "@/lib/cdn";
 import VTurbPlayer from "@/components/VTurbPlayer";
 import SEOHead from "@/components/SEOHead";
 
@@ -273,10 +272,7 @@ const DownloadPage = () => {
 
               {/* Pack image */}
               <div className="rounded-xl overflow-hidden mb-6">
-                <picture>
-                  <source srcSet={packImageWebp} type="image/webp" />
-                  <img src={packImage} alt="Pack com todos os jogos" className="w-full" loading="lazy" decoding="async" width={600} height={400} />
-                </picture>
+                <img src={`${CDN_BASE_URL}/pack-image.webp`} alt="Pack com todos os jogos" className="w-full" loading="lazy" decoding="async" width={600} height={400} />
               </div>
 
               {/* Badges pagamento e acesso */}
