@@ -263,6 +263,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden noise-overlay">
+      <SEOHead
+        title="Jogos Mobile Club — Jogue clássicos no celular"
+        description="Baixe e jogue NFS Underground 2, GTA, God of War e +100 jogos clássicos no celular. Tutorial completo e instalação fácil."
+        path="/"
+      />
 
       {/* ─── HERO ─── */}
       <section className="relative px-5 pt-12 pb-10 sm:pt-20 sm:pb-16 overflow-hidden">
