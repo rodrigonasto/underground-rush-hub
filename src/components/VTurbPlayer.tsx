@@ -37,7 +37,12 @@ const VTurbPlayer = ({ playerId, visible }: VTurbPlayerProps) => {
 
   return (
     <div
-      style={{ display: visible ? "block" : "none" }}
+      style={{
+        display: visible ? "block" : "none",
+        visibility: visible ? "visible" : "hidden",
+        height: visible ? "auto" : "0",
+        overflow: "hidden",
+      }}
       className="rounded-2xl overflow-hidden"
     >
       <div ref={containerRef} />
