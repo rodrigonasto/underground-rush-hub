@@ -22,7 +22,7 @@ const androidSteps: StepItem[] = [
     fileName: "NetherSX2",
     buttonLabel: "Baixar emulador NetherSX2",
     description: "Aplicativo que permite rodar jogos de PS2 no celular.",
-    link: "#",
+    link: "https://www.mediafire.com/file/hv7aape7n0ar8fm/NetherSX2-v2.0+signed+@JogosMobileClub.com.br.apk/file",
   },
   {
     step: 2,
@@ -30,7 +30,7 @@ const androidSteps: StepItem[] = [
     fileName: "BIOS PS2",
     buttonLabel: "Baixar BIOS",
     description: "Arquivo necessário para o funcionamento do emulador.",
-    link: "#",
+    link: "https://www.mediafire.com/file/ndivybmtt3pb27w/Bios+@JogosMobileClub.com.br.rar/file",
   },
   {
     step: 3,
@@ -38,7 +38,7 @@ const androidSteps: StepItem[] = [
     fileName: "Need for Speed Underground 2",
     buttonLabel: "Baixar o jogo (arquivo principal)",
     description: "Arquivo do jogo para rodar no emulador.",
-    link: "#",
+    link: "https://www.mediafire.com/file/pwoqlz2zyl6myvs/NEED+FOR+SPEED+UND+2.rar/file",
     isMain: true,
   },
 ];
