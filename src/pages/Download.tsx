@@ -362,7 +362,7 @@ const DownloadPage = () => {
 
           {/* Toggle link */}
           <button
-            onClick={() => setPlatform(platform === "android" ? "ios" : "android")}
+            onClick={() => handlePlatformChange(platform === "android" ? "ios" : "android")}
             className="mt-6 w-full text-center text-muted-foreground text-xs hover:text-primary transition-colors"
           >
             {platform === "android" ? "Usa iPhone? Ver versão iOS →" : "Usa Android? Ver versão Android →"}

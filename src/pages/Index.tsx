@@ -229,7 +229,7 @@ const TutorialSection = () => {
             <span className="text-xl">🤖</span> Android
           </button>
           <button
-            onClick={() => setPlatform("ios")}
+            onClick={() => handlePlatformChange("ios")}
             className={`flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm transition-all ${
               platform === "ios"
                 ? "bg-primary text-primary-foreground glow-primary"
