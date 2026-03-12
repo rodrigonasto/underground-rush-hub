@@ -1,11 +1,12 @@
 interface VTurbPlayerProps {
   playerId: string;
   visible: boolean;
+  vertical?: boolean;
 }
 
 const COMPANY_ID = "a57aea77-33e9-4609-ae0f-96bf93c595a1";
 
-const VTurbPlayer = ({ playerId, visible }: VTurbPlayerProps) => {
+const VTurbPlayer = ({ playerId, visible, vertical }: VTurbPlayerProps) => {
   const src = `https://scripts.converteai.net/${COMPANY_ID}/players/${playerId}/embed.html`;
 
   return (
@@ -17,7 +18,8 @@ const VTurbPlayer = ({ playerId, visible }: VTurbPlayerProps) => {
         allow="autoplay; fullscreen"
         allowFullScreen
         referrerPolicy="origin"
-        className="w-full border-none block aspect-[888/1920] sm:aspect-video"
+        className="w-full border-none block"
+        style={{ aspectRatio: vertical ? "888/1920" : "16/9" }}
         title="Tutorial de instalação"
       />
     </div>
