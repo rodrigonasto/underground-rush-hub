@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Download, ShieldCheck, ExternalLink, Star, Zap, Check, ChevronRight, ArrowUp } from "lucide-react";
 import packImage from "@/assets/pack-image-v2.png";
 import VTurbPlayer from "@/components/VTurbPlayer";
+import SEOHead from "@/components/SEOHead";
 
 const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
@@ -139,6 +140,11 @@ const DownloadPage = () => {
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
+      <SEOHead
+        title="Download NFS Underground 2 para celular — Jogos Mobile Club"
+        description="Baixe Need for Speed Underground 2 grátis para Android e iPhone. Tutorial passo a passo com emulador e arquivos necessários."
+        path="/download"
+      />
 
       {/* ─── HERO / CONFIRMAÇÃO ─── */}
       <section className="px-5 pt-10 pb-8 sm:pt-16 sm:pb-12">
