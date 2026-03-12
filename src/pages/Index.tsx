@@ -599,12 +599,12 @@ const Index = () => {
                 <span className="text-[10px] text-muted-foreground font-normal">{cat.games.length} jogos</span>
               </h3>
               <div className="grid grid-cols-4 sm:grid-cols-6 gap-2 sm:gap-2.5">
-                {cat.games.map((g) => (
-                  <div key={g.name} className="group">
+                {cat.games.map((name) => (
+                  <div key={name} className="group">
                     <div className="aspect-[3/4] rounded-lg overflow-hidden border border-border/50 group-hover:border-primary/40 transition-all bg-muted">
-                      <img src={g.img} alt={g.name} className="w-full h-full object-cover" loading="lazy" decoding="async" width={120} height={160} />
+                      <GameCover name={name} className="w-full h-full object-cover" />
                     </div>
-                    <p className="text-[9px] sm:text-[10px] text-muted-foreground text-center mt-1.5 truncate leading-tight">{g.name}</p>
+                    <p className="text-[9px] sm:text-[10px] text-muted-foreground text-center mt-1.5 truncate leading-tight">{name}</p>
                   </div>
                 ))}
               </div>
