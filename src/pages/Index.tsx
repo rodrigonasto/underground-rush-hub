@@ -29,7 +29,7 @@ const Index = () => {
         <section className="relative px-5 pt-12 pb-10 sm:pt-20 sm:pb-16 overflow-hidden">
           <div className="absolute inset-0 bg-grid opacity-40" />
           <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl sm:blur-[120px]" />
 
           <div className="container max-w-lg mx-auto text-center relative z-10 hero-fade-in">
             <div className="inline-flex items-center gap-1.5 glass-card text-primary text-xs font-semibold px-4 py-1.5 rounded-full mb-8">

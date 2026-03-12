@@ -84,10 +84,17 @@
 
   /* Glass card */
   .glass-card {
-    background: hsl(150 6% 8% / 0.6);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: hsl(150 6% 8% / 0.75);
     border: 1px solid hsl(150 5% 16% / 0.6);
+  }
+
+  /* Only apply backdrop-filter on devices that handle it well */
+  @media (min-width: 640px) {
+    .glass-card {
+      background: hsl(150 6% 8% / 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
   }
 
   /* Glow effects */

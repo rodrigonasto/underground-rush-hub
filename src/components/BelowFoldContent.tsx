@@ -288,7 +288,7 @@ const BelowFoldContent = ({
             {/* Card Premium */}
             <div className="rounded-2xl p-5 sm:p-6 text-center relative overflow-hidden" style={{ background: "linear-gradient(180deg, hsl(142 72% 50% / 0.06), hsl(150 6% 8%))" }}>
               <div className="absolute top-0 inset-x-0 h-0.5 shimmer-border" />
-              <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[300px] h-[200px] rounded-full bg-primary/8 blur-[80px]" />
+              <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[300px] h-[200px] rounded-full bg-primary/8 blur-3xl sm:blur-[80px]" />
               <div className="relative z-10">
                 <div className="inline-flex items-center gap-2 text-xs font-semibold px-4 py-2 rounded-full mb-4 border border-primary/30 bg-primary/10">
                   <ArrowUp className="w-3.5 h-3.5 text-primary" />
@@ -462,7 +462,7 @@ const BelowFoldContent = ({
         <div className="container max-w-md mx-auto">
           <div className="rounded-2xl p-6 sm:p-8 text-center relative overflow-hidden" style={{ background: "linear-gradient(180deg, hsl(142 72% 50% / 0.06), hsl(150 6% 8%))" }}>
             <div className="absolute top-0 inset-x-0 h-0.5 shimmer-border" />
-            <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[300px] h-[200px] rounded-full bg-primary/8 blur-[80px]" />
+            <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[300px] h-[200px] rounded-full bg-primary/8 blur-3xl sm:blur-[80px]" />
             <div className="relative z-10">
               <div className="inline-flex items-center gap-2 text-sm font-semibold px-6 py-2.5 rounded-full mb-5 border border-primary/30 bg-primary/10">
                 <ArrowUp className="w-4 h-4 text-primary" />

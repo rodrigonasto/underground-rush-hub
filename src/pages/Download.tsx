@@ -140,6 +140,7 @@ const DownloadPage = () => {
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
+      <main>
       <SEOHead
         title="Download NFS Underground 2 para celular — Jogos Mobile Club"
         description="Baixe Need for Speed Underground 2 grátis para Android e iPhone. Tutorial passo a passo com emulador e arquivos necessários."
@@ -379,6 +380,7 @@ const DownloadPage = () => {
       </section>
 
       {/* ─── FOOTER ─── */}
+      </main>
       <footer className="px-5 py-6 border-t border-border">
         <p className="text-center text-muted-foreground text-[10px]">
           Conteúdo criado para ajudar jogadores a baixar e instalar Need for Speed Underground no celular sem complicação.
