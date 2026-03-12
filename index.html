@@ -9,21 +9,18 @@
     <!-- Preload LCP image from CDN -->
     <link rel="preload" as="image" type="image/webp" href="https://pub-ea93f56e93a64de8a24b1a7fcd48b703.r2.dev/nfs-cover.webp" fetchpriority="high" />
 
-    <!-- Font loading optimized -->
+    <!-- Font loading optimized — swap to prevent FOIT -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" /></noscript>
 
     <!-- DNS prefetch for third-party domains -->
-    <link rel="preconnect" href="https://pay.lowify.com.br" />
-    <link rel="dns-prefetch" href="https://pay.lowify.com.br" />
     <link rel="preconnect" href="https://pub-ea93f56e93a64de8a24b1a7fcd48b703.r2.dev" crossorigin />
     <link rel="dns-prefetch" href="https://pub-ea93f56e93a64de8a24b1a7fcd48b703.r2.dev" />
-    <link rel="dns-prefetch" href="https://ksdigital.shop" />
+    <link rel="dns-prefetch" href="https://pay.lowify.com.br" />
     <link rel="dns-prefetch" href="https://cdn.converteai.net" />
     <link rel="dns-prefetch" href="https://scripts.converteai.net" />
-    <link rel="dns-prefetch" href="https://images.converteai.net" />
     <link rel="dns-prefetch" href="https://api.vturb.com.br" />
 
     <title>Jogos Mobile Club</title>
@@ -41,34 +38,42 @@
     <meta name="twitter:description" content="Jogue clássicos no celular como Need for Speed, GTA e God of War. Tutoriais simples, downloads organizados e instalação automática." />
     <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/D3wuzRc3DBS4GCECdR349mi0OA62/social-images/social-1772765985794-de4cad1259152ae76bebb2c59b02f2fe.webp" />
 
-    <!-- Critical CSS for hero section - inlined to avoid render blocking -->
+    <!-- Critical CSS inlined for hero -->
     <style>
       .hero-fade-in{animation:heroFadeIn .3s ease-out both}
       @keyframes heroFadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
     </style>
-
-  <!-- Utmify Pixel -->
-  <script>
-    window.pixelId = "69b2692bc0943879db0c1359";
-    var a = document.createElement("script");
-    a.setAttribute("async", "");
-    a.setAttribute("defer", "");
-    a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-    document.head.appendChild(a);
-  </script>
-
-  <!-- Utmify UTM tracking -->
-  <script
-    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-    data-utmify-prevent-xcod-sck
-    data-utmify-prevent-subids
-    async
-    defer
-  ></script>
 </head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Analytics deferred until after page is interactive -->
+    <script>
+      function loadAnalytics() {
+        // Utmify Pixel
+        window.pixelId = "69b2692bc0943879db0c1359";
+        var a = document.createElement("script");
+        a.setAttribute("async", "");
+        a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+        document.head.appendChild(a);
+
+        // Utmify UTM tracking
+        var b = document.createElement("script");
+        b.setAttribute("async", "");
+        b.setAttribute("src", "https://cdn.utmify.com.br/scripts/utms/latest.js");
+        b.setAttribute("data-utmify-prevent-xcod-sck", "");
+        b.setAttribute("data-utmify-prevent-subids", "");
+        document.head.appendChild(b);
+      }
+
+      // Load analytics after the page is fully interactive
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadAnalytics, { timeout: 3000 });
+      } else {
+        setTimeout(loadAnalytics, 2000);
+      }
+    </script>
   </body>
 </html>
