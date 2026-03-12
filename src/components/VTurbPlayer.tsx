@@ -17,7 +17,7 @@ const VTurbPlayer = ({ playerId, visible }: VTurbPlayerProps) => {
         allow="autoplay; fullscreen"
         allowFullScreen
         referrerPolicy="origin"
-        className="w-full border-none block aspect-[9/16] sm:aspect-video"
+        className="w-full border-none block aspect-[888/1920] sm:aspect-video"
         title="Tutorial de instalação"
       />
     </div>
