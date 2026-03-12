@@ -135,14 +135,20 @@ const DownloadPage = () => {
   });
 
   useEffect(() => {
-    if (platform === "ios") {
-      const exists = document.querySelector('script[src*="69aa29eea584f1a405f84d6b"]');
+    const loadVturbScript = (playerId: string) => {
+      const exists = document.querySelector(`script[src*="${playerId}"]`);
       if (!exists) {
         const s = document.createElement("script");
-        s.src = "https://scripts.converteai.net/a57aea77-33e9-4609-ae0f-96bf93c595a1/players/69aa29eea584f1a405f84d6b/v4/player.js";
+        s.src = `https://scripts.converteai.net/a57aea77-33e9-4609-ae0f-96bf93c595a1/players/${playerId}/v4/player.js`;
         s.async = true;
         document.head.appendChild(s);
       }
+    };
+
+    if (platform === "android") {
+      loadVturbScript("69b22b5e005f4e6dada6b831");
+    } else {
+      loadVturbScript("69aa29eea584f1a405f84d6b");
     }
   }, [platform]);
 
@@ -203,14 +209,11 @@ const DownloadPage = () => {
 
           {/* Video por plataforma */}
           {platform === "android" ? (
-            <div className="aspect-video rounded-2xl overflow-hidden bg-background border border-border mb-3">
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/VIDEO_ID_ANDROID"
-                title="Tutorial Android"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
+            <div className="rounded-2xl overflow-hidden bg-background border border-border mb-3">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: '<vturb-smartplayer id="vid-69b22b5e005f4e6dada6b831" style="display:block;margin:0 auto;width:100%;"></vturb-smartplayer>'
+                }}
               />
             </div>
           ) : (
