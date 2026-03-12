@@ -209,14 +209,11 @@ const DownloadPage = () => {
 
           {/* Video por plataforma */}
           {platform === "android" ? (
-            <div className="aspect-video rounded-2xl overflow-hidden bg-background border border-border mb-3">
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/VIDEO_ID_ANDROID"
-                title="Tutorial Android"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
+            <div className="rounded-2xl overflow-hidden bg-background border border-border mb-3">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: '<vturb-smartplayer id="vid-69b22b5e005f4e6dada6b831" style="display:block;margin:0 auto;width:100%;"></vturb-smartplayer>'
+                }}
               />
             </div>
           ) : (

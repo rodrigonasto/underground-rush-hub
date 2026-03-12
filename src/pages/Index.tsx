@@ -238,14 +238,11 @@ const TutorialSection = () => {
         {platform === "android" && (
           <motion.div variants={fadeUp} className="space-y-4">
             <h3 className="text-base font-bold text-foreground text-center">Tutorial Android</h3>
-            <div className="aspect-video rounded-2xl overflow-hidden glass-card">
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/VIDEO_ID_ANDROID"
-                title="Tutorial Android"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
+            <div className="rounded-2xl overflow-hidden glass-card">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: '<vturb-smartplayer id="vid-69b22b5e005f4e6dada6b831" style="display:block;margin:0 auto;width:100%;"></vturb-smartplayer>'
+                }}
               />
             </div>
             <p className="text-muted-foreground text-xs text-center">
