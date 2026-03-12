@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Download, ShieldCheck, ExternalLink, Star, Zap, Check, ChevronRight, ArrowUp } from "lucide-react";
+import packImageWebp from "@/assets/pack-image.webp";
 import packImage from "@/assets/pack-image-v2.png";
 import VTurbPlayer from "@/components/VTurbPlayer";
 import SEOHead from "@/components/SEOHead";
