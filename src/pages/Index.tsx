@@ -7,6 +7,7 @@ import packImageWebp from "@/assets/pack-image.webp";
 import packImage from "@/assets/pack-image-v2.png";
 import { Download, Check, X, Smartphone, ShieldCheck, Zap, Star, Search, ChevronRight, Sparkles, ArrowUp } from "lucide-react";
 import VTurbPlayer from "@/components/VTurbPlayer";
+import GameCover from "@/components/GameCover";
 import SEOHead from "@/components/SEOHead";
 import {
   Dialog,
