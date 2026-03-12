@@ -241,7 +241,7 @@ const TutorialSection = () => {
               />
             </div>
             <p className="text-muted-foreground text-xs text-center">
-              ⚠️ O tutorial usa outro jogo como exemplo, mas o processo de instalação é o mesmo.
+              ⚡ Assista ao vídeo abaixo e siga o passo a passo mostrado na tela. Em poucos minutos a instalação estará concluída.
             </p>
           </div>
         </div>
