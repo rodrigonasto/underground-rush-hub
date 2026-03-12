@@ -190,20 +190,10 @@ const DownloadPage = () => {
             </button>
           </div>
 
-          {/* Video por plataforma - ambos renderizados, visibilidade controlada por CSS */}
-          <div style={{ display: platform === "android" ? "block" : "none" }} className="w-full rounded-2xl overflow-hidden bg-background border border-border mb-3">
-            <div
-              dangerouslySetInnerHTML={{
-                __html: '<vturb-smartplayer id="vid-69b22b5e005f4e6dada6b831" style="display:block;width:100%;"></vturb-smartplayer>'
-              }}
-            />
-          </div>
-          <div style={{ display: platform === "ios" ? "block" : "none" }} className="w-full rounded-2xl overflow-hidden bg-background border border-border mb-3">
-            <div
-              dangerouslySetInnerHTML={{
-                __html: '<vturb-smartplayer id="vid-69aa29eea584f1a405f84d6b" style="display:block;width:100%;"></vturb-smartplayer>'
-              }}
-            />
+          {/* Video por plataforma */}
+          <div className="mb-3">
+            <VTurbPlayer playerId="69b22b5e005f4e6dada6b831" visible={platform === "android"} />
+            <VTurbPlayer playerId="69aa29eea584f1a405f84d6b" visible={platform === "ios"} />
           </div>
           <p className="text-muted-foreground text-xs text-center mb-10">
             ⚠️ O vídeo usa outro jogo como exemplo, mas o processo de instalação é o mesmo.
