@@ -6,6 +6,7 @@ import nfsCoverWebp from "@/assets/nfs-cover.webp";
 import packImage from "@/assets/pack-image-v2.png";
 import logoFooter from "@/assets/logo-jogosmobileclub.png";
 import { Download, Check, X, Smartphone, ShieldCheck, Zap, Star, Search, ChevronRight, Sparkles, ArrowUp } from "lucide-react";
+import VTurbPlayer from "@/components/VTurbPlayer";
 import {
   Dialog,
   DialogContent,
