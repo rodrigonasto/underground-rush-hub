@@ -7,6 +7,7 @@ import packImage from "@/assets/pack-image-v2.png";
 import logoFooter from "@/assets/logo-jogosmobileclub.png";
 import { Download, Check, X, Smartphone, ShieldCheck, Zap, Star, Search, ChevronRight, Sparkles, ArrowUp } from "lucide-react";
 import VTurbPlayer from "@/components/VTurbPlayer";
+import SEOHead from "@/components/SEOHead";
 import {
   Dialog,
   DialogContent,
