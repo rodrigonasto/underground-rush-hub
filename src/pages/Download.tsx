@@ -133,7 +133,7 @@ const StepCard = ({ item }: { item: StepItem }) => (
 );
 
 const DownloadPage = () => {
-  const [platform, setPlatform] = useState<"android" | "ios">(() => {
+  const [platform, setPlatform] = useState<"android" | "ios" | "library">(() => {
     const ua = navigator.userAgent || "";
     return /iPhone|iPad|iPod/i.test(ua) ? "ios" : "android";
   });
