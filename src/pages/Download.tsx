@@ -129,10 +129,21 @@ const StepCard = ({ item }: { item: StepItem }) => (
 );
 
 const DownloadPage = () => {
+  const pauseAllMedia = () => {
+    document.querySelectorAll("video, audio").forEach((el) => {
+      (el as HTMLMediaElement).pause();
+    });
+  };
+
   const [platform, setPlatform] = useState<"android" | "ios">(() => {
     const ua = navigator.userAgent || "";
     return /iPhone|iPad|iPod/i.test(ua) ? "ios" : "android";
   });
+
+  const handlePlatformChange = (p: "android" | "ios") => {
+    pauseAllMedia();
+    setPlatform(p);
+  };
 
   useEffect(() => {
     const playerIds = ["69b22b5e005f4e6dada6b831", "69aa29eea584f1a405f84d6b"];
@@ -181,7 +192,7 @@ const DownloadPage = () => {
           {/* Platform Tabs */}
           <div className="grid grid-cols-2 gap-3 mb-6">
             <button
-              onClick={() => setPlatform("android")}
+              onClick={() => handlePlatformChange("android")}
               className={`flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm transition-all border ${
                 platform === "android"
                   ? "bg-primary text-primary-foreground border-primary"
@@ -191,7 +202,7 @@ const DownloadPage = () => {
               <span className="text-xl">🤖</span> Android
             </button>
             <button
-              onClick={() => setPlatform("ios")}
+              onClick={() => handlePlatformChange("ios")}
               className={`flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm transition-all border ${
                 platform === "ios"
                   ? "bg-primary text-primary-foreground border-primary"
@@ -351,7 +362,7 @@ const DownloadPage = () => {
 
           {/* Toggle link */}
           <button
-            onClick={() => setPlatform(platform === "android" ? "ios" : "android")}
+            onClick={() => handlePlatformChange(platform === "android" ? "ios" : "android")}
             className="mt-6 w-full text-center text-muted-foreground text-xs hover:text-primary transition-colors"
           >
             {platform === "android" ? "Usa iPhone? Ver versão iOS →" : "Usa Android? Ver versão Android →"}
