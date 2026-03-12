@@ -361,7 +361,7 @@ const DownloadPage = () => {
           </ul>
 
           <a
-            href="https://wa.me/SEUNUMERO?text=Quero%20entrar%20no%20grupo%20VIP%20de%20jogos"
+            href="https://wa.me/5531983496296?text=Quero%20entrar%20no%20grupo%20VIP%20de%20jogos"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full inline-flex items-center justify-center gap-2 bg-amber-400 text-background font-bold text-base py-4 rounded-xl hover:bg-amber-300 transition-all"
