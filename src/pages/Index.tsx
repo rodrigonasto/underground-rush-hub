@@ -219,7 +219,7 @@ const TutorialSection = () => {
         {/* Platform Tabs */}
         <motion.div variants={fadeUp} className="grid grid-cols-2 gap-3 mb-6">
           <button
-            onClick={() => setPlatform("android")}
+            onClick={() => handlePlatformChange("android")}
             className={`flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm transition-all ${
               platform === "android"
                 ? "bg-primary text-primary-foreground glow-primary"
