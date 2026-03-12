@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef, useMemo, lazy, Suspense } from "react";
 import { Download, Check, X, Smartphone, ShieldCheck, Zap, Star, Search, ChevronRight, Sparkles, ArrowUp } from "lucide-react";
 import GameCover from "@/components/GameCover";
-import packImageWebp from "@/assets/pack-image.webp";
-import packImage from "@/assets/pack-image-v2.png";
+import { CDN_BASE_URL } from "@/lib/cdn";
 import {
   Dialog,
   DialogContent,
