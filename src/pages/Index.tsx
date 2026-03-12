@@ -165,10 +165,21 @@ const SocialProofBadge = () => {
 };
 
 const TutorialSection = () => {
+  const pauseAllMedia = () => {
+    document.querySelectorAll("video, audio").forEach((el) => {
+      (el as HTMLMediaElement).pause();
+    });
+  };
+
   const [platform, setPlatform] = useState<"android" | "ios">(() => {
     const ua = navigator.userAgent || "";
     return /iPhone|iPad|iPod/i.test(ua) ? "ios" : "android";
   });
+
+  const handlePlatformChange = (p: "android" | "ios") => {
+    pauseAllMedia();
+    setPlatform(p);
+  };
 
   useEffect(() => {
     const playerIds = ["69b22b5e005f4e6dada6b831", "69aa29eea584f1a405f84d6b"];
