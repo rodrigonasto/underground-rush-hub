@@ -272,10 +272,7 @@ const DownloadPage = () => {
 
               {/* Pack image */}
               <div className="rounded-xl overflow-hidden mb-6">
-                <picture>
-                  <source srcSet={packImageWebp} type="image/webp" />
-                  <img src={packImage} alt="Pack com todos os jogos" className="w-full" loading="lazy" decoding="async" width={600} height={400} />
-                </picture>
+                <img src={`${CDN_BASE_URL}/pack-image.webp`} alt="Pack com todos os jogos" className="w-full" loading="lazy" decoding="async" width={600} height={400} />
               </div>
 
               {/* Badges pagamento e acesso */}
