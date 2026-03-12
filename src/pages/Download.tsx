@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Download, ShieldCheck, ExternalLink, Star, Zap, Check, ChevronRight, ArrowUp } from "lucide-react";
 import packImage from "@/assets/pack-image-v2.png";
+import VTurbPlayer from "@/components/VTurbPlayer";
 
 const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
@@ -129,34 +130,10 @@ const StepCard = ({ item }: { item: StepItem }) => (
 );
 
 const DownloadPage = () => {
-  const pauseAllMedia = () => {
-    document.querySelectorAll("video, audio").forEach((el) => {
-      (el as HTMLMediaElement).pause();
-    });
-  };
-
   const [platform, setPlatform] = useState<"android" | "ios">(() => {
     const ua = navigator.userAgent || "";
     return /iPhone|iPad|iPod/i.test(ua) ? "ios" : "android";
   });
-
-  const handlePlatformChange = (p: "android" | "ios") => {
-    pauseAllMedia();
-    setPlatform(p);
-  };
-
-  useEffect(() => {
-    const playerIds = ["69b22b5e005f4e6dada6b831", "69aa29eea584f1a405f84d6b"];
-    playerIds.forEach((playerId) => {
-      const exists = document.querySelector(`script[src*="${playerId}"]`);
-      if (!exists) {
-        const s = document.createElement("script");
-        s.src = `https://scripts.converteai.net/a57aea77-33e9-4609-ae0f-96bf93c595a1/players/${playerId}/v4/player.js`;
-        s.async = true;
-        document.head.appendChild(s);
-      }
-    });
-  }, []);
 
   const steps = platform === "android" ? androidSteps : iosSteps;
 
@@ -192,7 +169,7 @@ const DownloadPage = () => {
           {/* Platform Tabs */}
           <div className="grid grid-cols-2 gap-3 mb-6">
             <button
-              onClick={() => handlePlatformChange("android")}
+              onClick={() => setPlatform("android")}
               className={`flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm transition-all border ${
                 platform === "android"
                   ? "bg-primary text-primary-foreground border-primary"
@@ -202,7 +179,7 @@ const DownloadPage = () => {
               <span className="text-xl">🤖</span> Android
             </button>
             <button
-              onClick={() => handlePlatformChange("ios")}
+              onClick={() => setPlatform("ios")}
               className={`flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm transition-all border ${
                 platform === "ios"
                   ? "bg-primary text-primary-foreground border-primary"
@@ -213,22 +190,10 @@ const DownloadPage = () => {
             </button>
           </div>
 
-          {/* Video por plataforma - ambos renderizados, visibilidade controlada por CSS */}
-          <div style={{ display: platform === "android" ? "block" : "none", paddingBottom: "56.25%", position: "relative" }} className="relative w-full rounded-2xl overflow-hidden bg-background border border-border mb-3">
-            <div
-              className="absolute inset-0"
-              dangerouslySetInnerHTML={{
-                __html: '<vturb-smartplayer id="vid-69b22b5e005f4e6dada6b831" style="display:block;width:100%;height:100%;position:absolute;top:0;left:0;"></vturb-smartplayer>'
-              }}
-            />
-          </div>
-          <div style={{ display: platform === "ios" ? "block" : "none", paddingBottom: "56.25%", position: "relative" }} className="relative w-full rounded-2xl overflow-hidden bg-background border border-border mb-3">
-            <div
-              className="absolute inset-0"
-              dangerouslySetInnerHTML={{
-                __html: '<vturb-smartplayer id="vid-69aa29eea584f1a405f84d6b" style="display:block;width:100%;height:100%;position:absolute;top:0;left:0;"></vturb-smartplayer>'
-              }}
-            />
+          {/* Video por plataforma */}
+          <div className="mb-3">
+            <VTurbPlayer playerId="69b22b5e005f4e6dada6b831" visible={platform === "android"} />
+            <VTurbPlayer playerId="69aa29eea584f1a405f84d6b" visible={platform === "ios"} />
           </div>
           <p className="text-muted-foreground text-xs text-center mb-10">
             ⚠️ O vídeo usa outro jogo como exemplo, mas o processo de instalação é o mesmo.
@@ -364,7 +329,7 @@ const DownloadPage = () => {
 
           {/* Toggle link */}
           <button
-            onClick={() => handlePlatformChange(platform === "android" ? "ios" : "android")}
+            onClick={() => setPlatform(platform === "android" ? "ios" : "android")}
             className="mt-6 w-full text-center text-muted-foreground text-xs hover:text-primary transition-colors"
           >
             {platform === "android" ? "Usa iPhone? Ver versão iOS →" : "Usa Android? Ver versão Android →"}
