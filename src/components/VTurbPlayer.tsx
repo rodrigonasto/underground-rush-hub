@@ -10,13 +10,11 @@ const VTurbPlayer = ({ playerId, visible }: VTurbPlayerProps) => {
   const initialized = useRef(false);
 
   useEffect(() => {
-    if (initialized.current || !containerRef.current) return;
+    if (!visible || initialized.current || !containerRef.current) return;
     initialized.current = true;
 
-    // Inject the raw HTML the same way VTurb expects
     containerRef.current.innerHTML = `<vturb-smartplayer id="vid-${playerId}" style="display:block;margin:0 auto;width:100%;"></vturb-smartplayer>`;
 
-    // Load the script
     const scriptSrc = `https://scripts.converteai.net/a57aea77-33e9-4609-ae0f-96bf93c595a1/players/${playerId}/v4/player.js`;
     if (!document.querySelector(`script[src="${scriptSrc}"]`)) {
       const s = document.createElement("script");
@@ -24,32 +22,12 @@ const VTurbPlayer = ({ playerId, visible }: VTurbPlayerProps) => {
       s.async = true;
       document.head.appendChild(s);
     }
-  }, [playerId]);
+  }, [playerId, visible]);
 
-  // Pause media when hidden
-  useEffect(() => {
-    if (!visible && containerRef.current) {
-      containerRef.current.querySelectorAll("video, audio").forEach((el) => {
-        (el as HTMLMediaElement).pause();
-      });
-    }
-  }, [visible]);
+  if (!visible) return null;
 
-  // Use opacity + pointer-events + position instead of display:none
-  // iOS Safari can fail to initialize players hidden with display:none
   return (
-    <div
-      style={{
-        position: visible ? "relative" : "absolute",
-        opacity: visible ? 1 : 0,
-        pointerEvents: visible ? "auto" : "none",
-        width: "100%",
-        zIndex: visible ? 1 : -1,
-        ...(visible ? {} : { height: 0, overflow: "hidden" }),
-      }}
-      aria-hidden={!visible}
-      className="rounded-2xl overflow-hidden"
-    >
+    <div className="rounded-2xl overflow-hidden">
       <div ref={containerRef} />
     </div>
   );
