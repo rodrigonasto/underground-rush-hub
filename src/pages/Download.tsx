@@ -179,7 +179,7 @@ const DownloadPage = () => {
               <span className="text-xl">🤖</span> Android
             </button>
             <button
-              onClick={() => handlePlatformChange("ios")}
+              onClick={() => setPlatform("ios")}
               className={`flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm transition-all border ${
                 platform === "ios"
                   ? "bg-primary text-primary-foreground border-primary"
