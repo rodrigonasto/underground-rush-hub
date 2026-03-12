@@ -11,19 +11,13 @@ const VTurbPlayer = ({ playerId, visible }: VTurbPlayerProps) => {
   return (
     <div
       className={`w-full rounded-2xl overflow-hidden ${visible ? "block" : "hidden"}`}
-      style={{ aspectRatio: "16/9" }}
     >
       <iframe
         src={src}
         allow="autoplay; fullscreen"
         allowFullScreen
         referrerPolicy="origin"
-        style={{
-          width: "100%",
-          height: "100%",
-          border: "none",
-          display: "block",
-        }}
+        className="w-full border-none block aspect-[9/16] sm:aspect-video"
         title="Tutorial de instalação"
       />
     </div>
