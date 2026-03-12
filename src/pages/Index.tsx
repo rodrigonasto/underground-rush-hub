@@ -171,7 +171,8 @@ const TutorialSection = () => {
   });
 
   useEffect(() => {
-    const loadVturbScript = (playerId: string) => {
+    const playerIds = ["69b22b5e005f4e6dada6b831", "69aa29eea584f1a405f84d6b"];
+    playerIds.forEach((playerId) => {
       const exists = document.querySelector(`script[src*="${playerId}"]`);
       if (!exists) {
         const s = document.createElement("script");
@@ -179,14 +180,8 @@ const TutorialSection = () => {
         s.async = true;
         document.head.appendChild(s);
       }
-    };
-
-    if (platform === "android") {
-      loadVturbScript("69b22b5e005f4e6dada6b831");
-    } else {
-      loadVturbScript("69aa29eea584f1a405f84d6b");
-    }
-  }, [platform]);
+    });
+  }, []);
 
   return (
     <motion.section
@@ -235,8 +230,8 @@ const TutorialSection = () => {
         </motion.div>
 
         {/* Android Content */}
-        {platform === "android" && (
-          <motion.div variants={fadeUp} className="space-y-4">
+        <div style={{ display: platform === "android" ? "block" : "none" }}>
+          <div className="space-y-4">
             <h3 className="text-base font-bold text-foreground text-center">Tutorial Android</h3>
             <div className="rounded-2xl overflow-hidden glass-card">
               <div
@@ -248,12 +243,12 @@ const TutorialSection = () => {
             <p className="text-muted-foreground text-xs text-center">
               ⚠️ O tutorial usa outro jogo como exemplo, mas o processo de instalação é o mesmo.
             </p>
-          </motion.div>
-        )}
+          </div>
+        </div>
 
         {/* iOS Content */}
-        {platform === "ios" && (
-          <motion.div variants={fadeUp} className="space-y-4">
+        <div style={{ display: platform === "ios" ? "block" : "none" }}>
+          <div className="space-y-4">
             <h3 className="text-base font-bold text-foreground text-center">Tutorial iPhone (iOS)</h3>
             <div className="rounded-2xl overflow-hidden glass-card">
               <div
@@ -263,10 +258,10 @@ const TutorialSection = () => {
               />
             </div>
             <p className="text-muted-foreground text-xs text-center">
-              ⚠️ O tutorial usa outro jogo como exemplo, mas o processo de instalação é o mesmo.
+              ⚠️ O vídeo usa outro jogo como exemplo, mas o processo de instalação é o mesmo.
             </p>
-          </motion.div>
-        )}
+          </div>
+        </div>
       </div>
     </motion.section>
   );

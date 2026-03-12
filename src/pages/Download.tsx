@@ -135,7 +135,8 @@ const DownloadPage = () => {
   });
 
   useEffect(() => {
-    const loadVturbScript = (playerId: string) => {
+    const playerIds = ["69b22b5e005f4e6dada6b831", "69aa29eea584f1a405f84d6b"];
+    playerIds.forEach((playerId) => {
       const exists = document.querySelector(`script[src*="${playerId}"]`);
       if (!exists) {
         const s = document.createElement("script");
@@ -143,14 +144,8 @@ const DownloadPage = () => {
         s.async = true;
         document.head.appendChild(s);
       }
-    };
-
-    if (platform === "android") {
-      loadVturbScript("69b22b5e005f4e6dada6b831");
-    } else {
-      loadVturbScript("69aa29eea584f1a405f84d6b");
-    }
-  }, [platform]);
+    });
+  }, []);
 
   const steps = platform === "android" ? androidSteps : iosSteps;
 
@@ -207,24 +202,21 @@ const DownloadPage = () => {
             </button>
           </div>
 
-          {/* Video por plataforma */}
-          {platform === "android" ? (
-            <div className="rounded-2xl overflow-hidden bg-background border border-border mb-3">
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: '<vturb-smartplayer id="vid-69b22b5e005f4e6dada6b831" style="display:block;margin:0 auto;width:100%;"></vturb-smartplayer>'
-                }}
-              />
-            </div>
-          ) : (
-            <div className="rounded-2xl overflow-hidden bg-background border border-border mb-3">
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: '<vturb-smartplayer id="vid-69aa29eea584f1a405f84d6b" style="display:block;margin:0 auto;width:100%;max-width:400px;"></vturb-smartplayer>'
-                }}
-              />
-            </div>
-          )}
+          {/* Video por plataforma - ambos renderizados, visibilidade controlada por CSS */}
+          <div style={{ display: platform === "android" ? "block" : "none" }} className="rounded-2xl overflow-hidden bg-background border border-border mb-3">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: '<vturb-smartplayer id="vid-69b22b5e005f4e6dada6b831" style="display:block;margin:0 auto;width:100%;"></vturb-smartplayer>'
+              }}
+            />
+          </div>
+          <div style={{ display: platform === "ios" ? "block" : "none" }} className="rounded-2xl overflow-hidden bg-background border border-border mb-3">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: '<vturb-smartplayer id="vid-69aa29eea584f1a405f84d6b" style="display:block;margin:0 auto;width:100%;max-width:400px;"></vturb-smartplayer>'
+              }}
+            />
+          </div>
           <p className="text-muted-foreground text-xs text-center mb-10">
             ⚠️ O vídeo usa outro jogo como exemplo, mas o processo de instalação é o mesmo.
           </p>
