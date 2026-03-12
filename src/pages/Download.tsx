@@ -135,14 +135,20 @@ const DownloadPage = () => {
   });
 
   useEffect(() => {
-    if (platform === "ios") {
-      const exists = document.querySelector('script[src*="69aa29eea584f1a405f84d6b"]');
+    const loadVturbScript = (playerId: string) => {
+      const exists = document.querySelector(`script[src*="${playerId}"]`);
       if (!exists) {
         const s = document.createElement("script");
-        s.src = "https://scripts.converteai.net/a57aea77-33e9-4609-ae0f-96bf93c595a1/players/69aa29eea584f1a405f84d6b/v4/player.js";
+        s.src = `https://scripts.converteai.net/a57aea77-33e9-4609-ae0f-96bf93c595a1/players/${playerId}/v4/player.js`;
         s.async = true;
         document.head.appendChild(s);
       }
+    };
+
+    if (platform === "android") {
+      loadVturbScript("69b22b5e005f4e6dada6b831");
+    } else {
+      loadVturbScript("69aa29eea584f1a405f84d6b");
     }
   }, [platform]);
 
