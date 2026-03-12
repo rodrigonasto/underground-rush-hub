@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0a0f0a" />
 
-    <!-- Preload LCP image -->
-    <link rel="preload" as="image" type="image/webp" href="/assets/nfs-cover.webp" fetchpriority="high" />
+    <!-- Preload LCP image from CDN -->
+    <link rel="preload" as="image" type="image/webp" href="https://pub-ea93f56e93a64de8a24b1a7fcd48b703.r2.dev/nfs-cover.webp" fetchpriority="high" />
 
     <!-- Font loading optimized -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,6 +40,12 @@
     <meta name="twitter:title" content="Jogos Mobile Club" />
     <meta name="twitter:description" content="Jogue clássicos no celular como Need for Speed, GTA e God of War. Tutoriais simples, downloads organizados e instalação automática." />
     <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/D3wuzRc3DBS4GCECdR349mi0OA62/social-images/social-1772765985794-de4cad1259152ae76bebb2c59b02f2fe.webp" />
+
+    <!-- Critical CSS for hero section - inlined to avoid render blocking -->
+    <style>
+      .hero-fade-in{animation:heroFadeIn .3s ease-out both}
+      @keyframes heroFadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    </style>
 
   <!-- Utmify Pixel -->
   <script>
