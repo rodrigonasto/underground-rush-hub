@@ -230,8 +230,8 @@ const TutorialSection = () => {
         </motion.div>
 
         {/* Android Content */}
-        {platform === "android" && (
-          <motion.div variants={fadeUp} className="space-y-4">
+        <div style={{ display: platform === "android" ? "block" : "none" }}>
+          <div className="space-y-4">
             <h3 className="text-base font-bold text-foreground text-center">Tutorial Android</h3>
             <div className="rounded-2xl overflow-hidden glass-card">
               <div
@@ -243,12 +243,12 @@ const TutorialSection = () => {
             <p className="text-muted-foreground text-xs text-center">
               ⚠️ O tutorial usa outro jogo como exemplo, mas o processo de instalação é o mesmo.
             </p>
-          </motion.div>
-        )}
+          </div>
+        </div>
 
         {/* iOS Content */}
-        {platform === "ios" && (
-          <motion.div variants={fadeUp} className="space-y-4">
+        <div style={{ display: platform === "ios" ? "block" : "none" }}>
+          <div className="space-y-4">
             <h3 className="text-base font-bold text-foreground text-center">Tutorial iPhone (iOS)</h3>
             <div className="rounded-2xl overflow-hidden glass-card">
               <div
@@ -258,10 +258,10 @@ const TutorialSection = () => {
               />
             </div>
             <p className="text-muted-foreground text-xs text-center">
-              ⚠️ O tutorial usa outro jogo como exemplo, mas o processo de instalação é o mesmo.
+              ⚠️ O vídeo usa outro jogo como exemplo, mas o processo de instalação é o mesmo.
             </p>
-          </motion.div>
-        )}
+          </div>
+        </div>
       </div>
     </motion.section>
   );
