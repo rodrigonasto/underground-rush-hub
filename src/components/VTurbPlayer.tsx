@@ -7,20 +7,16 @@ interface VTurbPlayerProps {
 
 const VTurbPlayer = ({ playerId, visible }: VTurbPlayerProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const mountedRef = useRef(false);
+  const initialized = useRef(false);
 
   useEffect(() => {
-    if (mountedRef.current || !containerRef.current) return;
-    mountedRef.current = true;
+    if (initialized.current || !containerRef.current) return;
+    initialized.current = true;
 
-    // Create the smartplayer element
-    const player = document.createElement("vturb-smartplayer");
-    player.id = `vid-${playerId}`;
-    player.style.display = "block";
-    player.style.width = "100%";
-    containerRef.current.appendChild(player);
+    // Inject the raw HTML the same way VTurb expects
+    containerRef.current.innerHTML = `<vturb-smartplayer id="vid-${playerId}" style="display:block;margin:0 auto;width:100%;"></vturb-smartplayer>`;
 
-    // Load the script if not already loaded
+    // Load the script
     const scriptSrc = `https://scripts.converteai.net/a57aea77-33e9-4609-ae0f-96bf93c595a1/players/${playerId}/v4/player.js`;
     if (!document.querySelector(`script[src="${scriptSrc}"]`)) {
       const s = document.createElement("script");
@@ -40,8 +36,11 @@ const VTurbPlayer = ({ playerId, visible }: VTurbPlayerProps) => {
   }, [visible]);
 
   return (
-    <div style={{ display: visible ? "block" : "none" }}>
-      <div ref={containerRef} className="vturb-container" />
+    <div
+      style={{ display: visible ? "block" : "none" }}
+      className="rounded-2xl overflow-hidden"
+    >
+      <div ref={containerRef} />
     </div>
   );
 };

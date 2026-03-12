@@ -56,31 +56,6 @@
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-body);
   }
-
-  /* Ensure VTurb players are responsive */
-  .vturb-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    border-radius: 1rem;
-    overflow: hidden;
-    background: hsl(var(--card));
-  }
-
-  .vturb-container vturb-smartplayer {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    display: block !important;
-  }
-
-  .vturb-container vturb-smartplayer *,
-  .vturb-container vturb-player,
-  .vturb-container vturb-player > div {
-    max-width: 100% !important;
-  }
 }
 
 @layer utilities {
