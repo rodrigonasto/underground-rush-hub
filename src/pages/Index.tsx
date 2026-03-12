@@ -233,7 +233,7 @@ const TutorialSection = () => {
         <div style={{ display: platform === "ios" ? "block" : "none" }}>
           <div className="space-y-4">
             <h3 className="text-base font-bold text-foreground text-center">Tutorial iPhone (iOS)</h3>
-            <VTurbPlayer playerId="69aa29eea584f1a405f84d6b" visible={platform === "ios"} />
+            <VTurbPlayer playerId="69aa29eea584f1a405f84d6b" visible={platform === "ios"} vertical />
             <p className="text-muted-foreground text-xs text-center">
               ⚠️ O vídeo usa outro jogo como exemplo, mas o processo de instalação é o mesmo.
             </p>
