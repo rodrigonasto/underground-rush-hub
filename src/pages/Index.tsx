@@ -212,7 +212,7 @@ const Index = () => {
     return categories
       .map(cat => ({
         ...cat,
-        games: cat.games.filter(g => g.name.toLowerCase().includes(query)),
+        games: cat.games.filter(g => g.toLowerCase().includes(query)),
       }))
       .filter(cat => cat.games.length > 0);
   }, [searchQuery]);
