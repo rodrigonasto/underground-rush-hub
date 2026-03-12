@@ -175,26 +175,36 @@ const DownloadPage = () => {
           </p>
 
           {/* Platform Tabs */}
-          <div className="grid grid-cols-2 gap-3 mb-6">
+          <div className="grid grid-cols-3 gap-2 mb-6">
             <button
               onClick={() => setPlatform("android")}
-              className={`flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm transition-all border ${
+              className={`flex items-center justify-center gap-1.5 py-3 rounded-xl font-bold text-xs sm:text-sm transition-all border ${
                 platform === "android"
                   ? "bg-primary text-primary-foreground border-primary"
                   : "bg-card text-muted-foreground border-border hover:border-primary/50"
               }`}
             >
-              <span className="text-xl">🤖</span> Android
+              <span className="text-lg">🤖</span> Android
             </button>
             <button
               onClick={() => setPlatform("ios")}
-              className={`flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm transition-all border ${
+              className={`flex items-center justify-center gap-1.5 py-3 rounded-xl font-bold text-xs sm:text-sm transition-all border ${
                 platform === "ios"
                   ? "bg-primary text-primary-foreground border-primary"
                   : "bg-card text-muted-foreground border-border hover:border-primary/50"
               }`}
             >
-              <span className="text-xl">🍎</span> iPhone
+              <span className="text-lg">🍎</span> iPhone
+            </button>
+            <button
+              onClick={() => setPlatform("library")}
+              className={`flex items-center justify-center gap-1.5 py-3 rounded-xl font-bold text-xs sm:text-sm transition-all border ${
+                platform === "library"
+                  ? "bg-primary text-primary-foreground border-primary shadow-[0_0_16px_-2px_hsl(var(--primary)/0.4)]"
+                  : "bg-card text-muted-foreground border-border hover:border-primary/50"
+              }`}
+            >
+              <span className="text-lg">📱</span> App
             </button>
           </div>
 
