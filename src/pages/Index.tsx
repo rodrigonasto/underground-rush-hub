@@ -171,7 +171,8 @@ const TutorialSection = () => {
   });
 
   useEffect(() => {
-    const loadVturbScript = (playerId: string) => {
+    const playerIds = ["69b22b5e005f4e6dada6b831", "69aa29eea584f1a405f84d6b"];
+    playerIds.forEach((playerId) => {
       const exists = document.querySelector(`script[src*="${playerId}"]`);
       if (!exists) {
         const s = document.createElement("script");
@@ -179,14 +180,8 @@ const TutorialSection = () => {
         s.async = true;
         document.head.appendChild(s);
       }
-    };
-
-    if (platform === "android") {
-      loadVturbScript("69b22b5e005f4e6dada6b831");
-    } else {
-      loadVturbScript("69aa29eea584f1a405f84d6b");
-    }
-  }, [platform]);
+    });
+  }, []);
 
   return (
     <motion.section
