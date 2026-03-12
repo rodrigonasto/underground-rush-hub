@@ -214,19 +214,17 @@ const DownloadPage = () => {
           </div>
 
           {/* Video por plataforma - ambos renderizados, visibilidade controlada por CSS */}
-          <div style={{ display: platform === "android" ? "block" : "none", paddingBottom: "56.25%", position: "relative" }} className="relative w-full rounded-2xl overflow-hidden bg-background border border-border mb-3">
+          <div style={{ display: platform === "android" ? "block" : "none" }} className="w-full rounded-2xl overflow-hidden bg-background border border-border mb-3">
             <div
-              className="absolute inset-0"
               dangerouslySetInnerHTML={{
-                __html: '<vturb-smartplayer id="vid-69b22b5e005f4e6dada6b831" style="display:block;width:100%;height:100%;position:absolute;top:0;left:0;"></vturb-smartplayer>'
+                __html: '<vturb-smartplayer id="vid-69b22b5e005f4e6dada6b831" style="display:block;width:100%;"></vturb-smartplayer>'
               }}
             />
           </div>
-          <div style={{ display: platform === "ios" ? "block" : "none", paddingBottom: "56.25%", position: "relative" }} className="relative w-full rounded-2xl overflow-hidden bg-background border border-border mb-3">
+          <div style={{ display: platform === "ios" ? "block" : "none" }} className="w-full rounded-2xl overflow-hidden bg-background border border-border mb-3">
             <div
-              className="absolute inset-0"
               dangerouslySetInnerHTML={{
-                __html: '<vturb-smartplayer id="vid-69aa29eea584f1a405f84d6b" style="display:block;width:100%;height:100%;position:absolute;top:0;left:0;"></vturb-smartplayer>'
+                __html: '<vturb-smartplayer id="vid-69aa29eea584f1a405f84d6b" style="display:block;width:100%;"></vturb-smartplayer>'
               }}
             />
           </div>
