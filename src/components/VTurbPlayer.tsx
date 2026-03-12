@@ -35,14 +35,19 @@ const VTurbPlayer = ({ playerId, visible }: VTurbPlayerProps) => {
     }
   }, [visible]);
 
+  // Use opacity + pointer-events + position instead of display:none
+  // iOS Safari can fail to initialize players hidden with display:none
   return (
     <div
       style={{
-        display: visible ? "block" : "none",
-        visibility: visible ? "visible" : "hidden",
-        height: visible ? "auto" : "0",
-        overflow: "hidden",
+        position: visible ? "relative" : "absolute",
+        opacity: visible ? 1 : 0,
+        pointerEvents: visible ? "auto" : "none",
+        width: "100%",
+        zIndex: visible ? 1 : -1,
+        ...(visible ? {} : { height: 0, overflow: "hidden" }),
       }}
+      aria-hidden={!visible}
       className="rounded-2xl overflow-hidden"
     >
       <div ref={containerRef} />
