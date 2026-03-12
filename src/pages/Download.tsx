@@ -22,7 +22,7 @@ const androidSteps: StepItem[] = [
     fileName: "NetherSX2",
     buttonLabel: "Baixar emulador NetherSX2",
     description: "Aplicativo que permite rodar jogos de PS2 no celular.",
-    link: "#",
+    link: "https://www.mediafire.com/file/hv7aape7n0ar8fm/NetherSX2-v2.0+signed+@JogosMobileClub.com.br.apk/file",
   },
   {
     step: 2,
@@ -30,7 +30,7 @@ const androidSteps: StepItem[] = [
     fileName: "BIOS PS2",
     buttonLabel: "Baixar BIOS",
     description: "Arquivo necessário para o funcionamento do emulador.",
-    link: "#",
+    link: "https://www.mediafire.com/file/ndivybmtt3pb27w/Bios+@JogosMobileClub.com.br.rar/file",
   },
   {
     step: 3,
@@ -38,7 +38,7 @@ const androidSteps: StepItem[] = [
     fileName: "Need for Speed Underground 2",
     buttonLabel: "Baixar o jogo (arquivo principal)",
     description: "Arquivo do jogo para rodar no emulador.",
-    link: "#",
+    link: "https://www.mediafire.com/file/pwoqlz2zyl6myvs/NEED+FOR+SPEED+UND+2.rar/file",
     isMain: true,
   },
 ];
@@ -361,7 +361,7 @@ const DownloadPage = () => {
           </ul>
 
           <a
-            href="https://wa.me/SEUNUMERO?text=Quero%20entrar%20no%20grupo%20VIP%20de%20jogos"
+            href="https://wa.me/5531983496296?text=Quero%20entrar%20no%20grupo%20VIP%20de%20jogos"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full inline-flex items-center justify-center gap-2 bg-amber-400 text-background font-bold text-base py-4 rounded-xl hover:bg-amber-300 transition-all"
