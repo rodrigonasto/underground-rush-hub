@@ -199,7 +199,7 @@ const DownloadPage = () => {
           {/* Video por plataforma */}
           <div className="mb-3">
             <VTurbPlayer playerId="69b22b5e005f4e6dada6b831" visible={platform === "android"} />
-            <VTurbPlayer playerId="69aa29eea584f1a405f84d6b" visible={platform === "ios"} />
+            <VTurbPlayer playerId="69aa29eea584f1a405f84d6b" visible={platform === "ios"} vertical />
           </div>
           <p className="text-muted-foreground text-xs text-center mb-10">
             ⚠️ O vídeo usa outro jogo como exemplo, mas o processo de instalação é o mesmo.
