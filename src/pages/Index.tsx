@@ -166,34 +166,10 @@ const SocialProofBadge = () => {
 };
 
 const TutorialSection = () => {
-  const pauseAllMedia = () => {
-    document.querySelectorAll("video, audio").forEach((el) => {
-      (el as HTMLMediaElement).pause();
-    });
-  };
-
   const [platform, setPlatform] = useState<"android" | "ios">(() => {
     const ua = navigator.userAgent || "";
     return /iPhone|iPad|iPod/i.test(ua) ? "ios" : "android";
   });
-
-  const handlePlatformChange = (p: "android" | "ios") => {
-    pauseAllMedia();
-    setPlatform(p);
-  };
-
-  useEffect(() => {
-    const playerIds = ["69b22b5e005f4e6dada6b831", "69aa29eea584f1a405f84d6b"];
-    playerIds.forEach((playerId) => {
-      const exists = document.querySelector(`script[src*="${playerId}"]`);
-      if (!exists) {
-        const s = document.createElement("script");
-        s.src = `https://scripts.converteai.net/a57aea77-33e9-4609-ae0f-96bf93c595a1/players/${playerId}/v4/player.js`;
-        s.async = true;
-        document.head.appendChild(s);
-      }
-    });
-  }, []);
 
   return (
     <motion.section
@@ -220,7 +196,7 @@ const TutorialSection = () => {
         {/* Platform Tabs */}
         <motion.div variants={fadeUp} className="grid grid-cols-2 gap-3 mb-6">
           <button
-            onClick={() => handlePlatformChange("android")}
+            onClick={() => setPlatform("android")}
             className={`flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm transition-all ${
               platform === "android"
                 ? "bg-primary text-primary-foreground glow-primary"
@@ -230,7 +206,7 @@ const TutorialSection = () => {
             <span className="text-xl">🤖</span> Android
           </button>
           <button
-            onClick={() => handlePlatformChange("ios")}
+            onClick={() => setPlatform("ios")}
             className={`flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm transition-all ${
               platform === "ios"
                 ? "bg-primary text-primary-foreground glow-primary"
@@ -245,13 +221,7 @@ const TutorialSection = () => {
         <div style={{ display: platform === "android" ? "block" : "none" }}>
           <div className="space-y-4">
             <h3 className="text-base font-bold text-foreground text-center">Tutorial Android</h3>
-            <div className="w-full rounded-2xl overflow-hidden glass-card">
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: '<vturb-smartplayer id="vid-69b22b5e005f4e6dada6b831" style="display:block;width:100%;"></vturb-smartplayer>'
-                }}
-              />
-            </div>
+            <VTurbPlayer playerId="69b22b5e005f4e6dada6b831" visible={platform === "android"} />
             <p className="text-muted-foreground text-xs text-center">
               ⚡ Assista ao vídeo abaixo e siga o passo a passo mostrado na tela. Em poucos minutos a instalação estará concluída.
             </p>
@@ -262,13 +232,7 @@ const TutorialSection = () => {
         <div style={{ display: platform === "ios" ? "block" : "none" }}>
           <div className="space-y-4">
             <h3 className="text-base font-bold text-foreground text-center">Tutorial iPhone (iOS)</h3>
-            <div className="w-full rounded-2xl overflow-hidden glass-card">
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: '<vturb-smartplayer id="vid-69aa29eea584f1a405f84d6b" style="display:block;width:100%;"></vturb-smartplayer>'
-                }}
-              />
-            </div>
+            <VTurbPlayer playerId="69aa29eea584f1a405f84d6b" visible={platform === "ios"} />
             <p className="text-muted-foreground text-xs text-center">
               ⚠️ O vídeo usa outro jogo como exemplo, mas o processo de instalação é o mesmo.
             </p>
