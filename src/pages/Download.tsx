@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { Download, ShieldCheck, ExternalLink, Star, Zap, Check, ChevronRight } from "lucide-react";
 import { CDN_BASE_URL } from "@/lib/cdn";
 import VTurbPlayer from "@/components/VTurbPlayer";
@@ -131,10 +132,19 @@ const StepCard = ({ item }: { item: StepItem }) => (
 );
 
 const DownloadPage = () => {
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const [platform, setPlatform] = useState<"android" | "ios">(() => {
     const ua = navigator.userAgent || "";
     return /iPhone|iPad|iPod/i.test(ua) ? "ios" : "android";
   });
+
+  useEffect(() => {
+    const utmSource = searchParams.get("utm_source");
+    if (utmSource !== "FB") {
+      navigate("/", { replace: true });
+    }
+  }, [searchParams, navigate]);
 
   const steps = platform === "android" ? androidSteps : iosSteps;
 
