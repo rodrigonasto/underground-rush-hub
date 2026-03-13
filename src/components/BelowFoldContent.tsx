@@ -444,7 +444,7 @@ const BelowFoldContent = ({
                   className="group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-3.5 px-6 rounded-xl hover:brightness-110 transition-all glow-primary overflow-hidden"
                 >
                   <Zap className="w-4 h-4 flex-shrink-0" />
-                  <span>QUERO INSTALAR E JOGAR EM 1 CLIQUE</span>
+                  <span className="flex flex-col items-center leading-tight"><span className="uppercase tracking-wide">Quero Instalar e Jogar</span><span className="text-[10px] font-normal opacity-80">📲 Pronto em 1 clique</span></span>
                   <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
                 </a>
                 <p className="text-muted-foreground text-[9px] mt-2 flex items-center justify-center gap-1">
