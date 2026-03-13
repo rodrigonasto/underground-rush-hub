@@ -70,7 +70,7 @@ const Index = () => {
               <vturb-smartplayer
                 id={`vid-${VTURB_PLAYER_ID}`}
                 style={{ display: "block", margin: "0 auto", width: "100%" }}
-              /
+              />
             </div>
 
             {/* Bullets */}
