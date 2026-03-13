@@ -637,7 +637,11 @@ const BelowFoldContent = ({
               { name: "Pedro H.", city: "Belo Horizonte", game: "GTA San Andreas", time: "há 12 min", avatar: `${CDN_BASE_URL}/pedro.jpg` },
               { name: "Mariana S.", city: "Curitiba", game: "Dragon Ball Z", time: "há 18 min", avatar: `${CDN_BASE_URL}/mariana%20S.jpg` },
             ].map((item, i) => (
-              <div key={i} className="flex items-center gap-3 glass-card rounded-xl px-4 py-3 border border-border/50">
+              <div
+                key={i}
+                className="flex items-center gap-3 glass-card rounded-xl px-4 py-3 border border-border/50 animate-fade-in opacity-0"
+                style={{ animationDelay: `${i * 0.4}s`, animationFillMode: "forwards" }}
+              >
                 <img
                   src={item.avatar}
                   alt={item.name}
