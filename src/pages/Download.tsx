@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Download, ShieldCheck, ExternalLink, Star, Zap, Check, ChevronRight } from "lucide-react";
 import { CDN_BASE_URL } from "@/lib/cdn";
+import { handleTrackedCheckoutClick } from "@/lib/checkoutTracking";
 import VTurbPlayer from "@/components/VTurbPlayer";
 import SEOHead from "@/components/SEOHead";
 
