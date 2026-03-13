@@ -593,17 +593,72 @@ const BelowFoldContent = ({
       </section>
 
       {/* ─── 7. PROVA SOCIAL ─── */}
-      <section className="px-5 py-10">
-        <div className="container max-w-lg mx-auto text-center">
-          <div className="flex items-center justify-center gap-1 mb-3">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
+      <section className="px-5 py-12">
+        <div className="container max-w-lg mx-auto">
+          {/* Header com avatar stack */}
+          <div className="flex flex-col items-center text-center mb-8">
+            <div className="flex items-center -space-x-3 mb-4">
+              {["🎮", "🕹️", "👾", "🏎️", "⚡"].map((emoji, i) => (
+                <div
+                  key={i}
+                  className="w-10 h-10 rounded-full border-2 border-background flex items-center justify-center text-lg"
+                  style={{ background: `hsl(${142 + i * 15} 50% ${20 + i * 5}%)`, zIndex: 5 - i }}
+                >
+                  {emoji}
+                </div>
+              ))}
+              <div className="w-10 h-10 rounded-full border-2 border-background bg-primary/20 flex items-center justify-center text-xs font-bold text-primary" style={{ zIndex: 0 }}>
+                +2.8k
+              </div>
+            </div>
+            <div className="flex items-center gap-1.5 mb-2">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+              ))}
+              <span className="text-xs text-muted-foreground ml-1">4.9/5</span>
+            </div>
+            <p className="text-foreground font-bold text-lg">Comunidade com +2.800 jogadores</p>
+            <p className="text-muted-foreground text-xs mt-1">que já estão jogando no celular</p>
+          </div>
+
+          {/* Feed de atividade recente */}
+          <div className="space-y-2.5 mb-6">
+            {[
+              { name: "Lucas M.", city: "São Paulo", game: "NFS Underground 2", time: "há 3 min", emoji: "🏎️" },
+              { name: "Ana C.", city: "Rio de Janeiro", game: "God of War", time: "há 7 min", emoji: "⚔️" },
+              { name: "Pedro H.", city: "Belo Horizonte", game: "GTA San Andreas", time: "há 12 min", emoji: "🔫" },
+              { name: "Mariana S.", city: "Curitiba", game: "Dragon Ball Z", time: "há 18 min", emoji: "🐉" },
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-3 glass-card rounded-xl px-4 py-3 border border-border/50">
+                <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-base flex-shrink-0">
+                  {item.emoji}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-xs text-foreground font-medium truncate">
+                    <span className="text-primary">{item.name}</span>{" "}instalou{" "}
+                    <span className="font-semibold">{item.game}</span>
+                  </p>
+                  <p className="text-[10px] text-muted-foreground">{item.city} • {item.time}</p>
+                </div>
+                <Check className="w-4 h-4 text-primary flex-shrink-0" />
+              </div>
             ))}
           </div>
-          <p className="text-foreground font-bold text-lg mb-1">+2.800 jogadores</p>
-          <p className="text-muted-foreground text-sm">
-            Mais de 2.800 jogadores instalaram e começaram a jogar esta semana.
-          </p>
+
+          {/* Stats bar */}
+          <div className="grid grid-cols-3 gap-3">
+            {[
+              { value: "2.847", label: "Instalações", icon: "📲" },
+              { value: "4.9★", label: "Avaliação", icon: "⭐" },
+              { value: "100+", label: "Jogos", icon: "🎮" },
+            ].map((stat) => (
+              <div key={stat.label} className="glass-card rounded-xl p-3 text-center border border-border/50">
+                <p className="text-lg mb-0.5">{stat.icon}</p>
+                <p className="text-foreground font-bold text-sm">{stat.value}</p>
+                <p className="text-muted-foreground text-[10px]">{stat.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
