@@ -598,14 +598,22 @@ const BelowFoldContent = ({
           {/* Header com avatar stack */}
           <div className="flex flex-col items-center text-center mb-8">
             <div className="flex items-center -space-x-3 mb-4">
-              {["🎮", "🕹️", "👾", "🏎️", "⚡"].map((emoji, i) => (
-                <div
+              {[
+                `${CDN_BASE_URL}/535949a4b0fb513757a89ceee9672094.jpg`,
+                `${CDN_BASE_URL}/a089c831304c4b0a7ac66041e8621c40.jpg`,
+                `${CDN_BASE_URL}/i%20(1).webp`,
+                `${CDN_BASE_URL}/i%20(2).webp`,
+                `${CDN_BASE_URL}/i.webp`,
+              ].map((url, i) => (
+                <img
                   key={i}
-                  className="w-10 h-10 rounded-full border-2 border-background flex items-center justify-center text-lg"
-                  style={{ background: `hsl(${142 + i * 15} 50% ${20 + i * 5}%)`, zIndex: 5 - i }}
-                >
-                  {emoji}
-                </div>
+                  src={url}
+                  alt={`Jogador ${i + 1}`}
+                  className="w-10 h-10 rounded-full border-2 border-background object-cover"
+                  style={{ zIndex: 5 - i }}
+                  loading="lazy"
+                  decoding="async"
+                />
               ))}
               <div className="w-10 h-10 rounded-full border-2 border-background bg-primary/20 flex items-center justify-center text-xs font-bold text-primary" style={{ zIndex: 0 }}>
                 +2.8k
@@ -624,15 +632,19 @@ const BelowFoldContent = ({
           {/* Feed de atividade recente */}
           <div className="space-y-2.5 mb-6">
             {[
-              { name: "Lucas M.", city: "São Paulo", game: "NFS Underground 2", time: "há 3 min", emoji: "🏎️" },
-              { name: "Ana C.", city: "Rio de Janeiro", game: "God of War", time: "há 7 min", emoji: "⚔️" },
-              { name: "Pedro H.", city: "Belo Horizonte", game: "GTA San Andreas", time: "há 12 min", emoji: "🔫" },
-              { name: "Mariana S.", city: "Curitiba", game: "Dragon Ball Z", time: "há 18 min", emoji: "🐉" },
+              { name: "Lucas M.", city: "São Paulo", game: "NFS Underground 2", time: "há 3 min", avatar: `${CDN_BASE_URL}/lucas%20m.jpg` },
+              { name: "Ana C.", city: "Rio de Janeiro", game: "God of War", time: "há 7 min", avatar: `${CDN_BASE_URL}/ana%20c.jpg` },
+              { name: "Pedro H.", city: "Belo Horizonte", game: "GTA San Andreas", time: "há 12 min", avatar: `${CDN_BASE_URL}/pedro.jpg` },
+              { name: "Mariana S.", city: "Curitiba", game: "Dragon Ball Z", time: "há 18 min", avatar: `${CDN_BASE_URL}/mariana%20S.jpg` },
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-3 glass-card rounded-xl px-4 py-3 border border-border/50">
-                <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-base flex-shrink-0">
-                  {item.emoji}
-                </div>
+                <img
+                  src={item.avatar}
+                  alt={item.name}
+                  className="w-9 h-9 rounded-full object-cover flex-shrink-0"
+                  loading="lazy"
+                  decoding="async"
+                />
                 <div className="flex-1 min-w-0">
                   <p className="text-xs text-foreground font-medium truncate">
                     <span className="text-primary">{item.name}</span>{" "}instalou{" "}
