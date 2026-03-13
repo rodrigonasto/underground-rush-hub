@@ -710,6 +710,7 @@ const BelowFoldContent = ({
             Instalador automático + biblioteca gamer com +100 jogos.
           </p>
           <p className="text-muted-foreground text-[10px] mt-4">© 2026 JogosMobileClub. Todos os direitos reservados.</p>
+          <p className="text-muted-foreground text-[10px]">CNPJ: 87.107.515/0001-73</p>
         </div>
       </footer>
     </>
