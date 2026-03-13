@@ -338,10 +338,9 @@ const BelowFoldContent = ({
         <div className="absolute inset-0 bg-grid-small opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-b from-card/80 to-background/80" />
         <div className="container max-w-lg mx-auto text-center relative z-10">
-          <span className="inline-flex items-center gap-1.5 text-primary text-[11px] font-semibold uppercase tracking-widest mb-3">
-            <Download className="w-3.5 h-3.5" /> Download
-          </span>
-          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">Download gratuito</h2>
+          <h2 className="inline-flex items-center gap-2 text-xl sm:text-2xl font-bold text-primary uppercase tracking-wide mb-2">
+            <Download className="w-5 h-5" /> Download gratuito
+          </h2>
           <p className="text-muted-foreground text-sm mb-8">Prefere instalar manualmente? Clique abaixo para baixar o jogo.</p>
           <button
             onClick={() => setDownloadModalOpen(true)}
