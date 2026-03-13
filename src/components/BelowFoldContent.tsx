@@ -203,6 +203,65 @@ const TutorialSection = () => {
   );
 };
 
+const ACTIVITY_ITEMS = [
+  { name: "Lucas M.", city: "São Paulo", game: "NFS Underground 2", time: "há 3 min", avatar: `${CDN_BASE_URL}/lucas%20m.jpg` },
+  { name: "Ana C.", city: "Rio de Janeiro", game: "God of War", time: "há 7 min", avatar: `${CDN_BASE_URL}/ana%20c.jpg` },
+  { name: "Pedro H.", city: "Belo Horizonte", game: "GTA San Andreas", time: "há 12 min", avatar: `${CDN_BASE_URL}/pedro.jpg` },
+  { name: "Mariana S.", city: "Curitiba", game: "Dragon Ball Z", time: "há 18 min", avatar: `${CDN_BASE_URL}/mariana%20S.jpg` },
+];
+
+const ActivityFeed = () => {
+  const feedRef = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = feedRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={feedRef} className="space-y-2.5 mb-6">
+      {ACTIVITY_ITEMS.map((item, i) => (
+        <div
+          key={i}
+          className={`flex items-center gap-3 glass-card rounded-xl px-4 py-3 border border-border/50 transition-all duration-500 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+          }`}
+          style={{ transitionDelay: visible ? `${i * 300}ms` : "0ms" }}
+        >
+          <img
+            src={item.avatar}
+            alt={item.name}
+            className="w-9 h-9 rounded-full object-cover flex-shrink-0"
+            loading="lazy"
+            decoding="async"
+          />
+          <div className="flex-1 min-w-0">
+            <p className="text-xs text-foreground font-medium truncate">
+              <span className="text-primary">{item.name}</span>{" "}instalou{" "}
+              <span className="font-semibold">{item.game}</span>
+            </p>
+            <p className="text-[10px] text-muted-foreground">{item.city} • {item.time}</p>
+          </div>
+          <Check className="w-4 h-4 text-primary flex-shrink-0" />
+        </div>
+      ))}
+    </div>
+  );
+};
+
+
 const BelowFoldContent = ({
   searchQuery,
   setSearchQuery,
@@ -630,36 +689,7 @@ const BelowFoldContent = ({
           </div>
 
           {/* Feed de atividade recente */}
-          <div className="space-y-2.5 mb-6">
-            {[
-              { name: "Lucas M.", city: "São Paulo", game: "NFS Underground 2", time: "há 3 min", avatar: `${CDN_BASE_URL}/lucas%20m.jpg` },
-              { name: "Ana C.", city: "Rio de Janeiro", game: "God of War", time: "há 7 min", avatar: `${CDN_BASE_URL}/ana%20c.jpg` },
-              { name: "Pedro H.", city: "Belo Horizonte", game: "GTA San Andreas", time: "há 12 min", avatar: `${CDN_BASE_URL}/pedro.jpg` },
-              { name: "Mariana S.", city: "Curitiba", game: "Dragon Ball Z", time: "há 18 min", avatar: `${CDN_BASE_URL}/mariana%20S.jpg` },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-3 glass-card rounded-xl px-4 py-3 border border-border/50 animate-fade-in opacity-0"
-                style={{ animationDelay: `${i * 0.4}s`, animationFillMode: "forwards" }}
-              >
-                <img
-                  src={item.avatar}
-                  alt={item.name}
-                  className="w-9 h-9 rounded-full object-cover flex-shrink-0"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div className="flex-1 min-w-0">
-                  <p className="text-xs text-foreground font-medium truncate">
-                    <span className="text-primary">{item.name}</span>{" "}instalou{" "}
-                    <span className="font-semibold">{item.game}</span>
-                  </p>
-                  <p className="text-[10px] text-muted-foreground">{item.city} • {item.time}</p>
-                </div>
-                <Check className="w-4 h-4 text-primary flex-shrink-0" />
-              </div>
-            ))}
-          </div>
+          <ActivityFeed />
 
           {/* Stats bar */}
           <div className="grid grid-cols-3 gap-3">
