@@ -495,7 +495,7 @@ const BelowFoldContent = ({
                     </div>
                   </div>
                 </div>
-                <p className="text-xs text-center text-foreground/80 mt-2">🔥 Mais de 2.800 jogadores já liberaram o acesso</p>
+                <p className="text-[10px] text-center mt-2" style={{ color: "hsl(35 90% 60%)" }}>🔥 Mais de 2.800 jogadores já estão jogando no celular</p>
 
                 <a
                   href="https://pay.lowify.com.br/checkout.php?product_id=QnPBLL"
@@ -630,7 +630,7 @@ const BelowFoldContent = ({
                     <span className="text-muted-foreground text-lg">,00</span>
                   </div>
                 </div>
-                <p className="text-sm text-center text-foreground/80 mt-2">🔥 Mais de 2.800 jogadores já liberaram o acesso</p>
+                <p className="text-xs text-center mt-2" style={{ color: "hsl(35 90% 60%)" }}>🔥 Mais de 2.800 jogadores já estão jogando no celular</p>
               </div>
 
               {/* CTA */}
