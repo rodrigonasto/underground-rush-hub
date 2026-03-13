@@ -224,6 +224,7 @@ const BelowFoldContent = ({
       <TutorialSection />
 
       {/* ─── 2. TRANSIÇÃO PARA OFERTA ─── */}
+      <p className="text-center text-xs text-primary/80 font-medium mb-2 px-5">⬇️ O download gratuito está disponível logo abaixo.</p>
       <section className="px-5 py-12">
         <div className="container max-w-lg mx-auto text-center">
           <span className="inline-flex items-center gap-1.5 text-primary text-[11px] font-semibold uppercase tracking-widest mb-4">
@@ -282,7 +283,6 @@ const BelowFoldContent = ({
       {/* ─── 3. COMPARATIVO ─── */}
       <section id="comparativo" className="px-5 py-14">
         <div className="container max-w-lg mx-auto">
-          <p className="text-center text-xs text-primary/80 font-medium mb-4">⬇️ O download gratuito está disponível logo abaixo.</p>
           <div className="text-center mb-8">
             <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">Manual vs Instalação Automática</h2>
           </div>
