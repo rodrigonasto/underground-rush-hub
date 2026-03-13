@@ -125,7 +125,6 @@ const LazyCategory = ({ cat }: { cat: { label: string; games: string[] } }) => {
           ))}
         </div>
       ) : (
-        /* Placeholder to reserve space and avoid layout shift */
         <div
           className="grid grid-cols-4 sm:grid-cols-6 gap-2 sm:gap-2.5"
           style={{ minHeight: `${Math.ceil(cat.games.length / 4) * 120}px` }}
@@ -148,8 +147,13 @@ const TutorialSection = () => {
           <span className="inline-flex items-center gap-1.5 text-primary text-[11px] font-semibold uppercase tracking-widest mb-3">
             <Sparkles className="w-3.5 h-3.5" /> Tutorial
           </span>
-          <h2 className="text-xl sm:text-2xl font-bold text-foreground">Como instalar</h2>
-          <p className="text-muted-foreground text-sm mt-2">Escolha seu sistema para ver o tutorial correto.</p>
+          <h2 className="text-xl sm:text-2xl font-bold text-foreground">COMO INSTALAR NO CELULAR</h2>
+          <p className="text-muted-foreground text-sm mt-2">
+            Assista ao vídeo abaixo e siga o passo a passo para rodar Need for Speed Underground 2 no celular.
+          </p>
+          <p className="text-muted-foreground/70 text-xs mt-1">
+            A instalação manual é gratuita e funciona em Android e iPhone.
+          </p>
         </div>
 
         <div className="grid grid-cols-2 gap-3 mb-6">
@@ -178,7 +182,7 @@ const TutorialSection = () => {
               <VTurbPlayer playerId="69b22b5e005f4e6dada6b831" visible={platform === "android"} />
             </Suspense>
             <p className="text-muted-foreground text-xs text-center">
-              ⚡ Assista ao vídeo abaixo e siga o passo a passo mostrado na tela.
+              ⚡ Assista ao vídeo e siga o passo a passo mostrado na tela.
             </p>
           </div>
         </div>
@@ -216,24 +220,82 @@ const BelowFoldContent = ({
 
   return (
     <>
-      {/* ─── SOCIAL PROOF ─── */}
-      <section className="px-5 pb-10">
-        <div className="container max-w-lg mx-auto">
-          <div className="flex items-center justify-center gap-1 mb-1.5">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-            ))}
-          </div>
-          <p className="text-center text-muted-foreground text-xs">
-            <span className="text-foreground font-semibold">4.9/5</span> • Mais de 2.800 downloads essa semana
+      {/* ─── 1. TUTORIAL ─── */}
+      <TutorialSection />
+
+      {/* ─── 2. TRANSIÇÃO PARA OFERTA ─── */}
+      <section className="px-5 py-12">
+        <div className="container max-w-lg mx-auto text-center">
+          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4">
+            A maioria instala manualmente…<br />
+            <span className="text-gradient-primary">mas existe um jeito muito mais fácil.</span>
+          </h2>
+          <p className="text-muted-foreground text-sm mb-3 max-w-md mx-auto">
+            O tutorial funciona. Mas você ainda vai precisar baixar arquivos, configurar o emulador e ajustar controles.
+          </p>
+          <p className="text-foreground/80 text-sm font-medium max-w-md mx-auto">
+            Para quem prefere praticidade, criamos um <strong className="text-primary">instalador automático</strong> que faz tudo sozinho.
           </p>
         </div>
       </section>
 
-      {/* ─── TUTORIAL ─── */}
-      <TutorialSection />
+      {/* ─── 3. COMPARATIVO ─── */}
+      <section id="comparativo" className="px-5 py-14">
+        <div className="container max-w-lg mx-auto">
+          <div className="text-center mb-8">
+            <span className="inline-flex items-center gap-1.5 text-primary text-[11px] font-semibold uppercase tracking-widest mb-3">
+              <Zap className="w-3.5 h-3.5" /> Comparativo
+            </span>
+            <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">Manual vs Instalação Automática</h2>
+          </div>
+          <div className="rounded-2xl overflow-hidden glass-card">
+            <div className="grid grid-cols-2">
+              <div className="bg-muted/50 p-3.5 text-center border-b border-r border-border">
+                <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Manual</span>
+              </div>
+              <div className="p-3.5 text-center border-b border-border" style={{ background: "hsl(142 72% 50% / 0.06)" }}>
+                <span className="text-xs font-bold text-primary uppercase tracking-wider">Automático</span>
+              </div>
+            </div>
+            {[
+              ["Baixar arquivos manualmente", "Instalação em 1 clique"],
+              ["Configurar emulador", "Jogo pronto para jogar"],
+              ["Ajustar controles", "Tudo já configurado"],
+              ["Pode gerar erros", "Sem erros ou configs"],
+              ["Apenas 1 jogo", "Biblioteca com +100 jogos"],
+            ].map(([manual, auto], i) => (
+              <div key={i} className="grid grid-cols-2">
+                <div className="bg-muted/30 border-b border-r border-border p-3.5 flex items-center gap-2">
+                  <X className="w-3.5 h-3.5 text-destructive flex-shrink-0" />
+                  <span className="text-muted-foreground text-xs">{manual}</span>
+                </div>
+                <div className="border-b border-border p-3.5 flex items-center gap-2" style={{ background: "hsl(142 72% 50% / 0.04)" }}>
+                  <Check className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+                  <span className="text-foreground text-xs font-medium">{auto}</span>
+                </div>
+              </div>
+            ))}
+            <div className="grid grid-cols-2">
+              <div className="bg-muted/30 border-r border-border p-3.5 text-center">
+                <span className="text-sm font-bold text-primary">Grátis</span>
+              </div>
+              <div className="p-3.5 text-center" style={{ background: "hsl(142 72% 50% / 0.04)" }}>
+                <span className="text-sm font-bold text-primary">R$47</span>
+              </div>
+            </div>
+          </div>
+          <button
+            onClick={() => document.getElementById("premium")?.scrollIntoView({ behavior: "smooth" })}
+            className="group w-full mt-6 inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm px-6 py-3.5 rounded-xl hover:brightness-110 transition-all glow-primary"
+          >
+            <Zap className="w-4 h-4" />
+            Quero a versão automática
+            <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+          </button>
+        </div>
+      </section>
 
-      {/* ─── DOWNLOAD ─── */}
+      {/* ─── 4. DOWNLOAD GRATUITO ─── */}
       <section id="download" className="relative px-5 py-14">
         <div className="absolute inset-0 bg-grid-small opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-b from-card/80 to-background/80" />
@@ -242,13 +304,13 @@ const BelowFoldContent = ({
             <Download className="w-3.5 h-3.5" /> Download
           </span>
           <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">Download gratuito</h2>
-          <p className="text-muted-foreground text-sm mb-8">Clique abaixo para baixar o jogo.</p>
+          <p className="text-muted-foreground text-sm mb-8">Prefere instalar manualmente? Clique abaixo para baixar o jogo.</p>
           <button
             onClick={() => setDownloadModalOpen(true)}
             className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-primary text-primary-foreground font-bold text-base px-12 py-4 rounded-xl hover:brightness-110 transition-all glow-primary"
           >
             <Download className="w-5 h-5" />
-            Baixar agora
+            Baixar manualmente
             <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
           </button>
           <p className="text-muted-foreground text-[11px] mt-4 flex items-center justify-center gap-1.5">
@@ -288,11 +350,11 @@ const BelowFoldContent = ({
             {/* Card Premium */}
             <div className="rounded-2xl p-5 sm:p-6 text-center relative overflow-hidden" style={{ background: "linear-gradient(180deg, hsl(142 72% 50% / 0.06), hsl(150 6% 8%))" }}>
               <div className="absolute top-0 inset-x-0 h-0.5 shimmer-border" />
-              <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[300px] h-[200px] rounded-full bg-primary/8 blur-3xl sm:blur-[80px]" />
+              <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[300px] h-[200px] rounded-full bg-primary/8 blur-3xl" />
               <div className="relative z-10">
                 <div className="inline-flex items-center gap-2 text-xs font-semibold px-4 py-2 rounded-full mb-4 border border-primary/30 bg-primary/10">
                   <ArrowUp className="w-3.5 h-3.5 text-primary" />
-                  <span className="text-primary">Promoção Especial Update 2.9.5</span>
+                  <span className="text-primary">Upgrade Premium</span>
                 </div>
                 <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">
                   Instalação automática +{" "}
@@ -306,27 +368,9 @@ const BelowFoldContent = ({
                     <span className="text-muted-foreground text-base">,00</span>
                   </div>
                 </div>
-                <p className="text-primary text-xs font-semibold mb-3">Economize R$80 hoje</p>
-                <p className="text-muted-foreground text-[10px] mb-4">⏱ Preço promocional válido apenas durante o lançamento do Update 2.9.5</p>
-                <PackImage />
-                <div className="grid grid-cols-2 gap-2 mb-4 p-3 rounded-xl glass-card">
-                  <div className="flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"><Check className="w-3.5 h-3.5 text-primary" /></div>
-                    <div className="text-left">
-                      <p className="text-foreground text-[11px] font-bold">Pagamento Único</p>
-                      <p className="text-muted-foreground text-[9px]">Pague apenas uma vez</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"><Star className="w-3.5 h-3.5 text-primary" /></div>
-                    <div className="text-left">
-                      <p className="text-foreground text-[11px] font-bold">Acesso Completo</p>
-                      <p className="text-muted-foreground text-[9px]">+100 jogos inclusos</p>
-                    </div>
-                  </div>
-                </div>
+                <p className="text-primary text-xs font-semibold mb-4">Economize R$80 hoje</p>
                 <ul className="text-left space-y-2 mb-4 grid grid-cols-2 gap-x-3 gap-y-2">
-                  {["Instalação em 1 clique", "+100 jogos clássicos", "Jogo pronto para jogar", "Novos jogos nas updates", "Sem erros ou configs", "Acesso vitalício"].map((t) => (
+                  {["Instalação em 1 clique", "+100 jogos clássicos", "Jogo pronto para jogar", "Acesso vitalício"].map((t) => (
                     <li key={t} className="flex items-start gap-1.5 text-[11px] text-foreground/90">
                       <Check className="w-3 h-3 text-primary flex-shrink-0 mt-0.5" />
                       <span>{t}</span>
@@ -344,7 +388,7 @@ const BelowFoldContent = ({
                   <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
                 </a>
                 <p className="text-muted-foreground text-[9px] mt-2 flex items-center justify-center gap-1">
-                  <ShieldCheck className="w-3 h-3" /> Compra segura • Entrega imediata
+                  <ShieldCheck className="w-3 h-3" /> Pagamento único • Acesso imediato
                 </p>
               </div>
             </div>
@@ -352,64 +396,7 @@ const BelowFoldContent = ({
         </DialogContent>
       </Dialog>
 
-      {/* ─── COMPARAÇÃO ─── */}
-      <section id="comparativo" className="px-5 py-14">
-        <div className="container max-w-lg mx-auto">
-          <div className="text-center mb-8">
-            <span className="inline-flex items-center gap-1.5 text-primary text-[11px] font-semibold uppercase tracking-widest mb-3">
-              <Zap className="w-3.5 h-3.5" /> Comparativo
-            </span>
-            <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">Manual vs Automático</h2>
-            <p className="text-muted-foreground text-sm">Não quer instalar manualmente? Compare:</p>
-          </div>
-          <div className="rounded-2xl overflow-hidden glass-card">
-            <div className="grid grid-cols-2">
-              <div className="bg-muted/50 p-3.5 text-center border-b border-r border-border">
-                <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Manual</span>
-              </div>
-              <div className="p-3.5 text-center border-b border-border" style={{ background: "hsl(142 72% 50% / 0.06)" }}>
-                <span className="text-xs font-bold text-primary uppercase tracking-wider">Automático</span>
-              </div>
-            </div>
-            {[
-              ["Instalação demorada", "Instala em 1 clique"],
-              ["Configuração manual", "Jogo pronto para jogar"],
-              ["Apenas 1 jogo", "Biblioteca com +100 jogos"],
-            ].map(([manual, auto], i) => (
-              <div key={i} className="grid grid-cols-2">
-                <div className="bg-muted/30 border-b border-r border-border p-3.5 flex items-center gap-2">
-                  <X className="w-3.5 h-3.5 text-destructive flex-shrink-0" />
-                  <span className="text-muted-foreground text-xs">{manual}</span>
-                </div>
-                <div className="border-b border-border p-3.5 flex items-center gap-2" style={{ background: "hsl(142 72% 50% / 0.04)" }}>
-                  <Check className="w-3.5 h-3.5 text-primary flex-shrink-0" />
-                  <span className="text-foreground text-xs font-medium">{auto}</span>
-                </div>
-              </div>
-            ))}
-            <div className="grid grid-cols-2">
-              <div className="bg-muted/30 border-r border-border p-3.5 text-center">
-                <span className="text-sm font-bold text-primary">Grátis</span>
-              </div>
-              <div className="p-3.5 text-center" style={{ background: "hsl(142 72% 50% / 0.04)" }}>
-                <span className="text-[10px] text-muted-foreground line-through block">De R$97</span>
-                <span className="text-sm font-bold text-primary">R$47</span>
-                <span className="text-[9px] text-primary block mt-0.5">Economize R$50</span>
-              </div>
-            </div>
-          </div>
-          <button
-            onClick={() => document.getElementById("premium")?.scrollIntoView({ behavior: "smooth" })}
-            className="group w-full mt-6 inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm px-6 py-3.5 rounded-xl hover:brightness-110 transition-all glow-primary"
-          >
-            <Zap className="w-4 h-4" />
-            Quero a versão automática
-            <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-          </button>
-        </div>
-      </section>
-
-      {/* ─── JOGOS DO PACK ─── */}
+      {/* ─── 5. JOGOS DO PACK ─── */}
       <section id="jogos" className="relative px-5 py-14">
         <div className="absolute inset-0 bg-grid opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-b from-card/90 via-card/70 to-card/90" />
@@ -445,7 +432,6 @@ const BelowFoldContent = ({
             />
           </div>
 
-          {/* Progressive rendering — each category renders its images only when near viewport */}
           {filteredCategories.length > 0 ? filteredCategories.map((cat) => (
             <LazyCategory key={cat.label} cat={cat} />
           )) : (
@@ -457,79 +443,111 @@ const BelowFoldContent = ({
         </div>
       </section>
 
-      {/* ─── PREMIUM ─── */}
+      {/* ─── 6. OFERTA PREMIUM + ANCORAGEM DE VALOR ─── */}
       <section id="premium" className="px-5 py-14">
         <div className="container max-w-md mx-auto">
           <div className="rounded-2xl p-6 sm:p-8 text-center relative overflow-hidden" style={{ background: "linear-gradient(180deg, hsl(142 72% 50% / 0.06), hsl(150 6% 8%))" }}>
             <div className="absolute top-0 inset-x-0 h-0.5 shimmer-border" />
-            <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[300px] h-[200px] rounded-full bg-primary/8 blur-3xl sm:blur-[80px]" />
+            <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[300px] h-[200px] rounded-full bg-primary/8 blur-3xl" />
             <div className="relative z-10">
               <div className="inline-flex items-center gap-2 text-sm font-semibold px-6 py-2.5 rounded-full mb-5 border border-primary/30 bg-primary/10">
-                <ArrowUp className="w-4 h-4 text-primary" />
-                <span className="text-primary">Promoção Especial Update 2.9.5</span>
+                <Zap className="w-4 h-4 text-primary" />
+                <span className="text-primary">Instalação Automática + Biblioteca Gamer</span>
               </div>
-              <p className="text-muted-foreground text-sm mb-5 max-w-sm mx-auto">
-                Lançamento da versão 2.9.5 com preço especial de lançamento.{" "}
-                <strong className="text-foreground">Esta oferta é limitada e o valor retornará ao normal em breve.</strong>
-              </p>
-              <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
-                Instalação automática + <span className="text-gradient-primary">Biblioteca gamer (+100 jogos)</span>
+
+              <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-3">
+                INSTALAÇÃO AUTOMÁTICA +{" "}
+                <span className="text-gradient-primary">BIBLIOTECA GAMER</span>
               </h2>
-              <div className="text-center mb-1 mt-6">
-                <span className="text-muted-foreground text-sm line-through block mb-1">De R$127,00</span>
-                <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-muted-foreground text-sm">Por apenas</span>
-                  <span className="text-5xl font-extrabold text-gradient-primary">R$ 47</span>
-                  <span className="text-muted-foreground text-lg">,00</span>
-                </div>
-              </div>
-              <p className="text-primary text-xs font-semibold mb-4">Economize R$80 hoje</p>
-              <p className="text-muted-foreground text-[11px] mb-6 text-center">⏱ Preço promocional válido apenas durante o lançamento do Update 2.9.5</p>
+
+              <p className="text-muted-foreground text-sm mb-6 max-w-sm mx-auto">
+                Com o instalador automático, o jogo é preparado e configurado para rodar no seu celular sem complicação.
+              </p>
+
               <PackImage />
-              <div className="grid grid-cols-2 gap-3 mb-6 p-4 rounded-xl glass-card">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"><Check className="w-4 h-4 text-primary" /></div>
-                  <div className="text-left">
-                    <p className="text-foreground text-xs font-bold">Pagamento Único</p>
-                    <p className="text-muted-foreground text-[10px]">Pague apenas uma vez</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"><Star className="w-4 h-4 text-primary" /></div>
-                  <div className="text-left">
-                    <p className="text-foreground text-xs font-bold">Acesso Completo</p>
-                    <p className="text-muted-foreground text-[10px]">+100 jogos inclusos</p>
-                  </div>
-                </div>
-              </div>
-              <ul className="text-left space-y-3 mb-8 grid grid-cols-2 gap-x-4 gap-y-3">
-                {["Instalação automática em 1 clique", "Biblioteca com +100 jogos clássicos", "Jogo pronto para jogar", "Novos jogos nas atualizações", "Sem erros ou configurações difíceis", "Acesso vitalício", "Suporte via comunidade", "Atualizações gratuitas"].map((t) => (
-                  <li key={t} className="flex items-start gap-2 text-xs text-foreground/90">
-                    <Check className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
+
+              {/* Benefícios */}
+              <ul className="text-left space-y-3 mb-8 max-w-sm mx-auto">
+                {[
+                  "Instalação automática em 1 clique",
+                  "Jogo pronto para rodar",
+                  "Biblioteca com +100 jogos clássicos",
+                  "Novos jogos nas atualizações",
+                  "Acesso vitalício",
+                  "Atualizações gratuitas",
+                ].map((t) => (
+                  <li key={t} className="flex items-start gap-2.5 text-sm text-foreground/90">
+                    <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                     <span>{t}</span>
                   </li>
                 ))}
               </ul>
+
+              {/* Ancoragem de Valor */}
+              <div className="rounded-xl glass-card p-5 mb-6">
+                <h3 className="text-sm font-bold text-foreground mb-4 uppercase tracking-wider">Valor incluído</h3>
+                <div className="space-y-2.5 mb-4">
+                  {[
+                    { label: "Biblioteca com +100 jogos", value: "R$97" },
+                    { label: "Instalador automático", value: "R$47" },
+                    { label: "Atualizações futuras", value: "R$37" },
+                  ].map((item) => (
+                    <div key={item.label} className="flex items-center justify-between text-sm">
+                      <span className="text-muted-foreground">{item.label}</span>
+                      <span className="text-foreground font-semibold line-through opacity-60">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="h-px bg-border mb-4" />
+                <div className="flex items-center justify-between text-sm mb-2">
+                  <span className="text-muted-foreground">Valor total</span>
+                  <span className="text-foreground font-bold line-through">R$181</span>
+                </div>
+                <div className="text-center mt-4">
+                  <span className="text-muted-foreground text-sm block mb-1">Hoje você libera tudo por apenas:</span>
+                  <div className="flex items-baseline justify-center gap-1">
+                    <span className="text-5xl font-extrabold text-gradient-primary">R$ 47</span>
+                    <span className="text-muted-foreground text-lg">,00</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* CTA */}
               <a
                 href="https://pay.lowify.com.br/checkout.php?product_id=QnPBLL"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-4 px-6 rounded-xl hover:brightness-110 transition-all glow-primary overflow-hidden"
+                className="group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-base py-4 px-6 rounded-xl hover:brightness-110 transition-all glow-primary overflow-hidden"
               >
-                <Zap className="w-4 h-4 flex-shrink-0" />
-                <span>Quero instalar e jogar em 1 clique</span>
+                <Zap className="w-5 h-5 flex-shrink-0" />
+                <span>QUERO INSTALAR E JOGAR EM 1 CLIQUE</span>
                 <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
               </a>
-              <p className="text-primary text-xs font-semibold mt-4">Pagamento único</p>
-              <p className="text-muted-foreground text-[10px] mt-1 max-w-xs mx-auto">
-                Sem mensalidades. Sem taxas escondidas. Sem renovação. Você paga uma única vez e tem acesso completo e vitalício.
+
+              <p className="text-muted-foreground text-xs mt-3">
+                Pagamento único • Acesso imediato após o pagamento
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ─── FAQ ─── */}
+      {/* ─── 7. PROVA SOCIAL ─── */}
+      <section className="px-5 py-10">
+        <div className="container max-w-lg mx-auto text-center">
+          <div className="flex items-center justify-center gap-1 mb-3">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
+            ))}
+          </div>
+          <p className="text-foreground font-bold text-lg mb-1">+2.800 jogadores</p>
+          <p className="text-muted-foreground text-sm">
+            Mais de 2.800 jogadores instalaram e começaram a jogar esta semana.
+          </p>
+        </div>
+      </section>
+
+      {/* ─── 8. FAQ ─── */}
       <section className="relative px-5 py-14">
         <div className="absolute inset-0 bg-grid-small opacity-20" />
         <div className="absolute inset-0 bg-gradient-to-b from-card/80 to-background/80" />
@@ -540,7 +558,7 @@ const BelowFoldContent = ({
           </div>
           <div className="space-y-3">
             {[
-              { q: "O download é gratuito?", a: "Sim, você pode baixar e instalar o jogo gratuitamente." },
+              { q: "O download é gratuito?", a: "Sim, você pode baixar e instalar o jogo gratuitamente seguindo o tutorial." },
               { q: "Preciso pagar para jogar?", a: "Não. O pagamento é só para quem quer instalação automática e o pack com +100 jogos." },
               { q: "O instalador automático é seguro?", a: "Sim, ele apenas automatiza a instalação para facilitar." },
               { q: "Quais jogos vêm no pack?", a: "GTA, God of War, NFS, Dragon Ball, Naruto, Spider-Man, Tekken, e muitos outros clássicos." },
@@ -554,10 +572,16 @@ const BelowFoldContent = ({
         </div>
       </section>
 
-      {/* ─── FOOTER ─── */}
-      <footer className="px-5 py-10 border-t border-border flex flex-col items-center gap-4">
-        <p className="text-center text-muted-foreground text-[11px]">© 2026 JogosMobileClub. Todos os direitos reservados.</p>
-        <p className="text-center text-muted-foreground text-[10px]">CNPJ: 87.107.515/0001-73</p>
+      {/* ─── 9. FOOTER ─── */}
+      <footer className="px-5 py-10 border-t border-border">
+        <div className="container max-w-lg mx-auto text-center space-y-2">
+          <p className="text-foreground text-sm font-semibold">Pagamento único. Sem mensalidade. Acesso vitalício.</p>
+          <p className="text-muted-foreground text-xs">
+            Acesso vitalício ao instalador e à biblioteca gamer.
+          </p>
+          <p className="text-muted-foreground text-[10px] mt-4">© 2026 JogosMobileClub. Todos os direitos reservados.</p>
+          <p className="text-muted-foreground text-[10px]">CNPJ: 87.107.515/0001-73</p>
+        </div>
       </footer>
     </>
   );
