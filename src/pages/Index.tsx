@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, lazy, Suspense } from "react";
 import { useNavigate } from "react-router-dom";
-import { Smartphone, ShieldCheck, ChevronRight, Check, Volume2 } from "lucide-react";
+import { Smartphone, ShieldCheck, ChevronRight, Check } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 
 const BelowFoldContent = lazy(() => import("@/components/BelowFoldContent"));
@@ -14,7 +14,6 @@ const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [downloadModalOpen, setDownloadModalOpen] = useState(false);
   const [playerLoaded, setPlayerLoaded] = useState(false);
-  const [soundHintVisible, setSoundHintVisible] = useState(true);
   const playerRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
@@ -28,11 +27,6 @@ const Index = () => {
     return () => { script.remove(); };
   }, []);
 
-  // Auto-hide sound hint after 6s
-  useEffect(() => {
-    const t = setTimeout(() => setSoundHintVisible(false), 6000);
-    return () => clearTimeout(t);
-  }, []);
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden noise-overlay">
@@ -72,16 +66,6 @@ const Index = () => {
                 id={`vid-${VTURB_PLAYER_ID}`}
                 style={{ display: "block", margin: "0 auto", width: "100%" }}
               />
-              {/* Sound hint overlay */}
-              {soundHintVisible && (
-                <div
-                  className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5 glass-card text-foreground/80 text-xs font-medium px-3 py-1.5 rounded-full pointer-events-none transition-opacity duration-500"
-                  onClick={() => setSoundHintVisible(false)}
-                >
-                  <Volume2 className="w-3.5 h-3.5 text-primary" />
-                  Clique para ativar o som
-                </div>
-              )}
             </div>
 
             {/* Bullets */}
