@@ -283,7 +283,7 @@ const BelowFoldContent = ({
       <TutorialSection />
 
       {/* ─── 2. TRANSIÇÃO PARA OFERTA ─── */}
-      <div className="flex items-center justify-center gap-2 mx-5 mb-2 py-2.5 px-4 rounded-full glass-card border border-primary/20 max-w-md mx-auto">
+      <div className="flex items-center justify-center gap-2 px-4 py-2.5 mx-auto mb-2 max-w-md rounded-full glass-card border border-primary/20">
         <Download className="w-3.5 h-3.5 text-primary flex-shrink-0" />
         <span className="text-xs font-medium text-primary/90">O download gratuito está disponível logo abaixo</span>
       </div>
