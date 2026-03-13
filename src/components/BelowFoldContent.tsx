@@ -341,7 +341,8 @@ const BelowFoldContent = ({
           <h2 className="inline-flex items-center gap-2 text-xl sm:text-2xl font-bold text-primary uppercase tracking-wide mb-2">
             <Download className="w-5 h-5" /> Download gratuito
           </h2>
-          <p className="text-muted-foreground text-sm mb-8">Prefere instalar manualmente? Clique abaixo para baixar o jogo.</p>
+          <p className="text-muted-foreground text-sm mb-2">Prefere instalar manualmente?</p>
+          <p className="text-muted-foreground text-sm mb-8">Use o método gratuito abaixo para baixar e instalar o jogo passo a passo.</p>
           <button
             onClick={() => setDownloadModalOpen(true)}
             className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-primary text-primary-foreground font-bold text-base px-12 py-4 rounded-xl hover:brightness-110 transition-all glow-primary"
