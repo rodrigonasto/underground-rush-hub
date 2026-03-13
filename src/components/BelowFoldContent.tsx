@@ -473,8 +473,8 @@ const BelowFoldContent = ({
                   <div className="space-y-1.5 mb-2">
                     {[
                       { label: "Biblioteca com +100 jogos", value: "R$97" },
-                      { label: "Instalador automático", value: "R$47" },
-                      { label: "Atualizações futuras", value: "R$37" },
+                       { label: "Instalador automático em 1 clique", value: "R$47" },
+                       { label: "Atualizações futuras + novos jogos", value: "R$37" },
                     ].map((item) => (
                       <div key={item.label} className="flex items-center justify-between text-[11px]">
                         <span className="text-muted-foreground">{item.label}</span>
@@ -610,8 +610,8 @@ const BelowFoldContent = ({
                 <div className="space-y-2.5 mb-4">
                   {[
                     { label: "Biblioteca com +100 jogos", value: "R$97" },
-                    { label: "Instalador automático", value: "R$47" },
-                    { label: "Atualizações futuras", value: "R$37" },
+                     { label: "Instalador automático em 1 clique", value: "R$47" },
+                     { label: "Atualizações futuras + novos jogos", value: "R$37" },
                   ].map((item) => (
                     <div key={item.label} className="flex items-center justify-between text-sm">
                       <span className="text-muted-foreground">{item.label}</span>
