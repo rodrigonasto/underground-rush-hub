@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Download, ShieldCheck, ExternalLink, Star, Zap, Check, ChevronRight } from "lucide-react";
 import { CDN_BASE_URL } from "@/lib/cdn";
 import VTurbPlayer from "@/components/VTurbPlayer";
@@ -131,10 +132,17 @@ const StepCard = ({ item }: { item: StepItem }) => (
 );
 
 const DownloadPage = () => {
+  const navigate = useNavigate();
   const [platform, setPlatform] = useState<"android" | "ios">(() => {
     const ua = navigator.userAgent || "";
     return /iPhone|iPad|iPod/i.test(ua) ? "ios" : "android";
   });
+
+  useEffect(() => {
+    if (!sessionStorage.getItem("dl_auth")) {
+      navigate("/", { replace: true });
+    }
+  }, [navigate]);
 
   const steps = platform === "android" ? androidSteps : iosSteps;
 
