@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, lazy, Suspense } from "react";
 import { useNavigate } from "react-router-dom";
-import { Smartphone, ShieldCheck, ChevronRight, Check, Volume2 } from "lucide-react";
+import { Smartphone, ShieldCheck, ChevronRight, Check } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 
 const BelowFoldContent = lazy(() => import("@/components/BelowFoldContent"));
