@@ -439,7 +439,7 @@ const BelowFoldContent = ({
                 ))}
               </ul>
               <div className="mb-3"><span className="text-sm font-bold text-foreground">Grátis</span></div>
-              <button onClick={() => navigate("/download")} className="w-full inline-flex items-center justify-center gap-2 border border-border text-foreground font-semibold text-xs py-2.5 rounded-lg hover:bg-muted transition-colors">
+              <button onClick={() => { sessionStorage.setItem("dl_auth", "1"); navigate("/download"); }} className="w-full inline-flex items-center justify-center gap-2 border border-border text-foreground font-semibold text-xs py-2.5 rounded-lg hover:bg-muted transition-colors">
                 <span className="uppercase text-[10px]">Instalar manualmente</span><span className="text-[9px] font-normal opacity-70 ml-1">(método mais demorado)</span>
               </button>
             </div>
