@@ -493,7 +493,7 @@ const BelowFoldContent = ({
                       <span className="text-3xl font-extrabold text-gradient-primary">R$ 47</span>
                       <span className="text-muted-foreground text-sm">,00</span>
                     </div>
-                    <p className="text-[10px] text-center mt-1.5" style={{ color: "hsl(35 90% 60%)" }}>🔥 +2.800 jogadores já estão jogando</p>
+                    <p className="text-[10px] text-center mt-1.5" style={{ color: "hsl(35 90% 60%)" }}>+2.800 jogadores já estão jogando</p>
                   </div>
                 </div>
 
@@ -631,7 +631,7 @@ const BelowFoldContent = ({
                     <span className="text-muted-foreground text-lg">,00</span>
                   </div>
                 </div>
-                <p className="text-xs text-center mt-1.5" style={{ color: "hsl(35 90% 60%)" }}>🔥 +2.800 jogadores já estão jogando</p>
+                <p className="text-xs text-center mt-1.5" style={{ color: "hsl(35 90% 60%)" }}>+2.800 jogadores já estão jogando</p>
               </div>
 
               {/* CTA */}

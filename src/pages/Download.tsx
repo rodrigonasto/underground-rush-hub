@@ -327,7 +327,7 @@ const DownloadPage = () => {
                     <span className="text-5xl font-extrabold text-gradient-primary">R$ 47</span>
                    <span className="text-muted-foreground text-lg">,00</span>
                   </div>
-                  <p className="text-xs text-center mt-1.5" style={{ color: "hsl(35 90% 60%)" }}>🔥 +2.800 jogadores já estão jogando</p>
+                  <p className="text-xs text-center mt-1.5" style={{ color: "hsl(35 90% 60%)" }}>+2.800 jogadores já estão jogando</p>
                 </div>
               </div>
 
