@@ -632,15 +632,19 @@ const BelowFoldContent = ({
           {/* Feed de atividade recente */}
           <div className="space-y-2.5 mb-6">
             {[
-              { name: "Lucas M.", city: "São Paulo", game: "NFS Underground 2", time: "há 3 min", emoji: "🏎️" },
-              { name: "Ana C.", city: "Rio de Janeiro", game: "God of War", time: "há 7 min", emoji: "⚔️" },
-              { name: "Pedro H.", city: "Belo Horizonte", game: "GTA San Andreas", time: "há 12 min", emoji: "🔫" },
-              { name: "Mariana S.", city: "Curitiba", game: "Dragon Ball Z", time: "há 18 min", emoji: "🐉" },
+              { name: "Lucas M.", city: "São Paulo", game: "NFS Underground 2", time: "há 3 min", avatar: `${CDN_BASE_URL}/lucas%20m.jpg` },
+              { name: "Ana C.", city: "Rio de Janeiro", game: "God of War", time: "há 7 min", avatar: `${CDN_BASE_URL}/ana%20c.jpg` },
+              { name: "Pedro H.", city: "Belo Horizonte", game: "GTA San Andreas", time: "há 12 min", avatar: `${CDN_BASE_URL}/pedro.jpg` },
+              { name: "Mariana S.", city: "Curitiba", game: "Dragon Ball Z", time: "há 18 min", avatar: `${CDN_BASE_URL}/mariana%20S.jpg` },
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-3 glass-card rounded-xl px-4 py-3 border border-border/50">
-                <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-base flex-shrink-0">
-                  {item.emoji}
-                </div>
+                <img
+                  src={item.avatar}
+                  alt={item.name}
+                  className="w-9 h-9 rounded-full object-cover flex-shrink-0"
+                  loading="lazy"
+                  decoding="async"
+                />
                 <div className="flex-1 min-w-0">
                   <p className="text-xs text-foreground font-medium truncate">
                     <span className="text-primary">{item.name}</span>{" "}instalou{" "}
