@@ -14,7 +14,6 @@ const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [downloadModalOpen, setDownloadModalOpen] = useState(false);
   const [playerLoaded, setPlayerLoaded] = useState(false);
-  const [soundHintVisible, setSoundHintVisible] = useState(true);
   const playerRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
