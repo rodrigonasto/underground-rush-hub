@@ -72,9 +72,8 @@ const Index = () => {
             <ul className="flex flex-col items-start gap-2.5 max-w-xs mx-auto mb-8 text-left">
               {[
                 "Funciona em Android e iPhone",
-                "Tutorial simples passo a passo",
-                "Sem console e sem PC",
-                "Comece a jogar ainda hoje",
+                "Não precisa de console",
+                "Instalação gratuita",
               ].map((text) => (
                 <li key={text} className="flex items-center gap-2 text-sm text-foreground/90">
                   <Check className="w-4 h-4 text-primary flex-shrink-0" />
