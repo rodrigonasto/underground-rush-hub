@@ -4,7 +4,6 @@ import { Download, ShieldCheck, ExternalLink, Star, Zap, Check, ChevronRight } f
 import { CDN_BASE_URL } from "@/lib/cdn";
 import VTurbPlayer from "@/components/VTurbPlayer";
 import SEOHead from "@/components/SEOHead";
-import { warmupAnalyticsScripts } from "@/lib/analytics";
 
 const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
