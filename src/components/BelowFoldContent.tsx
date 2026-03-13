@@ -454,8 +454,8 @@ const BelowFoldContent = ({
                   <span className="text-primary">Instalação automática</span>
                 </div>
                 <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">
-                  INSTALAÇÃO AUTOMÁTICA +{" "}
-                  <span className="text-gradient-primary">BIBLIOTECA GAMER (+100 jogos)</span>
+                  +100 JOGOS CLÁSSICOS<br />
+                  <span className="text-gradient-primary">PRONTOS PARA JOGAR NO CELULAR</span>
                 </h3>
                 <p className="text-muted-foreground text-xs mb-4 max-w-xs mx-auto">
                   Com o instalador automático, o jogo é preparado e configurado para rodar no seu celular sem complicação.
