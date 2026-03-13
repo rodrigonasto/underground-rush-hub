@@ -371,6 +371,34 @@ const BelowFoldContent = ({
                     </li>
                   ))}
                 </ul>
+                {/* Ancoragem de valor compacta */}
+                <div className="rounded-lg glass-card p-3 mb-4">
+                  <div className="space-y-1.5 mb-2">
+                    {[
+                      { label: "Biblioteca com +100 jogos", value: "R$97" },
+                      { label: "Instalador automático", value: "R$47" },
+                      { label: "Atualizações futuras", value: "R$37" },
+                    ].map((item) => (
+                      <div key={item.label} className="flex items-center justify-between text-[11px]">
+                        <span className="text-muted-foreground">{item.label}</span>
+                        <span className="text-foreground font-semibold line-through opacity-60">{item.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="h-px bg-border mb-2" />
+                  <div className="flex items-center justify-between text-xs mb-2">
+                    <span className="text-muted-foreground">Valor total</span>
+                    <span className="text-foreground font-bold line-through">R$181</span>
+                  </div>
+                  <div className="text-center">
+                    <span className="text-muted-foreground text-xs block mb-0.5">Hoje por apenas:</span>
+                    <div className="flex items-baseline justify-center gap-1">
+                      <span className="text-3xl font-extrabold text-gradient-primary">R$ 47</span>
+                      <span className="text-muted-foreground text-sm">,00</span>
+                    </div>
+                  </div>
+                </div>
+
                 <a
                   href="https://pay.lowify.com.br/checkout.php?product_id=QnPBLL"
                   target="_blank"
@@ -378,11 +406,11 @@ const BelowFoldContent = ({
                   className="group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-3.5 px-6 rounded-xl hover:brightness-110 transition-all glow-primary overflow-hidden"
                 >
                   <Zap className="w-4 h-4 flex-shrink-0" />
-                  <span>Quero instalar e jogar em 1 clique</span>
+                  <span>QUERO INSTALAR E JOGAR EM 1 CLIQUE</span>
                   <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
                 </a>
                 <p className="text-muted-foreground text-[9px] mt-2 flex items-center justify-center gap-1">
-                  <ShieldCheck className="w-3 h-3" /> Pagamento único • Acesso imediato
+                  <ShieldCheck className="w-3 h-3" /> Pagamento único • Acesso imediato após o pagamento
                 </p>
               </div>
             </div>
