@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useMemo, lazy, Suspense } from "react";
-import { Download, Check, X, Smartphone, ShieldCheck, Zap, Star, Search, ChevronRight, Sparkles, ArrowUp } from "lucide-react";
+import { Download, Check, X, Smartphone, ShieldCheck, Zap, Star, Search, ChevronRight, Sparkles } from "lucide-react";
 import GameCover from "@/components/GameCover";
 import { CDN_BASE_URL } from "@/lib/cdn";
 import {
@@ -352,31 +352,53 @@ const BelowFoldContent = ({
               <div className="absolute top-0 inset-x-0 h-0.5 shimmer-border" />
               <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[300px] h-[200px] rounded-full bg-primary/8 blur-3xl" />
               <div className="relative z-10">
-                <div className="inline-flex items-center gap-2 text-xs font-semibold px-4 py-2 rounded-full mb-4 border border-primary/30 bg-primary/10">
-                  <ArrowUp className="w-3.5 h-3.5 text-primary" />
-                  <span className="text-primary">Upgrade Premium</span>
+              <div className="inline-flex items-center gap-2 text-xs font-semibold px-4 py-2 rounded-full mb-4 border border-primary/30 bg-primary/10">
+                  <Zap className="w-3.5 h-3.5 text-primary" />
+                  <span className="text-primary">Instalação Automática + Biblioteca Gamer</span>
                 </div>
                 <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">
-                  Instalação automática +{" "}
-                  <span className="text-gradient-primary">Biblioteca gamer (+100 jogos)</span>
+                  INSTALAÇÃO AUTOMÁTICA +{" "}
+                  <span className="text-gradient-primary">BIBLIOTECA GAMER (+100 jogos)</span>
                 </h3>
-                <div className="text-center mb-1 mt-4">
-                  <span className="text-muted-foreground text-xs line-through block mb-0.5">De R$127,00</span>
-                  <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-muted-foreground text-xs">Por apenas</span>
-                    <span className="text-4xl font-extrabold text-gradient-primary">R$ 47</span>
-                    <span className="text-muted-foreground text-base">,00</span>
-                  </div>
-                </div>
-                <p className="text-primary text-xs font-semibold mb-4">Economize R$80 hoje</p>
+                <p className="text-muted-foreground text-xs mb-4 max-w-xs mx-auto">
+                  Com o instalador automático, o jogo é preparado e configurado para rodar no seu celular sem complicação.
+                </p>
                 <ul className="text-left space-y-2 mb-4 grid grid-cols-2 gap-x-3 gap-y-2">
-                  {["Instalação em 1 clique", "+100 jogos clássicos", "Jogo pronto para jogar", "Acesso vitalício"].map((t) => (
+                  {["Instalação em 1 clique", "+100 jogos clássicos", "Jogo pronto para jogar", "Novos jogos nas atualizações", "Acesso vitalício", "Atualizações gratuitas"].map((t) => (
                     <li key={t} className="flex items-start gap-1.5 text-[11px] text-foreground/90">
                       <Check className="w-3 h-3 text-primary flex-shrink-0 mt-0.5" />
                       <span>{t}</span>
                     </li>
                   ))}
                 </ul>
+                {/* Ancoragem de valor compacta */}
+                <div className="rounded-lg glass-card p-3 mb-4">
+                  <div className="space-y-1.5 mb-2">
+                    {[
+                      { label: "Biblioteca com +100 jogos", value: "R$97" },
+                      { label: "Instalador automático", value: "R$47" },
+                      { label: "Atualizações futuras", value: "R$37" },
+                    ].map((item) => (
+                      <div key={item.label} className="flex items-center justify-between text-[11px]">
+                        <span className="text-muted-foreground">{item.label}</span>
+                        <span className="text-foreground font-semibold line-through opacity-60">{item.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="h-px bg-border mb-2" />
+                  <div className="flex items-center justify-between text-xs mb-2">
+                    <span className="text-muted-foreground">Valor total</span>
+                    <span className="text-foreground font-bold line-through">R$181</span>
+                  </div>
+                  <div className="text-center">
+                    <span className="text-muted-foreground text-xs block mb-0.5">Hoje por apenas:</span>
+                    <div className="flex items-baseline justify-center gap-1">
+                      <span className="text-3xl font-extrabold text-gradient-primary">R$ 47</span>
+                      <span className="text-muted-foreground text-sm">,00</span>
+                    </div>
+                  </div>
+                </div>
+
                 <a
                   href="https://pay.lowify.com.br/checkout.php?product_id=QnPBLL"
                   target="_blank"
@@ -384,11 +406,11 @@ const BelowFoldContent = ({
                   className="group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-3.5 px-6 rounded-xl hover:brightness-110 transition-all glow-primary overflow-hidden"
                 >
                   <Zap className="w-4 h-4 flex-shrink-0" />
-                  <span>Quero instalar e jogar em 1 clique</span>
+                  <span>QUERO INSTALAR E JOGAR EM 1 CLIQUE</span>
                   <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
                 </a>
                 <p className="text-muted-foreground text-[9px] mt-2 flex items-center justify-center gap-1">
-                  <ShieldCheck className="w-3 h-3" /> Pagamento único • Acesso imediato
+                  <ShieldCheck className="w-3 h-3" /> Pagamento único • Acesso imediato após o pagamento
                 </p>
               </div>
             </div>
