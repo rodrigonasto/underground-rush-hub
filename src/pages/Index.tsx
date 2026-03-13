@@ -27,11 +27,6 @@ const Index = () => {
     return () => { script.remove(); };
   }, []);
 
-  // Auto-hide sound hint after 6s
-  useEffect(() => {
-    const t = setTimeout(() => setSoundHintVisible(false), 6000);
-    return () => clearTimeout(t);
-  }, []);
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden noise-overlay">
