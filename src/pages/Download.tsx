@@ -241,35 +241,20 @@ const DownloadPage = () => {
             <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[300px] h-[200px] rounded-full bg-primary/8 blur-[80px]" />
 
             <div className="relative z-10">
-              {/* Badge promoção */}
+              {/* Badge */}
               <div className="inline-flex items-center gap-2 text-sm font-semibold px-6 py-2.5 rounded-full mb-5 border border-primary/30 bg-primary/10">
-                <ArrowUp className="w-4 h-4 text-primary" />
-                <span className="text-primary">Promoção Especial Update 2.9.5</span>
+                <Zap className="w-4 h-4 text-primary" />
+                <span className="text-primary">Instalação Automática + Biblioteca Gamer</span>
               </div>
 
               <p className="text-muted-foreground text-sm mb-5 max-w-sm mx-auto">
-                Lançamento da versão 2.9.5 com preço especial de lançamento.{" "}
-                <strong className="text-foreground">Esta oferta é limitada e o valor retornará ao normal em breve.</strong>
+                Com o instalador automático, o jogo é preparado e configurado para rodar no seu celular sem complicação.
               </p>
 
               <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
-                Instalação automática +{" "}
-                <span className="text-gradient-primary">Biblioteca gamer (+100 jogos)</span>
+                INSTALAÇÃO AUTOMÁTICA +{" "}
+                <span className="text-gradient-primary">BIBLIOTECA GAMER (+100 jogos)</span>
               </h2>
-
-              {/* Preço */}
-              <div className="text-center mb-1 mt-6">
-                <span className="text-muted-foreground text-sm line-through block mb-1">De R$127,00</span>
-                <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-muted-foreground text-sm">Por apenas</span>
-                  <span className="text-5xl font-extrabold text-gradient-primary">R$ 47</span>
-                  <span className="text-muted-foreground text-lg">,00</span>
-                </div>
-              </div>
-              <p className="text-primary text-xs font-semibold mb-4">Economize R$80 hoje</p>
-              <p className="text-muted-foreground text-[11px] mb-6 text-center">
-                ⏱ Preço promocional válido apenas durante o lançamento do Update 2.9.5
-              </p>
 
               {/* Pack image */}
               <div className="rounded-xl overflow-hidden mb-6">
@@ -316,6 +301,35 @@ const DownloadPage = () => {
                 ))}
               </ul>
 
+              {/* Ancoragem de Valor */}
+              <div className="rounded-xl glass-card p-5 mb-6">
+                <h3 className="text-sm font-bold text-foreground mb-4 uppercase tracking-wider">Valor incluído</h3>
+                <div className="space-y-2.5 mb-4">
+                  {[
+                    { label: "Biblioteca com +100 jogos", value: "R$97" },
+                    { label: "Instalador automático", value: "R$47" },
+                    { label: "Atualizações futuras", value: "R$37" },
+                  ].map((item) => (
+                    <div key={item.label} className="flex items-center justify-between text-sm">
+                      <span className="text-muted-foreground">{item.label}</span>
+                      <span className="text-foreground font-semibold line-through opacity-60">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="h-px bg-border mb-4" />
+                <div className="flex items-center justify-between text-sm mb-2">
+                  <span className="text-muted-foreground">Valor total</span>
+                  <span className="text-foreground font-bold line-through">R$181</span>
+                </div>
+                <div className="text-center mt-4">
+                  <span className="text-muted-foreground text-sm block mb-1">Hoje você libera tudo por apenas:</span>
+                  <div className="flex items-baseline justify-center gap-1">
+                    <span className="text-5xl font-extrabold text-gradient-primary">R$ 47</span>
+                    <span className="text-muted-foreground text-lg">,00</span>
+                  </div>
+                </div>
+              </div>
+
               <a
                 href="https://pay.lowify.com.br/checkout.php?product_id=QnPBLL"
                 target="_blank"
@@ -323,13 +337,12 @@ const DownloadPage = () => {
                 className="group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-4 px-6 rounded-xl hover:brightness-110 transition-all glow-primary overflow-hidden"
               >
                 <Zap className="w-4 h-4 flex-shrink-0" />
-                <span>Quero instalar e jogar em 1 clique</span>
+                <span>QUERO INSTALAR E JOGAR EM 1 CLIQUE</span>
                 <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
               </a>
 
-              <p className="text-primary text-xs font-semibold mt-4">Pagamento único</p>
-              <p className="text-muted-foreground text-[10px] mt-1 max-w-xs mx-auto">
-                Sem mensalidades. Sem taxas escondidas. Sem renovação. Você paga uma única vez e tem acesso completo e vitalício.
+              <p className="text-muted-foreground text-xs mt-3">
+                Pagamento único • Acesso imediato após o pagamento
               </p>
             </div>
           </div>
