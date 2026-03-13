@@ -4,7 +4,6 @@ import { Download, ShieldCheck, ExternalLink, Star, Zap, Check, ChevronRight } f
 import { CDN_BASE_URL } from "@/lib/cdn";
 import VTurbPlayer from "@/components/VTurbPlayer";
 import SEOHead from "@/components/SEOHead";
-import { warmupAnalyticsScripts } from "@/lib/analytics";
 
 const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
@@ -344,7 +343,7 @@ const DownloadPage = () => {
                 href="https://pay.lowify.com.br/checkout.php?product_id=QnPBLL"
                 target="_blank"
                 rel="noopener noreferrer"
-                onPointerDown={warmupAnalyticsScripts}
+                
                 className="premium-checkout-track group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-4 px-6 rounded-xl hover:brightness-110 transition-all glow-primary overflow-hidden"
               >
                 <Zap className="w-4 h-4 flex-shrink-0" />
