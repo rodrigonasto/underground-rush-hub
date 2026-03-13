@@ -252,7 +252,7 @@ const DownloadPage = () => {
               {/* Badge */}
               <div className="inline-flex items-center gap-2 text-sm font-semibold px-6 py-2.5 rounded-full mb-5 border border-primary/30 bg-primary/10">
                 <Zap className="w-4 h-4 text-primary" />
-                <span className="text-primary">Instalação Automática + Biblioteca Gamer</span>
+                <span className="text-primary">Instalação automática</span>
               </div>
 
               <p className="text-muted-foreground text-sm mb-5 max-w-sm mx-auto">
