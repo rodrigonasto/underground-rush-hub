@@ -226,16 +226,56 @@ const BelowFoldContent = ({
       {/* ─── 2. TRANSIÇÃO PARA OFERTA ─── */}
       <section className="px-5 py-12">
         <div className="container max-w-lg mx-auto text-center">
-          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4">
-            A maioria instala manualmente…<br />
-            <span className="text-gradient-primary">mas existe um jeito muito mais fácil.</span>
+          <span className="inline-flex items-center gap-1.5 text-primary text-[11px] font-semibold uppercase tracking-widest mb-4">
+            <Zap className="w-3.5 h-3.5" /> Escolha seu método
+          </span>
+          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
+            VOCÊ PODE INSTALAR DE 2 JEITOS
           </h2>
-          <p className="text-muted-foreground text-sm mb-3 max-w-md mx-auto">
-            O tutorial funciona. Mas você ainda vai precisar baixar arquivos, configurar o emulador e ajustar controles.
+          <p className="text-muted-foreground text-sm mb-1 max-w-md mx-auto">
+            O método manual funciona…
           </p>
-          <p className="text-foreground/80 text-sm font-medium max-w-md mx-auto">
-            Para quem prefere praticidade, criamos um <strong className="text-primary">instalador automático</strong> que faz tudo sozinho.
+          <p className="text-foreground/70 text-sm font-medium max-w-md mx-auto mb-8">
+            mas exige alguns passos.
           </p>
+
+          {/* Friction block */}
+          <div className="rounded-xl glass-card p-5 mb-8 text-left max-w-sm mx-auto">
+            <p className="text-muted-foreground text-xs font-semibold mb-3 text-center uppercase tracking-wider">
+              Quem instala manualmente precisa:
+            </p>
+            <ul className="space-y-2.5">
+              {[
+                "Baixar vários arquivos",
+                "Configurar o emulador",
+                "Ajustar controles",
+                "Resolver possíveis erros",
+              ].map((t) => (
+                <li key={t} className="flex items-center gap-2.5 text-sm text-muted-foreground">
+                  <X className="w-3.5 h-3.5 text-destructive flex-shrink-0" />
+                  {t}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Transition text */}
+          <p className="text-foreground font-bold text-base mb-1">
+            Por isso criamos a <span className="text-primary">instalação automática</span>.
+          </p>
+          <p className="text-muted-foreground text-sm max-w-sm mx-auto mb-6">
+            Um método que prepara tudo para você jogar sem precisar configurar nada.
+          </p>
+
+          {/* Social proof micro */}
+          <div className="inline-flex items-center gap-2 glass-card text-xs font-medium px-4 py-2 rounded-full text-foreground/80">
+            <div className="flex -space-x-1.5">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-3 h-3 fill-amber-400 text-amber-400" />
+              ))}
+            </div>
+            <span>Mais de 2.800 jogadores já escolheram a automática</span>
+          </div>
         </div>
       </section>
 
@@ -243,9 +283,6 @@ const BelowFoldContent = ({
       <section id="comparativo" className="px-5 py-14">
         <div className="container max-w-lg mx-auto">
           <div className="text-center mb-8">
-            <span className="inline-flex items-center gap-1.5 text-primary text-[11px] font-semibold uppercase tracking-widest mb-3">
-              <Zap className="w-3.5 h-3.5" /> Comparativo
-            </span>
             <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">Manual vs Instalação Automática</h2>
           </div>
           <div className="rounded-2xl overflow-hidden glass-card">
@@ -253,8 +290,8 @@ const BelowFoldContent = ({
               <div className="bg-muted/50 p-3.5 text-center border-b border-r border-border">
                 <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Manual</span>
               </div>
-              <div className="p-3.5 text-center border-b border-border" style={{ background: "hsl(142 72% 50% / 0.06)" }}>
-                <span className="text-xs font-bold text-primary uppercase tracking-wider">Automático</span>
+              <div className="p-3.5 text-center border-b border-border border-l border-primary/20" style={{ background: "hsl(142 72% 50% / 0.08)" }}>
+                <span className="text-xs font-bold text-primary uppercase tracking-wider">⚡ Automático</span>
               </div>
             </div>
             {[
@@ -269,7 +306,7 @@ const BelowFoldContent = ({
                   <X className="w-3.5 h-3.5 text-destructive flex-shrink-0" />
                   <span className="text-muted-foreground text-xs">{manual}</span>
                 </div>
-                <div className="border-b border-border p-3.5 flex items-center gap-2" style={{ background: "hsl(142 72% 50% / 0.04)" }}>
+                <div className="border-b border-border p-3.5 flex items-center gap-2 border-l border-primary/20" style={{ background: "hsl(142 72% 50% / 0.06)" }}>
                   <Check className="w-3.5 h-3.5 text-primary flex-shrink-0" />
                   <span className="text-foreground text-xs font-medium">{auto}</span>
                 </div>
@@ -277,9 +314,9 @@ const BelowFoldContent = ({
             ))}
             <div className="grid grid-cols-2">
               <div className="bg-muted/30 border-r border-border p-3.5 text-center">
-                <span className="text-sm font-bold text-primary">Grátis</span>
+                <span className="text-sm font-bold text-muted-foreground">Grátis</span>
               </div>
-              <div className="p-3.5 text-center" style={{ background: "hsl(142 72% 50% / 0.04)" }}>
+              <div className="p-3.5 text-center border-l border-primary/20" style={{ background: "hsl(142 72% 50% / 0.08)" }}>
                 <span className="text-sm font-bold text-primary">R$47</span>
               </div>
             </div>
