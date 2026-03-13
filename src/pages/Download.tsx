@@ -260,8 +260,8 @@ const DownloadPage = () => {
               </p>
 
               <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
-                INSTALAÇÃO AUTOMÁTICA +{" "}
-                <span className="text-gradient-primary">BIBLIOTECA GAMER (+100 jogos)</span>
+                +100 JOGOS CLÁSSICOS<br />
+                <span className="text-gradient-primary">PRONTOS PARA JOGAR NO CELULAR</span>
               </h2>
 
               {/* Pack image */}

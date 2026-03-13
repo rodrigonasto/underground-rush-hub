@@ -577,8 +577,8 @@ const BelowFoldContent = ({
               </div>
 
               <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-3">
-                INSTALAÇÃO AUTOMÁTICA +{" "}
-                <span className="text-gradient-primary">BIBLIOTECA GAMER</span>
+                +100 JOGOS CLÁSSICOS<br />
+                <span className="text-gradient-primary">PRONTOS PARA JOGAR NO CELULAR</span>
               </h2>
 
               <p className="text-muted-foreground text-sm mb-6 max-w-sm mx-auto">
