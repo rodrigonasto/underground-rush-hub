@@ -381,7 +381,7 @@ const BelowFoldContent = ({
               </ul>
               <div className="mb-3"><span className="text-sm font-bold text-foreground">Grátis</span></div>
               <button onClick={() => navigate("/download")} className="w-full inline-flex items-center justify-center gap-2 border border-border text-foreground font-semibold text-xs py-2.5 rounded-lg hover:bg-muted transition-colors">
-                Baixar manualmente
+                Instalar manualmente (mais demorado)
               </button>
             </div>
 
