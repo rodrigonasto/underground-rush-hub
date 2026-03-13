@@ -598,14 +598,22 @@ const BelowFoldContent = ({
           {/* Header com avatar stack */}
           <div className="flex flex-col items-center text-center mb-8">
             <div className="flex items-center -space-x-3 mb-4">
-              {["🎮", "🕹️", "👾", "🏎️", "⚡"].map((emoji, i) => (
-                <div
+              {[
+                `${CDN_BASE_URL}/535949a4b0fb513757a89ceee9672094.jpg`,
+                `${CDN_BASE_URL}/a089c831304c4b0a7ac66041e8621c40.jpg`,
+                `${CDN_BASE_URL}/i%20(1).webp`,
+                `${CDN_BASE_URL}/i%20(2).webp`,
+                `${CDN_BASE_URL}/i.webp`,
+              ].map((url, i) => (
+                <img
                   key={i}
-                  className="w-10 h-10 rounded-full border-2 border-background flex items-center justify-center text-lg"
-                  style={{ background: `hsl(${142 + i * 15} 50% ${20 + i * 5}%)`, zIndex: 5 - i }}
-                >
-                  {emoji}
-                </div>
+                  src={url}
+                  alt={`Jogador ${i + 1}`}
+                  className="w-10 h-10 rounded-full border-2 border-background object-cover"
+                  style={{ zIndex: 5 - i }}
+                  loading="lazy"
+                  decoding="async"
+                />
               ))}
               <div className="w-10 h-10 rounded-full border-2 border-background bg-primary/20 flex items-center justify-center text-xs font-bold text-primary" style={{ zIndex: 0 }}>
                 +2.8k
