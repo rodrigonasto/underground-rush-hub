@@ -230,11 +230,8 @@ const BelowFoldContent = ({
       </div>
       <section className="px-5 py-12">
         <div className="container max-w-lg mx-auto text-center">
-          <span className="inline-flex items-center gap-1.5 text-primary text-[11px] font-semibold uppercase tracking-widest mb-4">
-            <Zap className="w-3.5 h-3.5" /> Escolha seu método
-          </span>
           <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
-            VOCÊ PODE INSTALAR DE 2 JEITOS
+            <Zap className="w-5 h-5 text-primary inline-block mr-1.5 -mt-0.5" />VOCÊ PODE INSTALAR DE 2 JEITOS
           </h2>
           <p className="text-muted-foreground text-sm mb-1 max-w-md mx-auto">
             O método manual funciona…
