@@ -502,7 +502,7 @@ const BelowFoldContent = ({
                   href="https://pay.lowify.com.br/checkout.php?product_id=QnPBLL"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-3.5 px-6 rounded-xl hover:brightness-110 transition-all glow-primary overflow-hidden"
+                  className="premium-checkout-track group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-3.5 px-6 rounded-xl hover:brightness-110 transition-all glow-primary overflow-hidden"
                 >
                   <Zap className="w-4 h-4 flex-shrink-0" />
                   <span className="flex flex-col items-center leading-tight"><span className="uppercase tracking-wide">QUERO INSTALAR EM 1 CLIQUE</span><span className="text-[10px] font-normal text-background/80">Jogo pronto para jogar</span></span>
