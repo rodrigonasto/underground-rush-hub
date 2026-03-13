@@ -262,6 +262,7 @@ const ActivityFeed = () => {
 };
 
 
+const BelowFoldContent = ({
   searchQuery,
   setSearchQuery,
   downloadModalOpen,
