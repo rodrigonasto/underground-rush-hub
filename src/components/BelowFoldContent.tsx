@@ -495,6 +495,7 @@ const BelowFoldContent = ({
                     </div>
                   </div>
                 </div>
+                <p className="text-xs text-center text-foreground/80 mt-2">🔥 Mais de 2.800 jogadores já liberaram o acesso</p>
 
                 <a
                   href="https://pay.lowify.com.br/checkout.php?product_id=QnPBLL"
