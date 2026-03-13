@@ -348,7 +348,7 @@ const BelowFoldContent = ({
             className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-primary text-primary-foreground font-bold text-base px-12 py-4 rounded-xl hover:brightness-110 transition-all glow-primary"
           >
             <Download className="w-5 h-5" />
-            Baixar manualmente
+            Instalar manualmente (mais demorado)
             <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
           </button>
           <p className="text-muted-foreground text-[11px] mt-4 flex items-center justify-center gap-1.5">
@@ -381,7 +381,7 @@ const BelowFoldContent = ({
               </ul>
               <div className="mb-3"><span className="text-sm font-bold text-foreground">Grátis</span></div>
               <button onClick={() => navigate("/download")} className="w-full inline-flex items-center justify-center gap-2 border border-border text-foreground font-semibold text-xs py-2.5 rounded-lg hover:bg-muted transition-colors">
-                Baixar manualmente
+                Instalar manualmente (mais demorado)
               </button>
             </div>
 
