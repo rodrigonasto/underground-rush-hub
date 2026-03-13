@@ -9,7 +9,6 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { warmupAnalyticsScripts } from "@/lib/analytics";
 
 const VTurbPlayer = lazy(() => import("@/components/VTurbPlayer"));
 
