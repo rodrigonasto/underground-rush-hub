@@ -290,23 +290,23 @@ const BelowFoldContent = ({
               <div className="bg-muted/50 p-3.5 text-center border-b border-r border-border">
                 <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Manual</span>
               </div>
-              <div className="p-3.5 text-center border-b border-border border-l border-primary/20" style={{ background: "hsl(142 72% 50% / 0.08)" }}>
-                <span className="text-xs font-bold text-primary uppercase tracking-wider">⚡ Automático</span>
+              <div className="p-3.5 text-center border-b border-border border-l border-primary/20" style={{ background: "hsl(142 72% 50% / 0.10)" }}>
+                <span className="text-xs font-bold text-primary uppercase tracking-wider">Automático ⭐ Recomendado</span>
               </div>
             </div>
             {[
               ["Baixar arquivos manualmente", "Instalação em 1 clique"],
-              ["Configurar emulador", "Jogo pronto para jogar"],
-              ["Ajustar controles", "Tudo já configurado"],
-              ["Pode gerar erros", "Sem erros ou configs"],
-              ["Apenas 1 jogo", "Biblioteca com +100 jogos"],
+              ["Configurar emulador", "Tudo configurado automaticamente"],
+              ["Ajustar controles", "Jogo pronto para jogar"],
+              ["Possíveis erros de configuração", "Sem configuração ou erros"],
+              ["Apenas Need for Speed Underground 2", "Biblioteca com +100 jogos clássicos"],
             ].map(([manual, auto], i) => (
               <div key={i} className="grid grid-cols-2">
                 <div className="bg-muted/30 border-b border-r border-border p-3.5 flex items-center gap-2">
                   <X className="w-3.5 h-3.5 text-destructive flex-shrink-0" />
                   <span className="text-muted-foreground text-xs">{manual}</span>
                 </div>
-                <div className="border-b border-border p-3.5 flex items-center gap-2 border-l border-primary/20" style={{ background: "hsl(142 72% 50% / 0.06)" }}>
+                <div className="border-b border-border p-3.5 flex items-center gap-2 border-l border-primary/20" style={{ background: "hsl(142 72% 50% / 0.07)" }}>
                   <Check className="w-3.5 h-3.5 text-primary flex-shrink-0" />
                   <span className="text-foreground text-xs font-medium">{auto}</span>
                 </div>
@@ -316,7 +316,7 @@ const BelowFoldContent = ({
               <div className="bg-muted/30 border-r border-border p-3.5 text-center">
                 <span className="text-sm font-bold text-muted-foreground">Grátis</span>
               </div>
-              <div className="p-3.5 text-center border-l border-primary/20" style={{ background: "hsl(142 72% 50% / 0.08)" }}>
+              <div className="p-3.5 text-center border-l border-primary/20" style={{ background: "hsl(142 72% 50% / 0.10)" }}>
                 <span className="text-sm font-bold text-primary">R$47</span>
               </div>
             </div>
