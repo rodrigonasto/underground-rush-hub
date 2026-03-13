@@ -339,20 +339,22 @@ const BelowFoldContent = ({
         <div className="absolute inset-0 bg-gradient-to-b from-card/80 to-background/80" />
         <div className="container max-w-lg mx-auto text-center relative z-10">
           <span className="inline-flex items-center gap-1.5 text-primary text-[11px] font-semibold uppercase tracking-widest mb-3">
-            <Download className="w-3.5 h-3.5" /> Download
+            ⬇️ Download
           </span>
-          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">Download gratuito</h2>
-          <p className="text-muted-foreground text-sm mb-8">Prefere instalar manualmente? Clique abaixo para baixar o jogo.</p>
+          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">⬇️ DOWNLOAD GRATUITO</h2>
+          <p className="text-muted-foreground text-sm mb-2">Prefere instalar manualmente?</p>
+          <p className="text-muted-foreground text-sm mb-8">Use o método gratuito abaixo para baixar e instalar o jogo passo a passo.</p>
           <button
             onClick={() => setDownloadModalOpen(true)}
             className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-primary text-primary-foreground font-bold text-base px-12 py-4 rounded-xl hover:brightness-110 transition-all glow-primary"
           >
             <Download className="w-5 h-5" />
-            <span className="flex flex-col items-center leading-tight"><span className="uppercase tracking-wide">Instalar Manualmente</span><span className="text-[10px] font-normal opacity-80">(mais demorado)</span></span>
+            <span className="uppercase tracking-wide">Instalar Manualmente</span>
             <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
           </button>
-          <p className="text-muted-foreground text-[11px] mt-4 flex items-center justify-center gap-1.5">
-            <ShieldCheck className="w-3.5 h-3.5 text-primary/70" /> Download seguro e gratuito
+          <p className="text-muted-foreground text-[10px] mt-2">(método mais demorado)</p>
+          <p className="text-muted-foreground text-[11px] mt-3 flex items-center justify-center gap-1.5">
+            <Check className="w-3.5 h-3.5 text-primary/70" /> Download seguro e gratuito
           </p>
         </div>
       </section>
