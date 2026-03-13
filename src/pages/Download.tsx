@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Download, ShieldCheck, ExternalLink, Star, Zap, Check, ChevronRight, ArrowUp } from "lucide-react";
+import { Download, ShieldCheck, ExternalLink, Star, Zap, Check, ChevronRight } from "lucide-react";
 import { CDN_BASE_URL } from "@/lib/cdn";
 import VTurbPlayer from "@/components/VTurbPlayer";
 import SEOHead from "@/components/SEOHead";
