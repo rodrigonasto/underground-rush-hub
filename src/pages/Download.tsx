@@ -342,11 +342,7 @@ const DownloadPage = () => {
 
               <a
                 href="https://pay.lowify.com.br/checkout.php?product_id=QnPBLL"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const url = e.currentTarget.href;
-                  setTimeout(() => { window.location.href = url; }, 500);
-                }}
+                onClick={handleTrackedCheckoutClick}
                 className="premium-checkout-track group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-4 px-6 rounded-xl hover:brightness-110 transition-all glow-primary overflow-hidden"
               >
                 <Zap className="w-4 h-4 flex-shrink-0" />
