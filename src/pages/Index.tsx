@@ -1,19 +1,38 @@
-import { useState, lazy, Suspense } from "react";
+import { useState, useEffect, useRef, lazy, Suspense } from "react";
 import { useNavigate } from "react-router-dom";
-import { Smartphone, ShieldCheck, ChevronRight, Check } from "lucide-react";
+import { Smartphone, ShieldCheck, ChevronRight, Check, Volume2 } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 
 const BelowFoldContent = lazy(() => import("@/components/BelowFoldContent"));
 
 const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
-const CDN_BASE = "https://pub-ea93f56e93a64de8a24b1a7fcd48b703.r2.dev";
-const HERO_IMAGE = `${CDN_BASE}/nfs-cover.webp`;
+const VTURB_PLAYER_ID = "69b3dd6efaf9397e233276d8";
+const VTURB_COMPANY_ID = "a57aea77-33e9-4609-ae0f-96bf93c595a1";
 
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [downloadModalOpen, setDownloadModalOpen] = useState(false);
+  const [playerLoaded, setPlayerLoaded] = useState(false);
+  const [soundHintVisible, setSoundHintVisible] = useState(true);
+  const playerRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+
+  // Load VTurb smart player script
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = `https://scripts.converteai.net/${VTURB_COMPANY_ID}/players/${VTURB_PLAYER_ID}/v4/player.js`;
+    script.async = true;
+    script.onload = () => setPlayerLoaded(true);
+    document.head.appendChild(script);
+    return () => { script.remove(); };
+  }, []);
+
+  // Auto-hide sound hint after 6s
+  useEffect(() => {
+    const t = setTimeout(() => setSoundHintVisible(false), 6000);
+    return () => clearTimeout(t);
+  }, []);
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden noise-overlay">
@@ -31,21 +50,9 @@ const Index = () => {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl" />
 
           <div className="container max-w-lg mx-auto text-center relative z-10 hero-fade-in">
-            <div className="inline-flex items-center gap-1.5 glass-card text-primary text-xs font-semibold px-4 py-1.5 rounded-full mb-8">
+            <div className="inline-flex items-center gap-1.5 glass-card text-primary text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
               <Smartphone className="w-3.5 h-3.5" />
               Android & iPhone
-            </div>
-
-            {/* LCP element */}
-            <div className="w-full max-w-sm mx-auto mb-8">
-              <img
-                src={HERO_IMAGE}
-                alt="Need for Speed Underground 2 no celular"
-                className="w-full rounded-2xl glow-primary-strong border border-primary/20"
-                width={448}
-                height={252}
-                fetchPriority="high"
-              />
             </div>
 
             <h1 className="text-2xl sm:text-4xl font-extrabold text-foreground leading-tight mb-3">
@@ -55,9 +62,27 @@ const Index = () => {
             </h1>
 
             <p className="text-muted-foreground text-sm sm:text-base mb-6 max-w-md mx-auto">
-              Sim… o clássico que dominou PS2 e PC agora roda no seu Android ou iPhone.
-              Veja o tutorial gratuito e descubra como instalar em poucos minutos.
+              Veja como rodar o clássico que dominou PS2 e PC direto no seu Android ou iPhone.
             </p>
+
+            {/* VTurb Video Player */}
+            <div ref={playerRef} className="relative w-full max-w-lg mx-auto mb-8 rounded-2xl overflow-hidden glow-primary-strong border border-primary/20">
+              {/* @ts-ignore - VTurb custom element */}
+              <vturb-smartplayer
+                id={`vid-${VTURB_PLAYER_ID}`}
+                style={{ display: "block", margin: "0 auto", width: "100%" }}
+              />
+              {/* Sound hint overlay */}
+              {soundHintVisible && (
+                <div
+                  className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5 glass-card text-foreground/80 text-xs font-medium px-3 py-1.5 rounded-full pointer-events-none transition-opacity duration-500"
+                  onClick={() => setSoundHintVisible(false)}
+                >
+                  <Volume2 className="w-3.5 h-3.5 text-primary" />
+                  Clique para ativar o som
+                </div>
+              )}
+            </div>
 
             {/* Bullets */}
             <ul className="flex flex-col items-start gap-2.5 max-w-xs mx-auto mb-8 text-left">
@@ -82,7 +107,11 @@ const Index = () => {
               <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
             </button>
 
-            <div className="flex items-center justify-center gap-5 mt-6 text-muted-foreground text-xs">
+            <p className="text-muted-foreground text-xs mt-3">
+              Acesso imediato após a instalação.
+            </p>
+
+            <div className="flex items-center justify-center gap-5 mt-5 text-muted-foreground text-xs">
               <span className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-primary/70" /> Seguro</span>
               <span className="w-1 h-1 rounded-full bg-border" />
               <span>Sem cadastro</span>
