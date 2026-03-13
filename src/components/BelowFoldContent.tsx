@@ -502,6 +502,11 @@ const BelowFoldContent = ({
                   href="https://pay.lowify.com.br/checkout.php?product_id=QnPBLL"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={(event) => {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    window.open("https://pay.lowify.com.br/checkout.php?product_id=QnPBLL", "_blank", "noopener,noreferrer");
+                  }}
                   className="premium-checkout-track group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-3.5 px-6 rounded-xl hover:brightness-110 transition-all glow-primary overflow-hidden"
                 >
                   <Zap className="w-4 h-4 flex-shrink-0" />
@@ -639,7 +644,11 @@ const BelowFoldContent = ({
                 href="https://pay.lowify.com.br/checkout.php?product_id=QnPBLL"
                 target="_blank"
                 rel="noopener noreferrer"
-                
+                onClick={(event) => {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  window.open("https://pay.lowify.com.br/checkout.php?product_id=QnPBLL", "_blank", "noopener,noreferrer");
+                }}
                 className="premium-checkout-track group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-base py-4 px-6 rounded-xl hover:brightness-110 transition-all glow-primary overflow-hidden"
               >
                 <Zap className="w-5 h-5 flex-shrink-0" />
