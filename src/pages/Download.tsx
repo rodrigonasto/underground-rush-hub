@@ -314,9 +314,9 @@ const DownloadPage = () => {
                 <h3 className="text-sm font-bold text-foreground mb-4 uppercase tracking-wider">Valor incluído</h3>
                 <div className="space-y-2.5 mb-4">
                   {[
-                    { label: "Biblioteca com +100 jogos", value: "R$97" },
-                     { label: "Instalador automático em 1 clique", value: "R$47" },
-                     { label: "Atualizações futuras + novos jogos", value: "R$37" },
+                    { label: "Biblioteca com +100 jogos", value: "R$67" },
+                     { label: "Instalador automático", value: "R$37" },
+                     { label: "Atualizações futuras", value: "R$23" },
                   ].map((item) => (
                     <div key={item.label} className="flex items-center justify-between text-sm">
                       <span className="text-muted-foreground">{item.label}</span>
@@ -327,7 +327,7 @@ const DownloadPage = () => {
                 <div className="h-px bg-border mb-4" />
                 <div className="flex items-center justify-between text-sm mb-2">
                   <span className="text-muted-foreground">Valor total</span>
-                  <span className="text-foreground font-bold line-through">R$181</span>
+                  <span className="text-foreground font-bold line-through">R$127</span>
                 </div>
                 <div className="text-center mt-4">
                   <span className="text-muted-foreground text-sm block mb-1">Hoje você libera tudo por apenas:</span>
