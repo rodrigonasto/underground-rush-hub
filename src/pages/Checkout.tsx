@@ -79,7 +79,7 @@ const CheckoutPage = () => {
     }
   }, [navigate]);
 
-  return (
+    return (
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Checkout — Biblioteca Gamer Premium"
@@ -89,6 +89,12 @@ const CheckoutPage = () => {
 
       <main className="px-4 py-8 sm:py-12">
         <div className="container max-w-md mx-auto">
+
+          {/* ─── STEP INDICATOR ─── */}
+          <div className="text-center mb-6">
+            <span className="text-xs font-semibold text-primary tracking-wider uppercase">Etapa 2 de 3</span>
+            <h1 className="text-foreground font-bold text-lg mt-1">Libere sua biblioteca gamer</h1>
+          </div>
 
           {/* ─── TIMER ─── */}
           <div className="flex items-center justify-center gap-2 mb-6 bg-card border border-border rounded-xl py-3 px-4">
@@ -153,75 +159,39 @@ const CheckoutPage = () => {
             </div>
           </div>
 
-          {/* ─── FORM SECTION ─── */}
-          <div className="bg-card border border-border rounded-2xl p-5 mb-6">
+          {/* ─── CONFIRMATION BLOCK ─── */}
+          <div className="bg-card border border-border rounded-2xl p-5 mb-6 text-center">
             <h3 className="text-foreground font-bold text-base mb-1">
-              Digite seus dados para liberar os jogos agora
+              Seu acesso está quase liberado
             </h3>
-            <p className="text-muted-foreground text-xs mb-5">
-              Preencha abaixo para receber acesso imediato à Biblioteca Gamer Premium.
+            <p className="text-muted-foreground text-xs mb-4">
+              Revise os benefícios acima e continue para o pagamento seguro.
             </p>
 
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                window.open(CHECKOUT_URL, "_blank", "noopener,noreferrer");
-              }}
-              className="space-y-3"
+            {/* Security microcopy */}
+            <p className="text-muted-foreground text-[11px] mb-3">
+              🔒 Ambiente seguro • Acesso liberado imediatamente após o pagamento
+            </p>
+
+            {/* Main CTA */}
+            <a
+              href={CHECKOUT_URL}
+              className="premium-checkout-track group w-full flex flex-col items-center justify-center bg-primary text-primary-foreground font-bold text-sm py-4 px-6 rounded-xl hover:brightness-110 transition-all glow-primary"
             >
-              <div>
-                <label className="text-foreground text-xs font-semibold mb-1 block">Nome completo</label>
-                <input
-                  type="text"
-                  required
-                  placeholder="Seu nome"
-                  className="w-full h-11 rounded-xl border border-border bg-background px-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-                />
-              </div>
-              <div>
-                <label className="text-foreground text-xs font-semibold mb-1 block">E-mail</label>
-                <input
-                  type="email"
-                  required
-                  placeholder="seuemail@exemplo.com"
-                  className="w-full h-11 rounded-xl border border-border bg-background px-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-                />
-              </div>
-              <div>
-                <label className="text-foreground text-xs font-semibold mb-1 block">WhatsApp</label>
-                <input
-                  type="tel"
-                  required
-                  placeholder="(00) 00000-0000"
-                  className="w-full h-11 rounded-xl border border-border bg-background px-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-                />
-              </div>
+              <span className="flex items-center gap-2">
+                <Zap className="w-4 h-4 shrink-0" />
+                CONTINUAR PARA O PAGAMENTO
+                <ChevronRight className="w-4 h-4 shrink-0 transition-transform group-hover:translate-x-0.5" />
+              </span>
+              <span className="text-[11px] font-medium text-primary-foreground/80 mt-1">
+                PIX • Liberação imediata
+              </span>
+            </a>
 
-              {/* Security microcopy */}
-              <p className="text-muted-foreground text-[11px] text-center pt-2">
-                🔒 Ambiente seguro • Acesso liberado imediatamente após o pagamento
-              </p>
-
-              {/* Main CTA */}
-              <button
-                type="submit"
-                className="group w-full flex flex-col items-center justify-center bg-primary text-primary-foreground font-bold text-sm py-4 px-6 rounded-xl hover:brightness-110 transition-all glow-primary"
-              >
-                <span className="flex items-center gap-2">
-                  <Zap className="w-4 h-4 shrink-0" />
-                  PAGAR E LIBERAR ACESSO AGORA
-                  <ChevronRight className="w-4 h-4 shrink-0 transition-transform group-hover:translate-x-0.5" />
-                </span>
-                <span className="text-[11px] font-medium text-primary-foreground/80 mt-1">
-                  PIX • Liberação imediata
-                </span>
-              </button>
-
-              {/* Trust line */}
-              <p className="text-muted-foreground text-[11px] text-center">
-                Pagamento único • Acesso imediato após o pagamento • Sem mensalidade
-              </p>
-            </form>
+            {/* Trust line */}
+            <p className="text-muted-foreground text-[11px] mt-3">
+              Pagamento único • Sem mensalidade • Acesso vitalício
+            </p>
           </div>
 
           {/* ─── TRUST BADGES ─── */}
