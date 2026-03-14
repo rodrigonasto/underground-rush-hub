@@ -377,7 +377,7 @@ const BelowFoldContent = ({
                 <span className="text-sm font-bold text-muted-foreground">Grátis</span>
               </div>
               <div className="p-3.5 text-center border-l border-primary/20" style={{ background: "hsl(142 72% 50% / 0.10)" }}>
-                <span className="text-sm font-bold text-primary">R$47</span>
+                <span className="text-sm font-bold text-primary">R$27</span>
               </div>
             </div>
           </div>
