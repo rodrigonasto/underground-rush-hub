@@ -472,9 +472,9 @@ const BelowFoldContent = ({
                 <div className="rounded-lg glass-card p-3 mb-4">
                   <div className="space-y-1.5 mb-2">
                     {[
-                      { label: "Biblioteca com +100 jogos", value: "R$97" },
-                       { label: "Instalador automático em 1 clique", value: "R$47" },
-                       { label: "Atualizações futuras + novos jogos", value: "R$37" },
+                      { label: "Biblioteca com +100 jogos", value: "R$67" },
+                       { label: "Instalador automático", value: "R$37" },
+                       { label: "Atualizações futuras", value: "R$23" },
                     ].map((item) => (
                       <div key={item.label} className="flex items-center justify-between text-[11px]">
                         <span className="text-muted-foreground">{item.label}</span>
@@ -485,7 +485,7 @@ const BelowFoldContent = ({
                   <div className="h-px bg-border mb-2" />
                   <div className="flex items-center justify-between text-xs mb-2">
                     <span className="text-muted-foreground">Valor total</span>
-                    <span className="text-foreground font-bold line-through">R$181</span>
+                    <span className="text-foreground font-bold line-through">R$127</span>
                   </div>
                   <div className="text-center">
                     <span className="text-muted-foreground text-xs block mb-0.5">Hoje por apenas:</span>
