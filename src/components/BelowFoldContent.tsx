@@ -499,7 +499,9 @@ const BelowFoldContent = ({
 
 
                 <a
-                  href="/checkout"
+                  href="https://pay.lowify.com.br/checkout.php?product_id=QnPBLL"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-3.5 px-6 rounded-xl hover:brightness-110 transition-all glow-primary overflow-hidden"
                 >
                   <Zap className="w-4 h-4 flex-shrink-0" />
@@ -634,7 +636,9 @@ const BelowFoldContent = ({
 
               {/* CTA */}
               <a
-                href="/checkout"
+                href="https://pay.lowify.com.br/checkout.php?product_id=QnPBLL"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-base py-4 px-6 rounded-xl hover:brightness-110 transition-all glow-primary overflow-hidden"
               >
                 <Zap className="w-5 h-5 flex-shrink-0" />
