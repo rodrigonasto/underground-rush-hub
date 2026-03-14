@@ -332,7 +332,7 @@ const DownloadPage = () => {
                 <div className="text-center mt-4">
                   <span className="text-muted-foreground text-sm block mb-1">Hoje você libera tudo por apenas:</span>
                   <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-5xl font-extrabold text-gradient-primary">R$ 47</span>
+                    <span className="text-5xl font-extrabold text-gradient-primary">R$ 27</span>
                    <span className="text-muted-foreground text-lg">,00</span>
                   </div>
                   <p className="text-xs text-center mt-1.5" style={{ color: "hsl(35 90% 60%)" }}>+2.800 jogadores já estão jogando</p>

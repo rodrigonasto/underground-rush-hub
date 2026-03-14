@@ -377,7 +377,7 @@ const BelowFoldContent = ({
                 <span className="text-sm font-bold text-muted-foreground">Grátis</span>
               </div>
               <div className="p-3.5 text-center border-l border-primary/20" style={{ background: "hsl(142 72% 50% / 0.10)" }}>
-                <span className="text-sm font-bold text-primary">R$47</span>
+                <span className="text-sm font-bold text-primary">R$27</span>
               </div>
             </div>
           </div>
@@ -490,7 +490,7 @@ const BelowFoldContent = ({
                   <div className="text-center">
                     <span className="text-muted-foreground text-xs block mb-0.5">Hoje por apenas:</span>
                     <div className="flex items-baseline justify-center gap-1">
-                      <span className="text-3xl font-extrabold text-gradient-primary">R$ 47</span>
+                      <span className="text-3xl font-extrabold text-gradient-primary">R$ 27</span>
                       <span className="text-muted-foreground text-sm">,00</span>
                     </div>
                     <p className="text-[10px] text-center mt-1.5" style={{ color: "hsl(35 90% 60%)" }}>+2.800 jogadores já estão jogando</p>
@@ -627,7 +627,7 @@ const BelowFoldContent = ({
                 <div className="text-center mt-4">
                   <span className="text-muted-foreground text-sm block mb-1">Hoje você libera tudo por apenas:</span>
                   <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-5xl font-extrabold text-gradient-primary">R$ 47</span>
+                    <span className="text-5xl font-extrabold text-gradient-primary">R$ 27</span>
                     <span className="text-muted-foreground text-lg">,00</span>
                   </div>
                 </div>
