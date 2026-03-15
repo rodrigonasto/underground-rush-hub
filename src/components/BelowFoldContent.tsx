@@ -221,7 +221,10 @@ const TutorialSection = () => {
             <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
           </a>
           <p className="text-muted-foreground text-[10px] mt-2">
-            Instalação automática • +100 jogos clássicos • Acesso vitalício
+            +100 jogos prontos para jogar no celular
+          </p>
+          <p className="text-muted-foreground/60 text-[9px] mt-1">
+            Instalação automática • Acesso vitalício • Atualizações gratuitas
           </p>
         </div>
       </div>
