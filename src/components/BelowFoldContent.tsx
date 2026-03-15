@@ -340,8 +340,10 @@ const BelowFoldContent = ({
                 <Zap className="w-4 h-4 text-primary" />
                 <span className="text-xs font-bold text-primary uppercase tracking-wider">Completo</span>
               </div>
-              <div className="inline-flex items-center gap-1.5 text-[10px] font-bold px-3 py-1 rounded-full mb-2 border" style={{ color: "hsl(25 95% 60%)", borderColor: "hsl(25 95% 55% / 0.3)", background: "hsl(25 95% 55% / 0.1)" }}>
-                Oferta promocional disponível hoje
+              <div className="flex justify-center">
+                <div className="inline-flex items-center gap-1.5 text-[10px] font-bold px-3 py-1 rounded-full mb-2 border pulse" style={{ color: "hsl(25 95% 60%)", borderColor: "hsl(25 95% 55% / 0.3)", background: "hsl(25 95% 55% / 0.1)" }}>
+                  Oferta promocional disponível hoje
+                </div>
               </div>
               <div className="flex items-baseline gap-1 mt-1 mb-1">
                 <span className="text-3xl font-extrabold text-gradient-primary">R$27</span>
@@ -509,7 +511,7 @@ const BelowFoldContent = ({
                   +100 JOGOS CLÁSSICOS<br />
                   <span className="text-gradient-primary">PRONTOS PARA JOGAR</span>
                 </h3>
-                <div className="inline-flex items-center gap-1.5 text-[10px] font-bold px-3 py-1 rounded-full mb-3 border" style={{ color: "hsl(25 95% 60%)", borderColor: "hsl(25 95% 55% / 0.3)", background: "hsl(25 95% 55% / 0.1)" }}>
+                <div className="inline-flex items-center gap-1.5 text-[10px] font-bold px-3 py-1 rounded-full mb-3 border pulse" style={{ color: "hsl(25 95% 60%)", borderColor: "hsl(25 95% 55% / 0.3)", background: "hsl(25 95% 55% / 0.1)" }}>
                   Oferta promocional disponível hoje
                 </div>
                 <ul className="text-left space-y-2 mb-4 grid grid-cols-2 gap-x-3 gap-y-2">
@@ -619,7 +621,7 @@ const BelowFoldContent = ({
                 <span className="text-gradient-primary">PRONTOS PARA JOGAR NO CELULAR</span>
               </h2>
 
-              <div className="inline-flex items-center gap-1.5 text-[11px] font-bold px-4 py-1.5 rounded-full mb-4 border" style={{ color: "hsl(25 95% 60%)", borderColor: "hsl(25 95% 55% / 0.3)", background: "hsl(25 95% 55% / 0.1)" }}>
+              <div className="inline-flex items-center gap-1.5 text-[11px] font-bold px-4 py-1.5 rounded-full mb-4 border pulse" style={{ color: "hsl(25 95% 60%)", borderColor: "hsl(25 95% 55% / 0.3)", background: "hsl(25 95% 55% / 0.1)" }}>
                 Oferta promocional disponível hoje
               </div>
 
