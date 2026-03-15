@@ -363,13 +363,15 @@ const BelowFoldContent = ({
                 href="https://pay.lowify.com.br/checkout.php?product_id=QnPBLL"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-4 rounded-xl hover:brightness-110 transition-all glow-primary"
+                className="group w-full inline-flex flex-col items-center justify-center gap-1 bg-primary text-primary-foreground font-bold text-sm py-4 rounded-xl hover:brightness-110 transition-all glow-primary"
               >
-                <Zap className="w-4 h-4 flex-shrink-0" />
-                <span className="uppercase tracking-wide">QUERO INSTALAR EM 1 CLIQUE</span>
-                <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
+                <span className="flex items-center gap-2">
+                  <Zap className="w-4 h-4 flex-shrink-0" />
+                  <span className="uppercase tracking-wide">INSTALAR EM 1 CLIQUE</span>
+                  <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
+                </span>
+                <span className="text-[10px] font-normal text-primary-foreground/70">Instalação automática • Jogo pronto para rodar</span>
               </a>
-              <p className="text-[10px] text-center mt-2 text-muted-foreground">Instalação automática • Jogo pronto para rodar</p>
             </div>
 
             {/* Card Manual — R$9,90 (secondary) */}
