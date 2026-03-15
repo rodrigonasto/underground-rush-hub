@@ -440,26 +440,26 @@ const BelowFoldContent = ({
         </div>
       </section>
 
-      {/* ─── 4. DOWNLOAD GRATUITO ─── */}
+      {/* ─── 4. DOWNLOAD BÁSICO ─── */}
       <section id="download" className="relative px-5 py-14">
         <div className="absolute inset-0 bg-grid-small opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-b from-card/80 to-background/80" />
         <div className="container max-w-lg mx-auto text-center relative z-10">
-          <h2 className="inline-flex items-center gap-2 text-xl sm:text-2xl font-bold text-primary uppercase tracking-wide mb-2">
-            <Download className="w-5 h-5" /> Download gratuito
+          <h2 className="inline-flex items-center gap-2 text-xl sm:text-2xl font-bold text-foreground uppercase tracking-wide mb-2">
+            <Download className="w-5 h-5 text-primary" /> Download Básico
           </h2>
-          <p className="text-muted-foreground text-sm mb-2">Prefere instalar manualmente?</p>
-          <p className="text-muted-foreground text-sm mb-8">Use o método gratuito abaixo para baixar e instalar o jogo passo a passo.</p>
+          <p className="text-muted-foreground text-sm mb-2">Quer apenas o NFS Underground 2?</p>
+          <p className="text-muted-foreground text-sm mb-8">Instale manualmente por apenas <strong className="text-foreground">R$9,90</strong>.</p>
           <button
             onClick={() => setDownloadModalOpen(true)}
-            className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-primary text-primary-foreground font-bold text-base px-12 py-4 rounded-xl hover:brightness-110 transition-all glow-primary"
+            className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border-2 border-primary text-primary font-bold text-base px-12 py-4 rounded-xl hover:bg-primary hover:text-primary-foreground transition-all"
           >
             <Download className="w-5 h-5" />
-            <span className="flex flex-col items-center leading-tight"><span className="uppercase tracking-wide">Instalar Manualmente</span><span className="text-[10px] font-normal text-background/80">(método mais demorado)</span></span>
+            <span className="flex flex-col items-center leading-tight"><span className="uppercase tracking-wide">Comprar por R$9,90</span><span className="text-[10px] font-normal opacity-70">Apenas NFS Underground 2</span></span>
             <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
           </button>
           <p className="text-muted-foreground text-[11px] mt-4 flex items-center justify-center gap-1.5">
-            <ShieldCheck className="w-3.5 h-3.5 text-primary/70" /> Download seguro e gratuito
+            <ShieldCheck className="w-3.5 h-3.5 text-primary/70" /> Pagamento seguro
           </p>
         </div>
       </section>
