@@ -354,7 +354,7 @@ const BelowFoldContent = ({
           <p className="text-muted-foreground text-sm mb-2 max-w-md mx-auto">
             Escolha como deseja instalar no celular:
           </p>
-          <p className="text-muted-foreground/60 text-[11px] mb-8">
+          <p className="text-muted-foreground text-xs mb-8">
             A maioria dos jogadores escolhe a instalação automática.
           </p>
 
