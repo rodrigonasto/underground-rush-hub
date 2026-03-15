@@ -726,8 +726,8 @@ const BelowFoldContent = ({
               ))}
               <span className="text-xs text-muted-foreground ml-1">4.9/5</span>
             </div>
-            <p className="text-foreground font-bold text-lg">Comunidade com +2.800 jogadores</p>
-            <p className="text-muted-foreground text-xs mt-1">que já estão jogando no celular</p>
+            <p className="text-foreground font-bold text-lg">+2.800 JOGADORES JÁ ESTÃO JOGANDO</p>
+            <p className="text-muted-foreground text-xs mt-1">Milhares de jogadores já estão rodando clássicos diretamente no celular.</p>
           </div>
 
           {/* Feed de atividade recente */}
