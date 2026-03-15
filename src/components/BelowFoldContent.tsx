@@ -565,7 +565,7 @@ const BelowFoldContent = ({
                 ))}
               </ul>
               <div className="mb-3"><span className="text-lg font-bold text-foreground">R$9,90</span></div>
-              <a href="https://pay.lowify.com.br/checkout?product_id=KHWzbI" target="_blank" rel="noopener noreferrer" className="w-full inline-flex items-center justify-center gap-2 border border-border text-foreground font-semibold text-xs py-2.5 rounded-lg hover:bg-muted transition-colors">
+              <a href="https://checkout.jogosmobileclub.com.br/checkout?p=88542131ac5a91c1ded108004e5382ab" target="_blank" rel="noopener noreferrer" className="w-full inline-flex items-center justify-center gap-2 border border-border text-foreground font-semibold text-xs py-2.5 rounded-lg hover:bg-muted transition-colors">
                 <span className="uppercase text-[10px]">Instalar Manualmente</span>
               </a>
             </div>
