@@ -825,7 +825,7 @@ const BelowFoldContent = ({
               <div key={stat.label} className="glass-card rounded-xl p-3 text-center border border-border/50">
                 <p className="text-lg mb-0.5">{stat.icon}</p>
                 <p className="text-foreground font-bold text-sm">{stat.value}</p>
-                <p className="text-muted-foreground text-[10px]">{stat.label}</p>
+                <p className="text-muted-foreground text-xs">{stat.label}</p>
               </div>
             ))}
           </div>
