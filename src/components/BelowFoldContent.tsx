@@ -620,7 +620,7 @@ const BelowFoldContent = ({
               </h2>
 
               <div className="inline-flex items-center gap-1.5 text-[11px] font-bold px-4 py-1.5 rounded-full mb-4 border" style={{ color: "hsl(25 95% 60%)", borderColor: "hsl(25 95% 55% / 0.3)", background: "hsl(25 95% 55% / 0.1)" }}>
-                🔥 Oferta promocional disponível hoje
+                Oferta promocional disponível hoje
               </div>
 
               <p className="text-muted-foreground text-sm mb-6 max-w-sm mx-auto">
