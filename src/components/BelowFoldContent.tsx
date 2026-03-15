@@ -151,9 +151,6 @@ const TutorialSection = () => {
           <p className="text-muted-foreground text-sm mt-2">
             Assista ao vídeo abaixo e siga o passo a passo para rodar Need for Speed Underground 2 no celular.
           </p>
-          <p className="text-muted-foreground/70 text-xs mt-1">
-            Funciona em Android e iPhone.
-          </p>
         </div>
 
         <div className="grid grid-cols-2 gap-3 mb-6">
@@ -182,7 +179,10 @@ const TutorialSection = () => {
               <VTurbPlayer playerId="69b22b5e005f4e6dada6b831" visible={platform === "android"} />
             </Suspense>
             <p className="text-muted-foreground text-xs text-center">
-              ⚡ Assista ao vídeo e siga o passo a passo mostrado na tela.
+              ⚡ Este método é manual e exige seguir os passos mostrados no vídeo.
+            </p>
+            <p className="text-primary/80 text-xs text-center mt-2 font-medium">
+              Se preferir instalar tudo automaticamente com +100 jogos prontos para jogar, escolha o Pack Completo abaixo.
             </p>
           </div>
         </div>
@@ -195,6 +195,9 @@ const TutorialSection = () => {
             </Suspense>
             <p className="text-muted-foreground text-xs text-center">
               ⚠️ O vídeo usa outro jogo como exemplo, mas o processo de instalação é o mesmo.
+            </p>
+            <p className="text-primary/80 text-xs text-center mt-2 font-medium">
+              Se preferir instalar tudo automaticamente com +100 jogos prontos para jogar, escolha o Pack Completo abaixo.
             </p>
           </div>
         </div>
@@ -292,32 +295,27 @@ const BelowFoldContent = ({
             ESCOLHA COMO QUER JOGAR
           </h2>
           <p className="text-muted-foreground text-sm mb-8 max-w-md mx-auto">
-            Duas formas de ter o jogo no seu celular. Escolha a que faz mais sentido pra você.
+            Duas formas de ter o jogo no seu celular. Escolha a que faz mais sentido para você.
           </p>
 
           {/* ── PRICING CARDS SIDE BY SIDE ── */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
             {/* Card Básico — R$9,90 */}
             <div className="rounded-2xl glass-card p-5 text-left relative border border-border">
-              <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Básico</span>
+              <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Instalação Manual</span>
               <div className="flex items-baseline gap-1 mt-2 mb-3">
                 <span className="text-3xl font-extrabold text-foreground">R$9</span>
                 <span className="text-foreground text-lg font-bold">,90</span>
               </div>
-              <p className="text-muted-foreground text-xs mb-4">Apenas o jogo NFS Underground 2</p>
+              <p className="text-muted-foreground text-xs mb-4">Apenas Need for Speed Underground 2</p>
               <ul className="space-y-2.5 mb-5">
                 {[
-                  { text: "Apenas 1 jogo (NFS Underground 2)", ok: true },
+                  { text: "Apenas Need for Speed Underground 2", ok: true },
                   { text: "Instalação manual passo a passo", ok: true },
-                  { text: "Configuração por conta própria", ok: false },
-                  { text: "Sem suporte ou atualizações", ok: false },
+                  { text: "Seguindo o tutorial acima", ok: true },
                 ].map((item) => (
                   <li key={item.text} className="flex items-start gap-2 text-xs text-muted-foreground">
-                    {item.ok ? (
-                      <Check className="w-3.5 h-3.5 text-muted-foreground flex-shrink-0 mt-0.5" />
-                    ) : (
-                      <X className="w-3.5 h-3.5 text-destructive/60 flex-shrink-0 mt-0.5" />
-                    )}
+                    <Check className="w-3.5 h-3.5 text-muted-foreground flex-shrink-0 mt-0.5" />
                     {item.text}
                   </li>
                 ))}
@@ -327,7 +325,7 @@ const BelowFoldContent = ({
                 className="w-full inline-flex items-center justify-center gap-2 border border-border text-foreground font-semibold text-xs py-3 rounded-xl hover:bg-muted transition-colors"
               >
                 <Download className="w-3.5 h-3.5" />
-                <span className="uppercase tracking-wide">Comprar por R$9,90</span>
+                <span className="uppercase tracking-wide">Instalar Manualmente</span>
               </button>
             </div>
 
@@ -353,7 +351,6 @@ const BelowFoldContent = ({
                   "Biblioteca com +100 jogos clássicos",
                   "Jogo pronto para rodar, sem configurar",
                   "Atualizações gratuitas com novos jogos",
-                  "Suporte via comunidade VIP",
                   "Acesso vitalício",
                 ].map((t) => (
                   <li key={t} className="flex items-start gap-2 text-xs text-foreground/90">
@@ -369,10 +366,10 @@ const BelowFoldContent = ({
                 className="group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-3.5 rounded-xl hover:brightness-110 transition-all glow-primary"
               >
                 <Zap className="w-4 h-4 flex-shrink-0" />
-                <span className="uppercase tracking-wide">Quero o pack completo</span>
+                <span className="uppercase tracking-wide">QUERO O PACK COMPLETO</span>
                 <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
               </a>
-              <p className="text-[10px] text-center mt-2" style={{ color: "hsl(35 90% 60%)" }}>+2.800 jogadores já estão jogando</p>
+              <p className="text-[10px] text-center mt-2 text-muted-foreground">Instale tudo automaticamente e comece a jogar em minutos.</p>
             </div>
           </div>
 
@@ -434,7 +431,7 @@ const BelowFoldContent = ({
             className="group w-full mt-6 inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm px-6 py-3.5 rounded-xl hover:brightness-110 transition-all glow-primary"
           >
             <Zap className="w-4 h-4 flex-shrink-0" />
-            <span className="flex flex-col items-center leading-tight"><span className="uppercase tracking-wide">Quero o Pack Completo por R$27</span><span className="text-[10px] font-normal text-background/80">+100 jogos • Instalação automática</span></span>
+            <span className="flex flex-col items-center leading-tight"><span className="uppercase tracking-wide">QUERO O PACK COMPLETO POR R$27</span><span className="text-[10px] font-normal text-background/80">+100 jogos • Instalação automática</span></span>
             <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
           </a>
         </div>
@@ -446,7 +443,7 @@ const BelowFoldContent = ({
         <div className="absolute inset-0 bg-gradient-to-b from-card/80 to-background/80" />
         <div className="container max-w-lg mx-auto text-center relative z-10">
           <h2 className="inline-flex items-center gap-2 text-xl sm:text-2xl font-bold text-foreground uppercase tracking-wide mb-2">
-            <Download className="w-5 h-5 text-primary" /> Download Básico
+            <Download className="w-5 h-5 text-primary" /> Instalação Manual
           </h2>
           <p className="text-muted-foreground text-sm mb-2">Quer apenas o NFS Underground 2?</p>
           <p className="text-muted-foreground text-sm mb-8">Instale manualmente por apenas <strong className="text-foreground">R$9,90</strong>.</p>
@@ -455,7 +452,7 @@ const BelowFoldContent = ({
             className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border-2 border-primary text-primary font-bold text-base px-12 py-4 rounded-xl hover:bg-primary hover:text-primary-foreground transition-all"
           >
             <Download className="w-5 h-5" />
-            <span className="flex flex-col items-center leading-tight"><span className="uppercase tracking-wide">Comprar por R$9,90</span><span className="text-[10px] font-normal opacity-70">Apenas NFS Underground 2</span></span>
+            <span className="flex flex-col items-center leading-tight"><span className="uppercase tracking-wide">Instalar Manualmente</span><span className="text-[10px] font-normal opacity-70">Apenas NFS Underground 2 • R$9,90</span></span>
             <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
           </button>
           <p className="text-muted-foreground text-[11px] mt-4 flex items-center justify-center gap-1.5">
@@ -468,34 +465,29 @@ const BelowFoldContent = ({
       <Dialog open={downloadModalOpen} onOpenChange={setDownloadModalOpen}>
         <DialogContent className="max-w-md sm:max-w-lg p-0 gap-0 border-border bg-card max-h-[90vh] overflow-y-auto [&>button]:z-20 [&>button]:top-5 [&>button]:right-5 [&>button]:text-muted-foreground">
           <DialogHeader className="p-5 pb-3 text-center bg-card z-10">
-            <DialogTitle className="text-base sm:text-lg font-bold text-foreground mt-6">Escolha seu plano</DialogTitle>
-            <DialogDescription className="text-sm text-muted-foreground">Qual experiência você prefere?</DialogDescription>
+            <DialogTitle className="text-base sm:text-lg font-bold text-foreground mt-6">Escolha como quer jogar</DialogTitle>
+            <DialogDescription className="text-sm text-muted-foreground">Duas formas de ter o jogo no seu celular.</DialogDescription>
           </DialogHeader>
           <div className="px-5 pb-5 space-y-4">
             {/* Card Básico */}
             <div className="rounded-xl glass-card p-4 flex flex-col text-center">
-              <h3 className="text-sm font-bold text-foreground mb-1">Básico</h3>
-              <span className="text-[10px] text-muted-foreground mb-3">Apenas NFS Underground 2</span>
+              <h3 className="text-sm font-bold text-foreground mb-1">Instalação Manual</h3>
+              <span className="text-[10px] text-muted-foreground mb-3">Apenas Need for Speed Underground 2</span>
               <ul className="space-y-2 mb-4 flex-1 text-left">
                 {[
-                  { text: "Apenas 1 jogo", ok: true },
-                  { text: "Instalação manual passo a passo", ok: true },
-                  { text: "Configuração por conta própria", ok: false },
-                  { text: "Sem atualizações ou suporte", ok: false },
-                ].map((item) => (
-                  <li key={item.text} className="flex items-start gap-2 text-xs text-muted-foreground">
-                    {item.ok ? (
-                      <Check className="w-3 h-3 flex-shrink-0 mt-0.5 text-muted-foreground" />
-                    ) : (
-                      <X className="w-3 h-3 flex-shrink-0 mt-0.5 text-destructive/60" />
-                    )}
-                    {item.text}
+                  "Apenas Need for Speed Underground 2",
+                  "Instalação manual passo a passo",
+                  "Seguindo o tutorial acima",
+                ].map((text) => (
+                  <li key={text} className="flex items-start gap-2 text-xs text-muted-foreground">
+                    <Check className="w-3 h-3 flex-shrink-0 mt-0.5 text-muted-foreground" />
+                    {text}
                   </li>
                 ))}
               </ul>
               <div className="mb-3"><span className="text-lg font-bold text-foreground">R$9,90</span></div>
               <button onClick={() => { sessionStorage.setItem("dl_auth", "1"); navigate("/download"); }} className="w-full inline-flex items-center justify-center gap-2 border border-border text-foreground font-semibold text-xs py-2.5 rounded-lg hover:bg-muted transition-colors">
-                <span className="uppercase text-[10px]">Comprar por R$9,90</span>
+                <span className="uppercase text-[10px]">Instalar Manualmente</span>
               </button>
             </div>
 
@@ -562,11 +554,12 @@ const BelowFoldContent = ({
         <div className="absolute inset-0 bg-gradient-to-b from-card/90 via-card/70 to-card/90" />
         <div className="container max-w-2xl mx-auto relative z-10">
           <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-foreground mb-2">
-              Escolha Seu Jogo Favorito<br />
-              <span className="text-gradient-primary italic">e Comece a Jogar em 1 Clique</span>
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-foreground mb-2">
+              BIBLIOTECA GAMER COM<br />
+              <span className="text-gradient-primary italic">+100 JOGOS</span>
             </h2>
-            <p className="text-muted-foreground text-sm sm:text-base">+100 jogos prontos para instalar no Android e iPhone</p>
+            <p className="text-muted-foreground text-sm sm:text-base">Clássicos do PS2 e outros jogos adaptados para rodar direto no celular.</p>
+            <p className="text-muted-foreground text-xs mt-1">Novos jogos são adicionados nas atualizações.</p>
           </div>
           <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-10 max-w-md mx-auto">
             {[
@@ -599,7 +592,7 @@ const BelowFoldContent = ({
               Nenhum jogo encontrado para "{searchQuery}"
             </p>
           )}
-          <p className="text-muted-foreground text-[10px] text-center mt-6">E mais jogos adicionados toda semana!</p>
+          <p className="text-muted-foreground text-[10px] text-center mt-6">Novos jogos são adicionados nas atualizações.</p>
         </div>
       </section>
 
@@ -674,6 +667,8 @@ const BelowFoldContent = ({
               </div>
 
               {/* CTA */}
+              <h3 className="text-lg font-bold text-foreground mb-4">COMECE A JOGAR AGORA</h3>
+
               <a
                 href="https://pay.lowify.com.br/checkout.php?product_id=QnPBLL"
                 target="_blank"
@@ -681,7 +676,7 @@ const BelowFoldContent = ({
                 className="group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-base py-4 px-6 rounded-xl hover:brightness-110 transition-all glow-primary overflow-hidden"
               >
                 <Zap className="w-5 h-5 flex-shrink-0" />
-                <span className="flex flex-col items-center leading-tight"><span className="uppercase tracking-wide">QUERO INSTALAR EM 1 CLIQUE</span><span className="text-[10px] font-normal text-background/80">Jogo pronto para jogar</span></span>
+                <span className="uppercase tracking-wide">QUERO INSTALAR EM 1 CLIQUE</span>
                 <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
               </a>
 
@@ -726,8 +721,8 @@ const BelowFoldContent = ({
               ))}
               <span className="text-xs text-muted-foreground ml-1">4.9/5</span>
             </div>
-            <p className="text-foreground font-bold text-lg">Comunidade com +2.800 jogadores</p>
-            <p className="text-muted-foreground text-xs mt-1">que já estão jogando no celular</p>
+            <p className="text-foreground font-bold text-lg">+2.800 JOGADORES JÁ ESTÃO JOGANDO</p>
+            <p className="text-muted-foreground text-xs mt-1">Milhares de jogadores já estão rodando clássicos diretamente no celular.</p>
           </div>
 
           {/* Feed de atividade recente */}
@@ -737,7 +732,7 @@ const BelowFoldContent = ({
           <div className="grid grid-cols-3 gap-3">
             {[
               { value: "2.847", label: "Instalações", icon: "📲" },
-              { value: "4.9★", label: "Avaliação", icon: "⭐" },
+              { value: "4.9/5", label: "Avaliação", icon: "⭐" },
               { value: "100+", label: "Jogos", icon: "🎮" },
             ].map((stat) => (
               <div key={stat.label} className="glass-card rounded-xl p-3 text-center border border-border/50">

@@ -56,7 +56,7 @@ const Index = () => {
             </h1>
 
             <p className="text-muted-foreground text-sm sm:text-base mb-6 max-w-md mx-auto">
-              Veja como rodar o clássico que dominou PS2 e PC direto no seu Android ou iPhone.
+              Veja como rodar o clássico que dominou PS2 e PC diretamente no seu Android ou iPhone.
             </p>
 
             {/* VTurb Video Player */}
@@ -73,6 +73,7 @@ const Index = () => {
               {[
                 "Funciona em Android e iPhone",
                 "Não precisa de console",
+                "Instalação simples",
                 "A partir de R$9,90",
               ].map((text) => (
                 <li key={text} className="flex items-center gap-2 text-sm text-foreground/90">
@@ -87,6 +88,7 @@ const Index = () => {
               className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-primary text-primary-foreground font-bold text-sm px-10 py-4 rounded-xl hover:brightness-110 transition-all glow-primary"
             >
               <span className="flex flex-col items-center leading-tight"><span className="uppercase tracking-wide">VER COMO JOGAR NO CELULAR</span><span className="text-[10px] font-normal text-background/80">Tutorial rápido e fácil</span></span>
+
               <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
             </button>
 
