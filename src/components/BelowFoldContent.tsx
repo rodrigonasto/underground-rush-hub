@@ -196,10 +196,10 @@ const TutorialSection = () => {
             <Suspense fallback={<div className="w-full bg-muted animate-pulse rounded-2xl" style={{ aspectRatio: "888/1920" }} />}>
               <VTurbPlayer playerId="69aa29eea584f1a405f84d6b" visible={platform === "ios"} vertical />
             </Suspense>
-            <p className="text-muted-foreground text-xs text-center">
+            <p className="text-muted-foreground text-sm text-center">
               ⚡ Este vídeo mostra como funciona o processo de instalação.
             </p>
-            <p className="text-muted-foreground text-[11px] text-center">
+            <p className="text-muted-foreground text-sm text-center">
               Os arquivos e o instalador são liberados após a compra.
             </p>
           </div>
