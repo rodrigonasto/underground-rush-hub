@@ -651,8 +651,8 @@ const BelowFoldContent = ({
             ].map((item) => (
               <div key={item.label} className="glass-card rounded-xl p-3 text-center">
                 <span className="text-lg block mb-1">{item.icon}</span>
-                <span className="text-[10px] text-muted-foreground block">{item.label}</span>
-                <span className="text-xs font-bold text-primary">{item.highlight}</span>
+                <span className="text-xs text-muted-foreground block">{item.label}</span>
+                <span className="text-sm font-bold text-primary">{item.highlight}</span>
               </div>
             ))}
           </div>
