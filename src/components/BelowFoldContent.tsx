@@ -196,6 +196,9 @@ const TutorialSection = () => {
             <p className="text-muted-foreground text-xs text-center">
               ⚠️ O vídeo usa outro jogo como exemplo, mas o processo de instalação é o mesmo.
             </p>
+            <p className="text-primary/80 text-xs text-center mt-2 font-medium">
+              Se preferir instalar tudo automaticamente com +100 jogos prontos para jogar, escolha o Pack Completo abaixo.
+            </p>
           </div>
         </div>
       </div>
