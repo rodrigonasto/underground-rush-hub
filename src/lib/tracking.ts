@@ -19,6 +19,6 @@ export const trackCheckoutClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     // Longer delay to let UTMify pixel fully process the IC event
     setTimeout(() => {
       window.location.href = href;
-    }, 150);
+    }, 600);
   }
 };
