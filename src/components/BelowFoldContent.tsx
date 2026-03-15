@@ -1,12 +1,7 @@
-import { useState, useEffect, useRef, useMemo, useCallback, lazy, Suspense } from "react";
+import { useState, useEffect, useRef, useMemo, useCallback, lazy, Suspense, type MouseEvent } from "react";
 import { Download, Check, X, Smartphone, ShieldCheck, Zap, Star, Search, ChevronRight, Sparkles } from "lucide-react";
 import GameCover from "@/components/GameCover";
 import { CDN_BASE_URL } from "@/lib/cdn";
-
-/** Opens URL in new tab after a short delay so UTMify pixel captures the click */
-const openWithDelay = (url: string, delayMs = 300) => {
-  setTimeout(() => window.open(url, "_blank", "noopener,noreferrer"), delayMs);
-};
 import {
   Dialog,
   DialogContent,
@@ -14,6 +9,22 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
+
+/** Keeps destination URL on the CTA while delaying navigation for click capture */
+const openCheckoutWithTracking = (event: MouseEvent<HTMLAnchorElement>, delayMs = 300) => {
+  event.preventDefault();
+  const destination = event.currentTarget.href;
+  const newTab = window.open("about:blank", "_blank", "noopener,noreferrer");
+
+  setTimeout(() => {
+    if (newTab) {
+      newTab.location.href = destination;
+      return;
+    }
+
+    window.open(destination, "_blank", "noopener,noreferrer");
+  }, delayMs);
+};
 
 const VTurbPlayer = lazy(() => import("@/components/VTurbPlayer"));
 
