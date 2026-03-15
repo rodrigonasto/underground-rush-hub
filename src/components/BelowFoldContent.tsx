@@ -471,28 +471,23 @@ const BelowFoldContent = ({
           <div className="px-5 pb-5 space-y-4">
             {/* Card Básico */}
             <div className="rounded-xl glass-card p-4 flex flex-col text-center">
-              <h3 className="text-sm font-bold text-foreground mb-1">Básico</h3>
-              <span className="text-[10px] text-muted-foreground mb-3">Apenas NFS Underground 2</span>
+              <h3 className="text-sm font-bold text-foreground mb-1">Instalação Manual</h3>
+              <span className="text-[10px] text-muted-foreground mb-3">Apenas Need for Speed Underground 2</span>
               <ul className="space-y-2 mb-4 flex-1 text-left">
                 {[
-                  { text: "Apenas 1 jogo", ok: true },
-                  { text: "Instalação manual passo a passo", ok: true },
-                  { text: "Configuração por conta própria", ok: false },
-                  { text: "Sem atualizações ou suporte", ok: false },
-                ].map((item) => (
-                  <li key={item.text} className="flex items-start gap-2 text-xs text-muted-foreground">
-                    {item.ok ? (
-                      <Check className="w-3 h-3 flex-shrink-0 mt-0.5 text-muted-foreground" />
-                    ) : (
-                      <X className="w-3 h-3 flex-shrink-0 mt-0.5 text-destructive/60" />
-                    )}
-                    {item.text}
+                  "Apenas Need for Speed Underground 2",
+                  "Instalação manual passo a passo",
+                  "Seguindo o tutorial acima",
+                ].map((text) => (
+                  <li key={text} className="flex items-start gap-2 text-xs text-muted-foreground">
+                    <Check className="w-3 h-3 flex-shrink-0 mt-0.5 text-muted-foreground" />
+                    {text}
                   </li>
                 ))}
               </ul>
               <div className="mb-3"><span className="text-lg font-bold text-foreground">R$9,90</span></div>
               <button onClick={() => { sessionStorage.setItem("dl_auth", "1"); navigate("/download"); }} className="w-full inline-flex items-center justify-center gap-2 border border-border text-foreground font-semibold text-xs py-2.5 rounded-lg hover:bg-muted transition-colors">
-                <span className="uppercase text-[10px]">Comprar por R$9,90</span>
+                <span className="uppercase text-[10px]">Instalar Manualmente</span>
               </button>
             </div>
 
