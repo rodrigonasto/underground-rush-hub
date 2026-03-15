@@ -207,7 +207,7 @@ const TutorialSection = () => {
 
         {/* Transição para premium */}
         <div className="mt-8 text-center">
-          <p className="text-primary/80 text-xs font-medium mb-4">
+          <p className="text-primary/80 text-sm font-medium mb-4">
             Escolha abaixo a forma de instalação que prefere.
           </p>
           <button
@@ -217,7 +217,7 @@ const TutorialSection = () => {
             <span className="uppercase tracking-wide">ESCOLHER COMO INSTALAR</span>
             <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
           </button>
-          <p className="text-muted-foreground text-[10px] mt-2">
+          <p className="text-muted-foreground text-xs mt-2">
             Manual ou instalação automática
           </p>
         </div>
