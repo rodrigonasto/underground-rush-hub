@@ -342,9 +342,6 @@ const DownloadPage = () => {
 
               <a
                 href="https://checkout.jogosmobileclub.com.br/checkout?p=168e0566bf495bf16b249a4174a6478c"
-                target="_blank"
-                rel="noopener noreferrer"
-                
                 className="card group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-4 px-6 rounded-xl hover:brightness-110 transition-all glow-primary overflow-hidden"
               >
                 <Zap className="w-4 h-4 flex-shrink-0" />
