@@ -416,7 +416,7 @@ const BelowFoldContent = ({
                 <span className="text-2xl font-extrabold text-foreground">R$9</span>
                 <span className="text-foreground text-base font-bold">,90</span>
               </div>
-              <p className="text-muted-foreground text-xs mb-4">Instale o jogo manualmente seguindo o tutorial.</p>
+              <p className="text-muted-foreground text-sm mb-4">Instale o jogo manualmente seguindo o tutorial.</p>
               <ul className="space-y-2.5 mb-5">
                 {[
                   "Apenas 1 jogo (Need for Speed Underground 2)",
