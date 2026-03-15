@@ -283,58 +283,103 @@ const BelowFoldContent = ({
       <TutorialSection />
 
       {/* ─── 2. TRANSIÇÃO PARA OFERTA ─── */}
-      <div className="flex items-center justify-center gap-2 px-4 py-2.5 mx-auto mb-2 max-w-md rounded-full glass-card border border-primary/20">
-        <Download className="w-3.5 h-3.5 text-primary flex-shrink-0" />
-        <span className="text-xs font-medium text-primary/90">O download gratuito está disponível logo abaixo</span>
-      </div>
       <section className="px-5 py-12">
         <div className="container max-w-lg mx-auto text-center">
+          <div className="inline-flex items-center gap-1.5 text-primary text-[11px] font-semibold uppercase tracking-widest mb-4">
+            <Zap className="w-3.5 h-3.5" /> Escolha seu plano
+          </div>
           <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
-            <Zap className="w-5 h-5 text-primary inline-block mr-1.5 -mt-0.5" />VOCÊ PODE INSTALAR DE 2 JEITOS
+            ESCOLHA COMO QUER JOGAR
           </h2>
-          <p className="text-muted-foreground text-sm mb-1 max-w-md mx-auto">
-            O método manual funciona…
-          </p>
-          <p className="text-foreground/70 text-sm font-medium max-w-md mx-auto mb-8">
-            mas exige alguns passos.
+          <p className="text-muted-foreground text-sm mb-8 max-w-md mx-auto">
+            Duas formas de ter o jogo no seu celular. Escolha a que faz mais sentido pra você.
           </p>
 
-          {/* Friction block */}
-          <div className="rounded-xl glass-card p-5 mb-8 text-left max-w-sm mx-auto">
-            <p className="text-muted-foreground text-xs font-semibold mb-3 text-center uppercase tracking-wider">
-              Quem instala manualmente precisa:
-            </p>
-            <ul className="space-y-2.5">
-              {[
-                "Baixar vários arquivos",
-                "Configurar o emulador",
-                "Ajustar controles",
-                "Resolver possíveis erros",
-              ].map((t) => (
-                <li key={t} className="flex items-center gap-2.5 text-sm text-muted-foreground">
-                  <X className="w-3.5 h-3.5 text-destructive flex-shrink-0" />
-                  {t}
-                </li>
-              ))}
-            </ul>
+          {/* ── PRICING CARDS SIDE BY SIDE ── */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            {/* Card Básico — R$9,90 */}
+            <div className="rounded-2xl glass-card p-5 text-left relative border border-border">
+              <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Básico</span>
+              <div className="flex items-baseline gap-1 mt-2 mb-3">
+                <span className="text-3xl font-extrabold text-foreground">R$9</span>
+                <span className="text-foreground text-lg font-bold">,90</span>
+              </div>
+              <p className="text-muted-foreground text-xs mb-4">Apenas o jogo NFS Underground 2</p>
+              <ul className="space-y-2.5 mb-5">
+                {[
+                  { text: "Apenas 1 jogo (NFS Underground 2)", ok: true },
+                  { text: "Instalação manual passo a passo", ok: true },
+                  { text: "Configuração por conta própria", ok: false },
+                  { text: "Sem suporte ou atualizações", ok: false },
+                ].map((item) => (
+                  <li key={item.text} className="flex items-start gap-2 text-xs text-muted-foreground">
+                    {item.ok ? (
+                      <Check className="w-3.5 h-3.5 text-muted-foreground flex-shrink-0 mt-0.5" />
+                    ) : (
+                      <X className="w-3.5 h-3.5 text-destructive/60 flex-shrink-0 mt-0.5" />
+                    )}
+                    {item.text}
+                  </li>
+                ))}
+              </ul>
+              <button
+                onClick={() => setDownloadModalOpen(true)}
+                className="w-full inline-flex items-center justify-center gap-2 border border-border text-foreground font-semibold text-xs py-3 rounded-xl hover:bg-muted transition-colors"
+              >
+                <Download className="w-3.5 h-3.5" />
+                <span className="uppercase tracking-wide">Comprar por R$9,90</span>
+              </button>
+            </div>
+
+            {/* Card Premium — R$27 */}
+            <div className="rounded-2xl p-5 text-left relative overflow-hidden border-2 border-primary shadow-[0_0_30px_-6px_hsl(var(--primary)/0.3)]" style={{ background: "linear-gradient(180deg, hsl(142 72% 50% / 0.08), hsl(150 6% 8%))" }}>
+              <div className="absolute top-0 inset-x-0 h-0.5 shimmer-border" />
+              {/* Badge mais popular */}
+              <div className="absolute -top-0 right-4 bg-primary text-primary-foreground text-[9px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-b-lg shadow-lg">
+                ⭐ Mais popular
+              </div>
+              <div className="flex items-center gap-2 mb-2">
+                <Zap className="w-4 h-4 text-primary" />
+                <span className="text-xs font-bold text-primary uppercase tracking-wider">Completo</span>
+              </div>
+              <div className="flex items-baseline gap-1 mt-1 mb-1">
+                <span className="text-3xl font-extrabold text-gradient-primary">R$27</span>
+                <span className="text-muted-foreground text-lg">,00</span>
+              </div>
+              <p className="text-muted-foreground text-[10px] mb-4">Pagamento único • Acesso vitalício</p>
+              <ul className="space-y-2.5 mb-5">
+                {[
+                  "Instalação automática em 1 clique",
+                  "Biblioteca com +100 jogos clássicos",
+                  "Jogo pronto para rodar, sem configurar",
+                  "Atualizações gratuitas com novos jogos",
+                  "Suporte via comunidade VIP",
+                  "Acesso vitalício",
+                ].map((t) => (
+                  <li key={t} className="flex items-start gap-2 text-xs text-foreground/90">
+                    <Check className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
+                    {t}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="https://pay.lowify.com.br/checkout.php?product_id=QnPBLL"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-3.5 rounded-xl hover:brightness-110 transition-all glow-primary"
+              >
+                <Zap className="w-4 h-4 flex-shrink-0" />
+                <span className="uppercase tracking-wide">Quero o pack completo</span>
+                <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
+              </a>
+              <p className="text-[10px] text-center mt-2" style={{ color: "hsl(35 90% 60%)" }}>+2.800 jogadores já estão jogando</p>
+            </div>
           </div>
 
-          {/* Transition text */}
-          <p className="text-foreground font-bold text-base mb-1">
-            Por isso criamos a <span className="text-primary">instalação automática</span>.
-          </p>
-          <p className="text-muted-foreground text-sm max-w-sm mx-auto mb-6">
-            Um método que prepara tudo para você jogar sem precisar configurar nada.
-          </p>
-
-          {/* Social proof micro */}
-          <div className="inline-flex items-center gap-2 glass-card text-xs font-medium px-4 py-2 rounded-full text-foreground/80">
-            <div className="flex -space-x-1.5">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-3 h-3 fill-amber-400 text-amber-400" />
-              ))}
-            </div>
-            <span>Mais de 2.800 jogadores já escolheram a automática</span>
+          {/* Economia */}
+          <div className="inline-flex items-center gap-2 glass-card text-xs font-medium px-5 py-2.5 rounded-full text-foreground/80 border border-primary/20">
+            <Sparkles className="w-3.5 h-3.5 text-primary" />
+            <span>O pack completo sai por <strong className="text-primary">menos de R$0,27 por jogo</strong></span>
           </div>
         </div>
       </section>
