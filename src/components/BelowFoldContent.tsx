@@ -145,11 +145,14 @@ const TutorialSection = () => {
       <div className="container max-w-lg mx-auto">
         <div className="text-center mb-8">
           <span className="inline-flex items-center gap-1.5 text-primary text-[11px] font-semibold uppercase tracking-widest mb-3">
-            <Sparkles className="w-3.5 h-3.5" /> Tutorial
+            <Sparkles className="w-3.5 h-3.5" /> Demonstração
           </span>
-          <h2 className="text-xl sm:text-2xl font-bold text-foreground">COMO INSTALAR NO CELULAR</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-foreground">COMO FUNCIONA A INSTALAÇÃO NO CELULAR</h2>
           <p className="text-muted-foreground text-sm mt-2">
-            Assista ao vídeo abaixo e siga o passo a passo para rodar Need for Speed Underground 2 no celular.
+            Veja no vídeo abaixo como o jogo roda no celular e como funciona o processo de instalação.
+          </p>
+          <p className="text-muted-foreground/70 text-xs mt-1.5">
+            Após adquirir o acesso, você recebe os arquivos e o instalador necessários para jogar no celular.
           </p>
         </div>
 
@@ -174,32 +177,52 @@ const TutorialSection = () => {
 
         <div style={{ display: platform === "android" ? "block" : "none" }}>
           <div className="space-y-4">
-            <h3 className="text-base font-bold text-foreground text-center">Tutorial Android</h3>
+            <h3 className="text-base font-bold text-foreground text-center">Instalação no Android</h3>
             <Suspense fallback={<div className="w-full bg-muted animate-pulse rounded-2xl" style={{ aspectRatio: "16/9" }} />}>
               <VTurbPlayer playerId="69b22b5e005f4e6dada6b831" visible={platform === "android"} />
             </Suspense>
             <p className="text-muted-foreground text-xs text-center">
-              ⚡ Este método é manual e exige seguir os passos mostrados no vídeo.
+              ⚡ Este vídeo mostra como funciona o processo de instalação.
             </p>
-            <p className="text-primary/80 text-xs text-center mt-2 font-medium">
-              Se preferir instalar tudo automaticamente com +100 jogos prontos para jogar, escolha o Pack Completo abaixo.
+            <p className="text-muted-foreground text-[11px] text-center">
+              Os arquivos e o instalador são liberados após a compra.
             </p>
           </div>
         </div>
 
         <div style={{ display: platform === "ios" ? "block" : "none" }}>
           <div className="space-y-4">
-            <h3 className="text-base font-bold text-foreground text-center">Tutorial iPhone (iOS)</h3>
+            <h3 className="text-base font-bold text-foreground text-center">Instalação no iPhone (iOS)</h3>
             <Suspense fallback={<div className="w-full bg-muted animate-pulse rounded-2xl" style={{ aspectRatio: "888/1920" }} />}>
               <VTurbPlayer playerId="69aa29eea584f1a405f84d6b" visible={platform === "ios"} vertical />
             </Suspense>
             <p className="text-muted-foreground text-xs text-center">
-              ⚠️ O vídeo usa outro jogo como exemplo, mas o processo de instalação é o mesmo.
+              ⚡ Este vídeo mostra como funciona o processo de instalação.
             </p>
-            <p className="text-primary/80 text-xs text-center mt-2 font-medium">
-              Se preferir instalar tudo automaticamente com +100 jogos prontos para jogar, escolha o Pack Completo abaixo.
+            <p className="text-muted-foreground text-[11px] text-center">
+              Os arquivos e o instalador são liberados após a compra.
             </p>
           </div>
+        </div>
+
+        {/* Transição para premium */}
+        <div className="mt-8 text-center">
+          <p className="text-primary/80 text-xs font-medium mb-4">
+            Se preferir instalar tudo automaticamente com +100 jogos prontos para jogar, escolha o Pack Completo abaixo.
+          </p>
+          <a
+            href="https://pay.lowify.com.br/checkout.php?product_id=QnPBLL"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm px-8 py-3.5 rounded-xl hover:brightness-110 transition-all glow-primary"
+          >
+            <Zap className="w-4 h-4 flex-shrink-0" />
+            <span className="uppercase tracking-wide">QUERO O PACK COMPLETO</span>
+            <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
+          </a>
+          <p className="text-muted-foreground text-[10px] mt-2">
+            Instalação automática • +100 jogos clássicos • Acesso vitalício
+          </p>
         </div>
       </div>
     </section>
