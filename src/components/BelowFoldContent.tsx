@@ -412,7 +412,7 @@ const BelowFoldContent = ({
           {/* Economia */}
           <div className="inline-flex items-center gap-2 glass-card text-xs font-medium px-5 py-2.5 rounded-full text-foreground/80 border border-primary/20">
             <Sparkles className="w-3.5 h-3.5 text-primary" />
-            <span>O pack completo sai por <strong className="text-primary">menos de R$0,27 por jogo</strong></span>
+            <span>Instalação automática por <strong className="text-primary">menos de R$0,27 por jogo</strong></span>
           </div>
         </div>
       </section>
