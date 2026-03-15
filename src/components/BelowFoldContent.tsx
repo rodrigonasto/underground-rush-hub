@@ -532,7 +532,7 @@ const BelowFoldContent = ({
             <Download className="w-5 h-5" />
             <span className="uppercase tracking-wide">Instalar Manualmente</span>
             <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-          </a>
+          </button>
 
           <p className="text-muted-foreground text-xs mt-3">Apenas NFS Underground 2 • Processo manual</p>
           <p className="text-muted-foreground text-xs mt-1.5">⚠️ Requer seguir o tutorial e configurar manualmente.</p>
