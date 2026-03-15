@@ -431,7 +431,7 @@ const BelowFoldContent = ({
             className="group w-full mt-6 inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm px-6 py-3.5 rounded-xl hover:brightness-110 transition-all glow-primary"
           >
             <Zap className="w-4 h-4 flex-shrink-0" />
-            <span className="flex flex-col items-center leading-tight"><span className="uppercase tracking-wide">Quero o Pack Completo por R$27</span><span className="text-[10px] font-normal text-background/80">+100 jogos • Instalação automática</span></span>
+            <span className="flex flex-col items-center leading-tight"><span className="uppercase tracking-wide">QUERO O PACK COMPLETO POR R$27</span><span className="text-[10px] font-normal text-background/80">+100 jogos • Instalação automática</span></span>
             <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
           </a>
         </div>
