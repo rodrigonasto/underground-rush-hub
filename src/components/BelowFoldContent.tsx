@@ -151,7 +151,7 @@ const TutorialSection = () => {
           <p className="text-muted-foreground text-sm mt-2">
             Veja no vídeo abaixo como o jogo roda no celular e como funciona o processo de instalação.
           </p>
-          <p className="text-muted-foreground/70 text-xs mt-1.5">
+          <p className="text-muted-foreground text-sm mt-2">
             Após adquirir o acesso, você recebe os arquivos e o instalador necessários para jogar no celular.
           </p>
         </div>
@@ -181,10 +181,10 @@ const TutorialSection = () => {
             <Suspense fallback={<div className="w-full bg-muted animate-pulse rounded-2xl" style={{ aspectRatio: "16/9" }} />}>
               <VTurbPlayer playerId="69b22b5e005f4e6dada6b831" visible={platform === "android"} />
             </Suspense>
-            <p className="text-muted-foreground text-xs text-center">
+            <p className="text-muted-foreground text-sm text-center">
               ⚡ Este vídeo mostra como funciona o processo de instalação.
             </p>
-            <p className="text-muted-foreground text-[11px] text-center">
+            <p className="text-muted-foreground text-sm text-center">
               Os arquivos e o instalador são liberados após a compra.
             </p>
           </div>
@@ -196,10 +196,10 @@ const TutorialSection = () => {
             <Suspense fallback={<div className="w-full bg-muted animate-pulse rounded-2xl" style={{ aspectRatio: "888/1920" }} />}>
               <VTurbPlayer playerId="69aa29eea584f1a405f84d6b" visible={platform === "ios"} vertical />
             </Suspense>
-            <p className="text-muted-foreground text-xs text-center">
+            <p className="text-muted-foreground text-sm text-center">
               ⚡ Este vídeo mostra como funciona o processo de instalação.
             </p>
-            <p className="text-muted-foreground text-[11px] text-center">
+            <p className="text-muted-foreground text-sm text-center">
               Os arquivos e o instalador são liberados após a compra.
             </p>
           </div>
@@ -207,7 +207,7 @@ const TutorialSection = () => {
 
         {/* Transição para premium */}
         <div className="mt-8 text-center">
-          <p className="text-primary/80 text-xs font-medium mb-4">
+          <p className="text-primary/80 text-sm font-medium mb-4">
             Escolha abaixo a forma de instalação que prefere.
           </p>
           <button
@@ -217,7 +217,7 @@ const TutorialSection = () => {
             <span className="uppercase tracking-wide">ESCOLHER COMO INSTALAR</span>
             <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
           </button>
-          <p className="text-muted-foreground text-[10px] mt-2">
+          <p className="text-muted-foreground text-xs mt-2">
             Manual ou instalação automática
           </p>
         </div>
@@ -332,10 +332,10 @@ const BelowFoldContent = ({
               ))}
             </ul>
             <div className="h-px bg-border my-4" />
-            <p className="text-muted-foreground text-xs text-center">
+            <p className="text-muted-foreground text-sm text-center">
               Se o seu celular roda jogos da Play Store ou App Store, ele provavelmente roda esses jogos também.
             </p>
-            <p className="text-xs text-center mt-2 font-semibold" style={{ color: "hsl(35 90% 60%)" }}>
+            <p className="text-sm text-center mt-2 font-semibold" style={{ color: "hsl(35 90% 60%)" }}>
               +2.800 jogadores já estão rodando no celular
             </p>
           </div>
@@ -354,7 +354,7 @@ const BelowFoldContent = ({
           <p className="text-muted-foreground text-sm mb-2 max-w-md mx-auto">
             Escolha como deseja instalar no celular:
           </p>
-          <p className="text-muted-foreground/60 text-[11px] mb-8">
+          <p className="text-muted-foreground text-xs mb-8">
             A maioria dos jogadores escolhe a instalação automática.
           </p>
 
@@ -371,7 +371,7 @@ const BelowFoldContent = ({
                 <Zap className="w-4 h-4 text-primary" />
                 <span className="text-xs font-bold text-primary uppercase tracking-wider">Instalação Automática + Biblioteca Gamer</span>
               </div>
-              <p className="text-muted-foreground text-xs mb-3">Instalação automática com biblioteca completa de jogos.</p>
+              <p className="text-muted-foreground text-sm mb-3">Instalação automática com biblioteca completa de jogos.</p>
               <div className="flex justify-center">
                 <div className="inline-flex items-center gap-1.5 text-[10px] font-bold px-3 py-1 rounded-full mb-2 border pulse" style={{ color: "hsl(25 95% 60%)", borderColor: "hsl(25 95% 55% / 0.3)", background: "hsl(25 95% 55% / 0.1)" }}>
                   Oferta promocional disponível hoje
@@ -381,7 +381,7 @@ const BelowFoldContent = ({
                 <span className="text-4xl font-extrabold text-gradient-primary">R$27</span>
                 <span className="text-muted-foreground text-lg">,00</span>
               </div>
-              <p className="text-muted-foreground text-[10px] mb-5">Pagamento único • Acesso vitalício</p>
+              <p className="text-muted-foreground text-xs mb-5">Pagamento único • Acesso vitalício</p>
               <ul className="space-y-2.5 mb-6">
                 {[
                   "Instalador automático em 1 clique",
@@ -390,7 +390,7 @@ const BelowFoldContent = ({
                   "Acesso vitalício",
                   "Atualizações gratuitas",
                 ].map((t) => (
-                  <li key={t} className="flex items-start gap-2 text-xs text-foreground/90">
+                  <li key={t} className="flex items-start gap-2 text-sm text-foreground/90">
                     <Check className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
                     {t}
                   </li>
@@ -406,7 +406,7 @@ const BelowFoldContent = ({
                 <span className="uppercase tracking-wide">INSTALAR EM 1 CLIQUE</span>
                 <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
               </a>
-              <p className="text-[10px] text-center mt-2 text-foreground">Instalação automática • Jogo pronto para rodar</p>
+              <p className="text-xs text-center mt-2 text-foreground">Instalação automática • Jogo pronto para rodar</p>
             </div>
 
             {/* Card Manual — R$9,90 (secondary) */}
@@ -416,14 +416,14 @@ const BelowFoldContent = ({
                 <span className="text-2xl font-extrabold text-foreground">R$9</span>
                 <span className="text-foreground text-base font-bold">,90</span>
               </div>
-              <p className="text-muted-foreground text-xs mb-4">Instale o jogo manualmente seguindo o tutorial.</p>
+              <p className="text-muted-foreground text-sm mb-4">Instale o jogo manualmente seguindo o tutorial.</p>
               <ul className="space-y-2.5 mb-5">
                 {[
                   "Apenas 1 jogo (Need for Speed Underground 2)",
                   "Instalação manual passo a passo",
                   "Requer configuração manual",
                 ].map((text) => (
-                  <li key={text} className="flex items-start gap-2 text-xs text-muted-foreground">
+                  <li key={text} className="flex items-start gap-2 text-sm text-muted-foreground">
                     <Check className="w-3.5 h-3.5 text-muted-foreground flex-shrink-0 mt-0.5" />
                     {text}
                   </li>
@@ -436,12 +436,12 @@ const BelowFoldContent = ({
                 <Download className="w-3.5 h-3.5" />
                 <span className="uppercase tracking-wide">Acessar Método Manual</span>
               </button>
-              <p className="text-[10px] text-center mt-2 text-muted-foreground/60">Processo mais demorado</p>
+              <p className="text-xs text-center mt-2 text-muted-foreground/60">Processo mais demorado</p>
             </div>
           </div>
 
           {/* Economia */}
-          <div className="inline-flex items-center gap-2 glass-card text-xs font-medium px-5 py-2.5 rounded-full text-foreground/80 border border-primary/20">
+          <div className="inline-flex items-center gap-2 glass-card text-sm font-medium px-5 py-2.5 rounded-full text-foreground/80 border border-primary/20">
             <Sparkles className="w-3.5 h-3.5 text-primary" />
             <span>Instalação automática por <strong className="text-primary">menos de R$0,27 por jogo</strong></span>
           </div>
@@ -501,7 +501,7 @@ const BelowFoldContent = ({
             <span className="uppercase tracking-wide">INSTALAR EM 1 CLIQUE</span>
             <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
           </a>
-          <p className="text-[10px] text-center mt-2 text-foreground">+100 jogos prontos para jogar no celular</p>
+          <p className="text-xs text-center mt-2 text-foreground">+100 jogos prontos para jogar no celular</p>
         </div>
       </section>
 
@@ -641,7 +641,7 @@ const BelowFoldContent = ({
               <span className="text-gradient-primary italic">+100 JOGOS</span>
             </h2>
             <p className="text-muted-foreground text-sm sm:text-base">Clássicos do PS2 e outros jogos adaptados para rodar direto no celular.</p>
-            <p className="text-muted-foreground text-xs mt-1">Novos jogos são adicionados nas atualizações.</p>
+            <p className="text-muted-foreground text-sm mt-1">Novos jogos são adicionados nas atualizações.</p>
           </div>
           <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-10 max-w-md mx-auto">
             {[
@@ -651,8 +651,8 @@ const BelowFoldContent = ({
             ].map((item) => (
               <div key={item.label} className="glass-card rounded-xl p-3 text-center">
                 <span className="text-lg block mb-1">{item.icon}</span>
-                <span className="text-[10px] text-muted-foreground block">{item.label}</span>
-                <span className="text-xs font-bold text-primary">{item.highlight}</span>
+                <span className="text-xs text-muted-foreground block">{item.label}</span>
+                <span className="text-sm font-bold text-primary">{item.highlight}</span>
               </div>
             ))}
           </div>
@@ -674,7 +674,7 @@ const BelowFoldContent = ({
               Nenhum jogo encontrado para "{searchQuery}"
             </p>
           )}
-          <p className="text-muted-foreground text-[10px] text-center mt-6">Novos jogos são adicionados nas atualizações.</p>
+          <p className="text-muted-foreground text-xs text-center mt-6">Novos jogos são adicionados nas atualizações.</p>
         </div>
       </section>
 
@@ -749,7 +749,7 @@ const BelowFoldContent = ({
                     <span className="text-muted-foreground text-lg">,00</span>
                   </div>
                 </div>
-                <p className="text-xs text-center mt-1.5" style={{ color: "hsl(35 90% 60%)" }}>+2.800 jogadores já estão jogando</p>
+                <p className="text-sm text-center mt-1.5" style={{ color: "hsl(35 90% 60%)" }}>+2.800 jogadores já estão jogando</p>
               </div>
 
               {/* CTA */}
@@ -765,9 +765,9 @@ const BelowFoldContent = ({
                 <span className="uppercase tracking-wide">INSTALAR EM 1 CLIQUE</span>
                 <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
               </a>
-              <p className="text-[10px] text-center mt-2 text-foreground">+100 jogos prontos para jogar no celular</p>
+              <p className="text-xs text-center mt-2 text-foreground">+100 jogos prontos para jogar no celular</p>
 
-              <p className="text-muted-foreground text-xs mt-3">
+              <p className="text-muted-foreground text-sm mt-3">
                 Pagamento único • Acesso imediato após o pagamento
               </p>
             </div>
@@ -809,7 +809,7 @@ const BelowFoldContent = ({
               <span className="text-xs text-muted-foreground ml-1">4.9/5</span>
             </div>
             <p className="text-foreground font-bold text-lg">+2.800 JOGADORES JÁ ESTÃO JOGANDO</p>
-            <p className="text-muted-foreground text-xs mt-1">Milhares de jogadores já estão rodando clássicos diretamente no celular.</p>
+            <p className="text-muted-foreground text-sm mt-1">Milhares de jogadores já estão rodando clássicos diretamente no celular.</p>
           </div>
 
           {/* Feed de atividade recente */}
@@ -825,7 +825,7 @@ const BelowFoldContent = ({
               <div key={stat.label} className="glass-card rounded-xl p-3 text-center border border-border/50">
                 <p className="text-lg mb-0.5">{stat.icon}</p>
                 <p className="text-foreground font-bold text-sm">{stat.value}</p>
-                <p className="text-muted-foreground text-[10px]">{stat.label}</p>
+                <p className="text-muted-foreground text-xs">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -850,7 +850,7 @@ const BelowFoldContent = ({
             ].map(({ q, a }) => (
               <div key={q} className="rounded-xl glass-card p-5">
                 <h3 className="text-sm font-semibold text-foreground mb-1.5">{q}</h3>
-                <p className="text-muted-foreground text-xs leading-relaxed">{a}</p>
+                <p className="text-muted-foreground text-sm leading-relaxed">{a}</p>
               </div>
             ))}
           </div>
@@ -861,10 +861,10 @@ const BelowFoldContent = ({
       <footer className="px-5 py-10 border-t border-border">
         <div className="container max-w-lg mx-auto text-center space-y-2">
           <p className="text-foreground text-sm font-semibold">Pagamento único • Sem mensalidade • Acesso vitalício</p>
-          <p className="text-muted-foreground text-xs">
+          <p className="text-muted-foreground text-sm">
             Acesso liberado imediatamente após o pagamento.
           </p>
-          <p className="text-muted-foreground text-xs">
+          <p className="text-muted-foreground text-sm">
             Instalador automático + biblioteca gamer com +100 jogos.
           </p>
           <p className="text-muted-foreground text-[10px] mt-4">© 2026 JogosMobileClub. Todos os direitos reservados.</p>
