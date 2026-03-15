@@ -305,6 +305,43 @@ const BelowFoldContent = ({
       {/* ─── 1. TUTORIAL ─── */}
       <TutorialSection />
 
+      {/* ─── COMPATIBILIDADE ─── */}
+      <section className="px-5 py-10">
+        <div className="container max-w-lg mx-auto">
+          <div className="text-center mb-5">
+            <span className="inline-flex items-center gap-1.5 text-primary text-[11px] font-semibold uppercase tracking-widest mb-3">
+              <Smartphone className="w-3.5 h-3.5" /> Compatibilidade
+            </span>
+            <h2 className="text-xl sm:text-2xl font-bold text-foreground">FUNCIONA NO MEU CELULAR?</h2>
+            <p className="text-muted-foreground text-sm mt-2">
+              Sim. A maioria dos celulares Android e iPhone consegue rodar os jogos normalmente.
+            </p>
+          </div>
+          <div className="glass-card rounded-2xl p-5 border border-border/50">
+            <ul className="space-y-3 mb-4">
+              {[
+                "Funciona em celulares Android e iPhone",
+                "Não precisa de celular gamer",
+                "Funciona na maioria dos aparelhos",
+                "O instalador automático configura tudo para você",
+              ].map((t) => (
+                <li key={t} className="flex items-start gap-2.5 text-sm text-foreground/90">
+                  <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="h-px bg-border my-4" />
+            <p className="text-muted-foreground text-xs text-center">
+              Se o seu celular roda jogos da Play Store ou App Store, ele provavelmente roda esses jogos também.
+            </p>
+            <p className="text-xs text-center mt-2 font-semibold" style={{ color: "hsl(35 90% 60%)" }}>
+              +2.800 jogadores já estão rodando no celular
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ─── 2. TRANSIÇÃO PARA OFERTA ─── */}
       <section id="instalacao" className="px-5 py-12">
         <div className="container max-w-lg mx-auto text-center">
