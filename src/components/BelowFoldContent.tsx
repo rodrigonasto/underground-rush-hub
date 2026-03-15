@@ -423,7 +423,7 @@ const BelowFoldContent = ({
                   "Instalação manual passo a passo",
                   "Requer configuração manual",
                 ].map((text) => (
-                  <li key={text} className="flex items-start gap-2 text-xs text-muted-foreground">
+                  <li key={text} className="flex items-start gap-2 text-sm text-muted-foreground">
                     <Check className="w-3.5 h-3.5 text-muted-foreground flex-shrink-0 mt-0.5" />
                     {text}
                   </li>
