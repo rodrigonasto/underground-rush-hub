@@ -16,9 +16,9 @@ export const trackCheckoutClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
   const href = e.currentTarget?.href;
   if (href) {
     e.preventDefault();
-    // Small delay to let the pixel fire, then navigate
+    // Longer delay to let UTMify pixel fully process the IC event
     setTimeout(() => {
       window.location.href = href;
-    }, 150);
+    }, 600);
   }
 };
