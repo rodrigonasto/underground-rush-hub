@@ -405,8 +405,6 @@ const BelowFoldContent = ({
               <p className="text-[10px] text-center mt-2 text-muted-foreground/60">Processo mais demorado</p>
             </div>
           </div>
-            </div>
-          </div>
 
           {/* Economia */}
           <div className="inline-flex items-center gap-2 glass-card text-xs font-medium px-5 py-2.5 rounded-full text-foreground/80 border border-primary/20">
