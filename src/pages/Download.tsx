@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Download, ShieldCheck, ExternalLink, Star, Zap, Check, ChevronRight } from "lucide-react";
 import { CDN_BASE_URL } from "@/lib/cdn";
+import { trackCheckoutClick } from "@/lib/tracking";
 import VTurbPlayer from "@/components/VTurbPlayer";
 import SEOHead from "@/components/SEOHead";
 
@@ -341,6 +342,7 @@ const DownloadPage = () => {
               </div>
 
               <a
+                onClick={trackCheckoutClick}
                 href="https://checkout.jogosmobileclub.com.br/checkout?p=168e0566bf495bf16b249a4174a6478c"
                 className="card group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-4 px-6 rounded-xl hover:brightness-110 transition-all glow-primary overflow-hidden"
               >

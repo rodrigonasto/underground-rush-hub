@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useMemo, useCallback, lazy, Suspense } fro
 import { Download, Check, X, Smartphone, ShieldCheck, Zap, Star, Search, ChevronRight, Sparkles } from "lucide-react";
 import GameCover from "@/components/GameCover";
 import { CDN_BASE_URL } from "@/lib/cdn";
+import { trackCheckoutClick } from "@/lib/tracking";
 import {
   Dialog,
   DialogContent,
@@ -398,6 +399,7 @@ const BelowFoldContent = ({
                 ))}
               </ul>
               <a
+                onClick={trackCheckoutClick}
                 href="https://checkout.jogosmobileclub.com.br/checkout?p=168e0566bf495bf16b249a4174a6478c"
                 className="card group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-4 rounded-xl hover:brightness-110 transition-all glow-primary"
               >
@@ -491,6 +493,7 @@ const BelowFoldContent = ({
             </div>
           </div>
           <a
+            onClick={trackCheckoutClick}
             href="https://checkout.jogosmobileclub.com.br/checkout?p=168e0566bf495bf16b249a4174a6478c"
             className="card group w-full mt-6 inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm px-6 py-4 rounded-xl hover:brightness-110 transition-all glow-primary"
           >
@@ -521,9 +524,10 @@ const BelowFoldContent = ({
             Instale manualmente por apenas <strong className="text-primary">R$9,90</strong>
           </p>
 
-          <a
-            href="https://checkout.jogosmobileclub.com.br/checkout?p=88542131ac5a91c1ded108004e5382ab"
-            className="card group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border-2 border-primary text-primary font-bold text-base px-12 py-4 rounded-xl hover:bg-primary hover:text-primary-foreground transition-all"
+            <a
+              onClick={trackCheckoutClick}
+              href="https://checkout.jogosmobileclub.com.br/checkout?p=88542131ac5a91c1ded108004e5382ab"
+              className="card group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border-2 border-primary text-primary font-bold text-base px-12 py-4 rounded-xl hover:bg-primary hover:text-primary-foreground transition-all"
           >
             <Download className="w-5 h-5" />
             <span className="uppercase tracking-wide">Instalar Manualmente</span>
@@ -560,7 +564,7 @@ const BelowFoldContent = ({
                 ))}
               </ul>
               <div className="mb-3"><span className="text-lg font-bold text-foreground">R$9,90</span></div>
-              <a href="https://checkout.jogosmobileclub.com.br/checkout?p=88542131ac5a91c1ded108004e5382ab" className="card w-full inline-flex items-center justify-center gap-2 border border-border text-foreground font-semibold text-xs py-2.5 rounded-lg hover:bg-muted transition-colors">
+              <a onClick={trackCheckoutClick} href="https://checkout.jogosmobileclub.com.br/checkout?p=88542131ac5a91c1ded108004e5382ab" className="card w-full inline-flex items-center justify-center gap-2 border border-border text-foreground font-semibold text-xs py-2.5 rounded-lg hover:bg-muted transition-colors">
                 <span className="uppercase text-[10px]">Instalar Manualmente</span>
               </a>
             </div>
@@ -607,6 +611,7 @@ const BelowFoldContent = ({
                 </div>
 
                 <a
+                  onClick={trackCheckoutClick}
                   href="https://checkout.jogosmobileclub.com.br/checkout?p=168e0566bf495bf16b249a4174a6478c"
                   className="card group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-3.5 px-6 rounded-xl hover:brightness-110 transition-all glow-primary overflow-hidden"
                 >
@@ -751,6 +756,7 @@ const BelowFoldContent = ({
               <h3 className="text-lg font-bold text-foreground mb-4">COMECE A JOGAR AGORA</h3>
 
               <a
+                onClick={trackCheckoutClick}
                 href="https://checkout.jogosmobileclub.com.br/checkout?p=168e0566bf495bf16b249a4174a6478c"
                 className="card group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-base py-4 px-6 rounded-xl hover:brightness-110 transition-all glow-primary overflow-hidden"
               >
