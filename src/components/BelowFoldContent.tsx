@@ -208,23 +208,17 @@ const TutorialSection = () => {
         {/* Transição para premium */}
         <div className="mt-8 text-center">
           <p className="text-primary/80 text-xs font-medium mb-4">
-            Se preferir instalar tudo automaticamente com +100 jogos prontos para jogar, escolha o Pack Completo abaixo.
+            Escolha abaixo a forma de instalação que prefere.
           </p>
-          <a
-            href="https://pay.lowify.com.br/checkout.php?product_id=QnPBLL"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => document.getElementById("instalacao")?.scrollIntoView({ behavior: "smooth" })}
             className="group inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm px-8 py-3.5 rounded-xl hover:brightness-110 transition-all glow-primary"
           >
-            <Zap className="w-4 h-4 flex-shrink-0" />
-            <span className="uppercase tracking-wide">⚡ QUERO INSTALAR EM 1 CLIQUE</span>
+            <span className="uppercase tracking-wide">ESCOLHER COMO INSTALAR</span>
             <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
-          </a>
+          </button>
           <p className="text-muted-foreground text-[10px] mt-2">
-            +100 jogos prontos para jogar no celular
-          </p>
-          <p className="text-muted-foreground/60 text-[9px] mt-1">
-            Instalação automática • Acesso vitalício • Atualizações gratuitas
+            Manual ou instalação automática
           </p>
         </div>
       </div>
@@ -312,7 +306,7 @@ const BelowFoldContent = ({
       <TutorialSection />
 
       {/* ─── 2. TRANSIÇÃO PARA OFERTA ─── */}
-      <section className="px-5 py-12">
+      <section id="instalacao" className="px-5 py-12">
         <div className="container max-w-lg mx-auto text-center">
           <div className="inline-flex items-center gap-1.5 text-primary text-[11px] font-semibold uppercase tracking-widest mb-4">
             <Zap className="w-3.5 h-3.5" /> Escolha seu plano
