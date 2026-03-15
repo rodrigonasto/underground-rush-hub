@@ -151,7 +151,7 @@ const TutorialSection = () => {
           <p className="text-muted-foreground text-sm mt-2">
             Veja no vídeo abaixo como o jogo roda no celular e como funciona o processo de instalação.
           </p>
-          <p className="text-muted-foreground/70 text-xs mt-1.5">
+          <p className="text-muted-foreground text-sm mt-2">
             Após adquirir o acesso, você recebe os arquivos e o instalador necessários para jogar no celular.
           </p>
         </div>
