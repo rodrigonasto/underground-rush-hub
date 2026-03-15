@@ -592,7 +592,7 @@ const BelowFoldContent = ({
               Nenhum jogo encontrado para "{searchQuery}"
             </p>
           )}
-          <p className="text-muted-foreground text-[10px] text-center mt-6">E mais jogos adicionados toda semana!</p>
+          <p className="text-muted-foreground text-[10px] text-center mt-6">Novos jogos são adicionados nas atualizações.</p>
         </div>
       </section>
 
