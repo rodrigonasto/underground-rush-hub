@@ -56,7 +56,7 @@ const Index = () => {
             </h1>
 
             <p className="text-muted-foreground text-sm sm:text-base mb-6 max-w-md mx-auto">
-              Veja como rodar o clássico que dominou PS2 e PC direto no seu Android ou iPhone.
+              Veja como rodar o clássico que dominou PS2 e PC diretamente no seu Android ou iPhone.
             </p>
 
             {/* VTurb Video Player */}
