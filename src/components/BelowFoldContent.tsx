@@ -151,9 +151,6 @@ const TutorialSection = () => {
           <p className="text-muted-foreground text-sm mt-2">
             Assista ao vídeo abaixo e siga o passo a passo para rodar Need for Speed Underground 2 no celular.
           </p>
-          <p className="text-muted-foreground/70 text-xs mt-1">
-            Funciona em Android e iPhone.
-          </p>
         </div>
 
         <div className="grid grid-cols-2 gap-3 mb-6">
