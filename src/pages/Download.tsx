@@ -1,4 +1,4 @@
-import { useState, useEffect, type MouseEvent } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Download, ShieldCheck, ExternalLink, Star, Zap, Check, ChevronRight } from "lucide-react";
 import { CDN_BASE_URL } from "@/lib/cdn";
@@ -7,20 +7,6 @@ import SEOHead from "@/components/SEOHead";
 
 const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
-const openCheckoutWithTracking = (event: MouseEvent<HTMLAnchorElement>, delayMs = 300) => {
-  event.preventDefault();
-  const destination = event.currentTarget.href;
-  const newTab = window.open("about:blank", "_blank", "noopener,noreferrer");
-
-  setTimeout(() => {
-    if (newTab) {
-      newTab.location.href = destination;
-      return;
-    }
-
-    window.open(destination, "_blank", "noopener,noreferrer");
-  }, delayMs);
-};
 
 interface StepItem {
   step: number;
@@ -358,7 +344,7 @@ const DownloadPage = () => {
                 href="https://checkout.jogosmobileclub.com.br/checkout?p=168e0566bf495bf16b249a4174a6478c"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={openCheckoutWithTracking}
+                
                 className="card group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-4 px-6 rounded-xl hover:brightness-110 transition-all glow-primary overflow-hidden"
               >
                 <Zap className="w-4 h-4 flex-shrink-0" />
