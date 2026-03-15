@@ -99,7 +99,7 @@ const Index = () => {
               <span className="w-1 h-1 rounded-full bg-border" />
               <span>Sem cadastro</span>
               <span className="w-1 h-1 rounded-full bg-border" />
-              <span>Grátis</span>
+              <span>A partir de R$9,90</span>
             </div>
           </div>
         </section>
