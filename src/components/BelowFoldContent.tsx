@@ -390,7 +390,7 @@ const BelowFoldContent = ({
                   "Acesso vitalício",
                   "Atualizações gratuitas",
                 ].map((t) => (
-                  <li key={t} className="flex items-start gap-2 text-xs text-foreground/90">
+                  <li key={t} className="flex items-start gap-2 text-sm text-foreground/90">
                     <Check className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
                     {t}
                   </li>
