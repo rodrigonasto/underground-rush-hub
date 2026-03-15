@@ -388,23 +388,23 @@ const BelowFoldContent = ({
       <section id="comparativo" className="px-5 py-14">
         <div className="container max-w-lg mx-auto">
           <div className="text-center mb-8">
-            <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">Manual vs Instalação Automática</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">Básico vs Pack Completo</h2>
           </div>
           <div className="rounded-2xl overflow-hidden glass-card">
             <div className="grid grid-cols-2">
               <div className="bg-muted/50 p-3.5 text-center border-b border-r border-border">
-                <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Manual</span>
+                <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Básico • R$9,90</span>
               </div>
               <div className="p-3.5 text-center border-b border-border border-l border-primary/20" style={{ background: "hsl(142 72% 50% / 0.10)" }}>
-                <span className="text-xs font-bold text-primary uppercase tracking-wider">Automático ⭐ Recomendado</span>
+                <span className="text-xs font-bold text-primary uppercase tracking-wider">Completo • R$27 ⭐</span>
               </div>
             </div>
             {[
-              ["Baixar arquivos manualmente", "Instalação em 1 clique"],
-              ["Configurar emulador", "Tudo configurado automaticamente"],
-              ["Ajustar controles", "Jogo pronto para jogar"],
-              ["Possíveis erros de configuração", "Sem configuração ou erros"],
-              ["Apenas Need for Speed Underground 2", "Biblioteca com +100 jogos clássicos"],
+              ["Apenas 1 jogo", "+100 jogos clássicos"],
+              ["Instalação manual", "Instalação automática em 1 clique"],
+              ["Configuração por conta própria", "Tudo configurado automaticamente"],
+              ["Sem atualizações", "Atualizações gratuitas"],
+              ["Sem suporte", "Suporte via comunidade VIP"],
             ].map(([manual, auto], i) => (
               <div key={i} className="grid grid-cols-2">
                 <div className="bg-muted/30 border-b border-r border-border p-3.5 flex items-center gap-2">
@@ -419,21 +419,24 @@ const BelowFoldContent = ({
             ))}
             <div className="grid grid-cols-2">
               <div className="bg-muted/30 border-r border-border p-3.5 text-center">
-                <span className="text-sm font-bold text-muted-foreground">Grátis</span>
+                <span className="text-sm font-bold text-muted-foreground">R$9,90</span>
               </div>
               <div className="p-3.5 text-center border-l border-primary/20" style={{ background: "hsl(142 72% 50% / 0.10)" }}>
                 <span className="text-sm font-bold text-primary">R$27</span>
+                <span className="text-[9px] text-primary/70 block">menos de R$0,27/jogo</span>
               </div>
             </div>
           </div>
-          <button
-            onClick={() => document.getElementById("premium")?.scrollIntoView({ behavior: "smooth" })}
+          <a
+            href="https://pay.lowify.com.br/checkout.php?product_id=QnPBLL"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group w-full mt-6 inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm px-6 py-3.5 rounded-xl hover:brightness-110 transition-all glow-primary"
           >
             <Zap className="w-4 h-4 flex-shrink-0" />
-            <span className="flex flex-col items-center leading-tight"><span className="uppercase tracking-wide">Quero a Versão Automática</span><span className="text-[10px] font-normal text-background/80">Instalação em 1 clique</span></span>
+            <span className="flex flex-col items-center leading-tight"><span className="uppercase tracking-wide">Quero o Pack Completo por R$27</span><span className="text-[10px] font-normal text-background/80">+100 jogos • Instalação automática</span></span>
             <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
-          </button>
+          </a>
         </div>
       </section>
 
