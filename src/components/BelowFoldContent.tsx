@@ -332,10 +332,10 @@ const BelowFoldContent = ({
               ))}
             </ul>
             <div className="h-px bg-border my-4" />
-            <p className="text-muted-foreground text-xs text-center">
+            <p className="text-muted-foreground text-sm text-center">
               Se o seu celular roda jogos da Play Store ou App Store, ele provavelmente roda esses jogos também.
             </p>
-            <p className="text-xs text-center mt-2 font-semibold" style={{ color: "hsl(35 90% 60%)" }}>
+            <p className="text-sm text-center mt-2 font-semibold" style={{ color: "hsl(35 90% 60%)" }}>
               +2.800 jogadores já estão rodando no celular
             </p>
           </div>
