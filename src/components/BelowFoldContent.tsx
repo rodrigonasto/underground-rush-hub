@@ -615,6 +615,8 @@ const BelowFoldContent = ({
                 <span className="text-gradient-primary">PRONTOS PARA JOGAR NO CELULAR</span>
               </h2>
 
+              <p className="text-xs font-semibold mb-4" style={{ color: "hsl(25 95% 55%)" }}>🔥 Oferta promocional disponível hoje</p>
+
               <p className="text-muted-foreground text-sm mb-6 max-w-sm mx-auto">
                 Com o instalador automático, o jogo é preparado e configurado para rodar no seu celular sem complicação.
               </p>
