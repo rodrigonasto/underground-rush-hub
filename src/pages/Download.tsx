@@ -7,6 +7,21 @@ import SEOHead from "@/components/SEOHead";
 
 const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
+const openCheckoutWithTracking = (event: MouseEvent<HTMLAnchorElement>, delayMs = 300) => {
+  event.preventDefault();
+  const destination = event.currentTarget.href;
+  const newTab = window.open("about:blank", "_blank", "noopener,noreferrer");
+
+  setTimeout(() => {
+    if (newTab) {
+      newTab.location.href = destination;
+      return;
+    }
+
+    window.open(destination, "_blank", "noopener,noreferrer");
+  }, delayMs);
+};
+
 interface StepItem {
   step: number;
   title: string;
