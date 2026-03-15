@@ -850,7 +850,7 @@ const BelowFoldContent = ({
             ].map(({ q, a }) => (
               <div key={q} className="rounded-xl glass-card p-5">
                 <h3 className="text-sm font-semibold text-foreground mb-1.5">{q}</h3>
-                <p className="text-muted-foreground text-xs leading-relaxed">{a}</p>
+                <p className="text-muted-foreground text-sm leading-relaxed">{a}</p>
               </div>
             ))}
           </div>
