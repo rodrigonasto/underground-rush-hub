@@ -1,12 +1,7 @@
-import { useState, useEffect, useRef, useMemo, useCallback, lazy, Suspense } from "react";
+import { useState, useEffect, useRef, useMemo, useCallback, lazy, Suspense, type MouseEvent } from "react";
 import { Download, Check, X, Smartphone, ShieldCheck, Zap, Star, Search, ChevronRight, Sparkles } from "lucide-react";
 import GameCover from "@/components/GameCover";
 import { CDN_BASE_URL } from "@/lib/cdn";
-
-/** Opens URL in new tab after a short delay so UTMify pixel captures the click */
-const openWithDelay = (url: string, delayMs = 300) => {
-  setTimeout(() => window.open(url, "_blank", "noopener,noreferrer"), delayMs);
-};
 import {
   Dialog,
   DialogContent,
@@ -14,6 +9,22 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
+
+/** Keeps destination URL on the CTA while delaying navigation for click capture */
+const openCheckoutWithTracking = (event: MouseEvent<HTMLAnchorElement>, delayMs = 300) => {
+  event.preventDefault();
+  const destination = event.currentTarget.href;
+  const newTab = window.open("about:blank", "_blank", "noopener,noreferrer");
+
+  setTimeout(() => {
+    if (newTab) {
+      newTab.location.href = destination;
+      return;
+    }
+
+    window.open(destination, "_blank", "noopener,noreferrer");
+  }, delayMs);
+};
 
 const VTurbPlayer = lazy(() => import("@/components/VTurbPlayer"));
 
@@ -401,14 +412,17 @@ const BelowFoldContent = ({
                   </li>
                 ))}
               </ul>
-              <button
-                onClick={() => openWithDelay("https://checkout.jogosmobileclub.com.br/checkout?p=168e0566bf495bf16b249a4174a6478c")}
+              <a
+                href="https://checkout.jogosmobileclub.com.br/checkout?p=168e0566bf495bf16b249a4174a6478c"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={openCheckoutWithTracking}
                 className="card group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-4 rounded-xl hover:brightness-110 transition-all glow-primary"
               >
                 <Zap className="w-4 h-4 flex-shrink-0" />
                 <span className="uppercase tracking-wide">INSTALAR EM 1 CLIQUE</span>
                 <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
-              </button>
+              </a>
               <p className="text-xs text-center mt-2 text-foreground">Instalação automática • Jogo pronto para rodar</p>
             </div>
 
@@ -494,14 +508,17 @@ const BelowFoldContent = ({
               </div>
             </div>
           </div>
-          <button
-            onClick={() => openWithDelay("https://checkout.jogosmobileclub.com.br/checkout?p=168e0566bf495bf16b249a4174a6478c")}
+          <a
+            href="https://checkout.jogosmobileclub.com.br/checkout?p=168e0566bf495bf16b249a4174a6478c"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={openCheckoutWithTracking}
             className="card group w-full mt-6 inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm px-6 py-4 rounded-xl hover:brightness-110 transition-all glow-primary"
           >
             <Zap className="w-4 h-4 flex-shrink-0" />
             <span className="uppercase tracking-wide">INSTALAR EM 1 CLIQUE</span>
             <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
-          </button>
+          </a>
           <p className="text-xs text-center mt-2 text-foreground">+100 jogos prontos para jogar no celular</p>
         </div>
       </section>
@@ -525,14 +542,17 @@ const BelowFoldContent = ({
             Instale manualmente por apenas <strong className="text-primary">R$9,90</strong>
           </p>
 
-          <button
-            onClick={() => openWithDelay("https://checkout.jogosmobileclub.com.br/checkout?p=88542131ac5a91c1ded108004e5382ab")}
+          <a
+            href="https://checkout.jogosmobileclub.com.br/checkout?p=88542131ac5a91c1ded108004e5382ab"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={openCheckoutWithTracking}
             className="card group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border-2 border-primary text-primary font-bold text-base px-12 py-4 rounded-xl hover:bg-primary hover:text-primary-foreground transition-all"
           >
             <Download className="w-5 h-5" />
             <span className="uppercase tracking-wide">Instalar Manualmente</span>
             <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-          </button>
+          </a>
 
           <p className="text-muted-foreground text-xs mt-3">Apenas NFS Underground 2 • Processo manual</p>
           <p className="text-muted-foreground text-xs mt-1.5">⚠️ Requer seguir o tutorial e configurar manualmente.</p>
@@ -564,9 +584,9 @@ const BelowFoldContent = ({
                 ))}
               </ul>
               <div className="mb-3"><span className="text-lg font-bold text-foreground">R$9,90</span></div>
-              <button onClick={() => openWithDelay("https://checkout.jogosmobileclub.com.br/checkout?p=88542131ac5a91c1ded108004e5382ab")} className="card w-full inline-flex items-center justify-center gap-2 border border-border text-foreground font-semibold text-xs py-2.5 rounded-lg hover:bg-muted transition-colors">
+              <a href="https://checkout.jogosmobileclub.com.br/checkout?p=88542131ac5a91c1ded108004e5382ab" target="_blank" rel="noopener noreferrer" onClick={openCheckoutWithTracking} className="card w-full inline-flex items-center justify-center gap-2 border border-border text-foreground font-semibold text-xs py-2.5 rounded-lg hover:bg-muted transition-colors">
                 <span className="uppercase text-[10px]">Instalar Manualmente</span>
-              </button>
+              </a>
             </div>
 
             {/* Card Premium */}
@@ -610,14 +630,17 @@ const BelowFoldContent = ({
                   </div>
                 </div>
 
-                <button
-                  onClick={() => openWithDelay("https://checkout.jogosmobileclub.com.br/checkout?p=168e0566bf495bf16b249a4174a6478c")}
+                <a
+                  href="https://checkout.jogosmobileclub.com.br/checkout?p=168e0566bf495bf16b249a4174a6478c"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={openCheckoutWithTracking}
                   className="card group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-3.5 px-6 rounded-xl hover:brightness-110 transition-all glow-primary overflow-hidden"
                 >
                   <Zap className="w-4 h-4 flex-shrink-0" />
                   <span className="uppercase tracking-wide">INSTALAR EM 1 CLIQUE</span>
                   <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
-                </button>
+                </a>
                 <p className="text-[10px] text-center mt-2 text-foreground">+100 jogos • Instalação automática</p>
                  <p className="text-muted-foreground text-[9px] mt-2 flex items-center justify-center gap-1">
                    <ShieldCheck className="w-3 h-3" /> Pagamento único • Acesso imediato
@@ -754,14 +777,17 @@ const BelowFoldContent = ({
               {/* CTA */}
               <h3 className="text-lg font-bold text-foreground mb-4">COMECE A JOGAR AGORA</h3>
 
-              <button
-                onClick={() => openWithDelay("https://checkout.jogosmobileclub.com.br/checkout?p=168e0566bf495bf16b249a4174a6478c")}
+              <a
+                href="https://checkout.jogosmobileclub.com.br/checkout?p=168e0566bf495bf16b249a4174a6478c"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={openCheckoutWithTracking}
                 className="card group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-base py-4 px-6 rounded-xl hover:brightness-110 transition-all glow-primary overflow-hidden"
               >
                 <Zap className="w-5 h-5 flex-shrink-0" />
                 <span className="uppercase tracking-wide">INSTALAR EM 1 CLIQUE</span>
                 <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
-              </button>
+              </a>
               <p className="text-xs text-center mt-2 text-foreground">+100 jogos prontos para jogar no celular</p>
 
               <p className="text-muted-foreground text-sm mt-3">
