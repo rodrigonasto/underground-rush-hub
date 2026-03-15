@@ -381,7 +381,7 @@ const BelowFoldContent = ({
                 <span className="text-4xl font-extrabold text-gradient-primary">R$27</span>
                 <span className="text-muted-foreground text-lg">,00</span>
               </div>
-              <p className="text-muted-foreground text-[10px] mb-5">Pagamento único • Acesso vitalício</p>
+              <p className="text-muted-foreground text-xs mb-5">Pagamento único • Acesso vitalício</p>
               <ul className="space-y-2.5 mb-6">
                 {[
                   "Instalador automático em 1 clique",
