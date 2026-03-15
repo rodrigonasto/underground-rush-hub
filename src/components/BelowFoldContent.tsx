@@ -371,7 +371,7 @@ const BelowFoldContent = ({
                 <Zap className="w-4 h-4 text-primary" />
                 <span className="text-xs font-bold text-primary uppercase tracking-wider">Instalação Automática + Biblioteca Gamer</span>
               </div>
-              <p className="text-muted-foreground text-xs mb-3">Instalação automática com biblioteca completa de jogos.</p>
+              <p className="text-muted-foreground text-sm mb-3">Instalação automática com biblioteca completa de jogos.</p>
               <div className="flex justify-center">
                 <div className="inline-flex items-center gap-1.5 text-[10px] font-bold px-3 py-1 rounded-full mb-2 border pulse" style={{ color: "hsl(25 95% 60%)", borderColor: "hsl(25 95% 55% / 0.3)", background: "hsl(25 95% 55% / 0.1)" }}>
                   Oferta promocional disponível hoje
