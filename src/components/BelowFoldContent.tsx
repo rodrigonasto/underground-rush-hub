@@ -861,10 +861,10 @@ const BelowFoldContent = ({
       <footer className="px-5 py-10 border-t border-border">
         <div className="container max-w-lg mx-auto text-center space-y-2">
           <p className="text-foreground text-sm font-semibold">Pagamento único • Sem mensalidade • Acesso vitalício</p>
-          <p className="text-muted-foreground text-xs">
+          <p className="text-muted-foreground text-sm">
             Acesso liberado imediatamente após o pagamento.
           </p>
-          <p className="text-muted-foreground text-xs">
+          <p className="text-muted-foreground text-sm">
             Instalador automático + biblioteca gamer com +100 jogos.
           </p>
           <p className="text-muted-foreground text-[10px] mt-4">© 2026 JogosMobileClub. Todos os direitos reservados.</p>
