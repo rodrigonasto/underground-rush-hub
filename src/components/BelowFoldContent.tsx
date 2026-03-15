@@ -767,7 +767,7 @@ const BelowFoldContent = ({
               </a>
               <p className="text-xs text-center mt-2 text-foreground">+100 jogos prontos para jogar no celular</p>
 
-              <p className="text-muted-foreground text-xs mt-3">
+              <p className="text-muted-foreground text-sm mt-3">
                 Pagamento único • Acesso imediato após o pagamento
               </p>
             </div>
