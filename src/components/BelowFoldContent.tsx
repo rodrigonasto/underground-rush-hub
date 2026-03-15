@@ -578,9 +578,10 @@ const BelowFoldContent = ({
                   <span className="uppercase tracking-wide">⚡ QUERO INSTALAR EM 1 CLIQUE</span>
                   <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
                 </a>
-                <p className="text-muted-foreground text-[9px] mt-2 flex items-center justify-center gap-1">
-                  <ShieldCheck className="w-3 h-3" /> Pagamento único • Acesso imediato
-                </p>
+                 <p className="text-muted-foreground text-[9px] mt-2 flex items-center justify-center gap-1">
+                   <ShieldCheck className="w-3 h-3" /> Pagamento único • Acesso imediato
+                 </p>
+                 <p className="text-muted-foreground/60 text-[9px] mt-1">+100 jogos prontos para jogar no celular</p>
               </div>
             </div>
           </div>
