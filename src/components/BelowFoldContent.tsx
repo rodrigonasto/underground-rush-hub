@@ -800,10 +800,10 @@ const BelowFoldContent = ({
           </div>
           <div className="space-y-3">
             {[
-              { q: "Qual a diferença entre Básico e Completo?", a: "O Básico (R$9,90) inclui apenas o NFS Underground 2 com instalação manual. O Completo (R$27) inclui +100 jogos com instalação automática, atualizações e suporte." },
-              { q: "O pack completo vale a pena?", a: "Sim! Por apenas R$17,10 a mais que o básico, você leva +100 jogos, instalação automática e atualizações vitalícias." },
+              { q: "Qual a diferença entre Manual e Automático?", a: "O Manual (R$9,90) inclui apenas o NFS Underground 2 com instalação manual. O Automático (R$27) inclui +100 jogos com instalação em 1 clique, atualizações e suporte." },
+              { q: "A instalação automática vale a pena?", a: "Sim! Por apenas R$17,10 a mais, você leva +100 jogos, instalação em 1 clique e atualizações vitalícias." },
               { q: "O instalador automático é seguro?", a: "Sim, ele apenas automatiza a instalação para facilitar." },
-              { q: "Quais jogos vêm no pack completo?", a: "GTA, God of War, NFS, Dragon Ball, Naruto, Spider-Man, Tekken, e muitos outros clássicos." },
+              { q: "Quais jogos vêm na biblioteca?", a: "GTA, God of War, NFS, Dragon Ball, Naruto, Spider-Man, Tekken, e muitos outros clássicos." },
             ].map(({ q, a }) => (
               <div key={q} className="rounded-xl glass-card p-5">
                 <h3 className="text-sm font-semibold text-foreground mb-1.5">{q}</h3>
