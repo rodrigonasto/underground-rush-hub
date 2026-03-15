@@ -317,69 +317,44 @@ const BelowFoldContent = ({
           <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
             ESCOLHA COMO QUER JOGAR
           </h2>
-          <p className="text-muted-foreground text-sm mb-8 max-w-md mx-auto">
-            Duas formas de ter o jogo no seu celular. Escolha a que faz mais sentido para você.
+          <p className="text-muted-foreground text-sm mb-2 max-w-md mx-auto">
+            Escolha como deseja instalar no celular:
+          </p>
+          <p className="text-muted-foreground/60 text-[11px] mb-8">
+            A maioria dos jogadores escolhe a instalação automática.
           </p>
 
-          {/* ── PRICING CARDS SIDE BY SIDE ── */}
+          {/* ── PRICING: Premium first on mobile ── */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-            {/* Card Básico — R$9,90 */}
-            <div className="rounded-2xl glass-card p-5 text-left relative border border-border">
-              <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Instalação Manual</span>
-              <div className="flex items-baseline gap-1 mt-2 mb-3">
-                <span className="text-3xl font-extrabold text-foreground">R$9</span>
-                <span className="text-foreground text-lg font-bold">,90</span>
-              </div>
-              <p className="text-muted-foreground text-xs mb-4">Apenas Need for Speed Underground 2</p>
-              <ul className="space-y-2.5 mb-5">
-                {[
-                  { text: "Apenas Need for Speed Underground 2", ok: true },
-                  { text: "Instalação manual passo a passo", ok: true },
-                  { text: "Seguindo o tutorial acima", ok: true },
-                ].map((item) => (
-                  <li key={item.text} className="flex items-start gap-2 text-xs text-muted-foreground">
-                    <Check className="w-3.5 h-3.5 text-muted-foreground flex-shrink-0 mt-0.5" />
-                    {item.text}
-                  </li>
-                ))}
-              </ul>
-              <button
-                onClick={() => setDownloadModalOpen(true)}
-                className="w-full inline-flex items-center justify-center gap-2 border border-border text-foreground font-semibold text-xs py-3 rounded-xl hover:bg-muted transition-colors"
-              >
-                <Download className="w-3.5 h-3.5" />
-                <span className="uppercase tracking-wide">Instalar Manualmente</span>
-              </button>
-            </div>
 
-            {/* Card Premium — R$27 */}
-            <div className="rounded-2xl p-5 text-left relative overflow-hidden border-2 border-primary shadow-[0_0_30px_-6px_hsl(var(--primary)/0.3)]" style={{ background: "linear-gradient(180deg, hsl(142 72% 50% / 0.08), hsl(150 6% 8%))" }}>
+            {/* Card Premium — R$27 (appears first on mobile) */}
+            <div className="rounded-2xl p-6 text-left relative overflow-hidden border-2 border-primary shadow-[0_0_30px_-6px_hsl(var(--primary)/0.3)] order-first" style={{ background: "linear-gradient(180deg, hsl(142 72% 50% / 0.08), hsl(150 6% 8%))" }}>
               <div className="absolute top-0 inset-x-0 h-0.5 shimmer-border" />
-              {/* Badge mais popular */}
               <div className="absolute -top-0 right-4 bg-primary text-primary-foreground text-[9px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-b-lg shadow-lg">
                 ⭐ Mais popular
               </div>
               <div className="flex items-center gap-2 mb-2">
                 <Zap className="w-4 h-4 text-primary" />
-                <span className="text-xs font-bold text-primary uppercase tracking-wider">Completo</span>
+                <span className="text-xs font-bold text-primary uppercase tracking-wider">Pack Completo Gamer</span>
               </div>
+              <p className="text-muted-foreground text-xs mb-3">Instalação automática com biblioteca completa de jogos.</p>
               <div className="flex justify-center">
                 <div className="inline-flex items-center gap-1.5 text-[10px] font-bold px-3 py-1 rounded-full mb-2 border pulse" style={{ color: "hsl(25 95% 60%)", borderColor: "hsl(25 95% 55% / 0.3)", background: "hsl(25 95% 55% / 0.1)" }}>
                   Oferta promocional disponível hoje
                 </div>
               </div>
               <div className="flex items-baseline gap-1 mt-1 mb-1">
-                <span className="text-3xl font-extrabold text-gradient-primary">R$27</span>
+                <span className="text-4xl font-extrabold text-gradient-primary">R$27</span>
                 <span className="text-muted-foreground text-lg">,00</span>
               </div>
-              <p className="text-muted-foreground text-[10px] mb-4">Pagamento único • Acesso vitalício</p>
-              <ul className="space-y-2.5 mb-5">
+              <p className="text-muted-foreground text-[10px] mb-5">Pagamento único • Acesso vitalício</p>
+              <ul className="space-y-2.5 mb-6">
                 {[
-                  "Instalação automática em 1 clique",
-                  "Biblioteca com +100 jogos clássicos",
-                  "Jogo pronto para rodar, sem configurar",
-                  "Atualizações gratuitas com novos jogos",
+                  "Instalador automático em 1 clique",
+                  "+100 jogos clássicos prontos para jogar",
+                  "Novos jogos nas atualizações",
                   "Acesso vitalício",
+                  "Atualizações gratuitas",
                 ].map((t) => (
                   <li key={t} className="flex items-start gap-2 text-xs text-foreground/90">
                     <Check className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
@@ -391,13 +366,43 @@ const BelowFoldContent = ({
                 href="https://pay.lowify.com.br/checkout.php?product_id=QnPBLL"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-3.5 rounded-xl hover:brightness-110 transition-all glow-primary"
+                className="group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-4 rounded-xl hover:brightness-110 transition-all glow-primary"
               >
                 <Zap className="w-4 h-4 flex-shrink-0" />
-                <span className="uppercase tracking-wide">QUERO O PACK COMPLETO</span>
+                <span className="uppercase tracking-wide">QUERO INSTALAR EM 1 CLIQUE</span>
                 <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
               </a>
-              <p className="text-[10px] text-center mt-2 text-muted-foreground">Instale tudo automaticamente e comece a jogar em minutos.</p>
+              <p className="text-[10px] text-center mt-2 text-muted-foreground">Instalação automática • Jogo pronto para rodar</p>
+            </div>
+
+            {/* Card Manual — R$9,90 (secondary) */}
+            <div className="rounded-2xl glass-card p-5 text-left relative border border-border order-last sm:order-first">
+              <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Instalação Manual</span>
+              <div className="flex items-baseline gap-1 mt-2 mb-3">
+                <span className="text-2xl font-extrabold text-foreground">R$9</span>
+                <span className="text-foreground text-base font-bold">,90</span>
+              </div>
+              <p className="text-muted-foreground text-xs mb-4">Instale o jogo manualmente seguindo o tutorial.</p>
+              <ul className="space-y-2.5 mb-5">
+                {[
+                  "Apenas 1 jogo (Need for Speed Underground 2)",
+                  "Instalação manual passo a passo",
+                  "Requer configuração manual",
+                ].map((text) => (
+                  <li key={text} className="flex items-start gap-2 text-xs text-muted-foreground">
+                    <Check className="w-3.5 h-3.5 text-muted-foreground flex-shrink-0 mt-0.5" />
+                    {text}
+                  </li>
+                ))}
+              </ul>
+              <button
+                onClick={() => setDownloadModalOpen(true)}
+                className="w-full inline-flex items-center justify-center gap-2 border border-border text-foreground font-semibold text-xs py-3 rounded-xl hover:bg-muted transition-colors"
+              >
+                <Download className="w-3.5 h-3.5" />
+                <span className="uppercase tracking-wide">Acessar Método Manual</span>
+              </button>
+              <p className="text-[10px] text-center mt-2 text-muted-foreground/60">Processo mais demorado</p>
             </div>
           </div>
 
