@@ -73,7 +73,7 @@ const Index = () => {
               {[
                 "Funciona em Android e iPhone",
                 "Não precisa de console",
-                "Instalação gratuita",
+                "A partir de R$9,90",
               ].map((text) => (
                 <li key={text} className="flex items-center gap-2 text-sm text-foreground/90">
                   <Check className="w-4 h-4 text-primary flex-shrink-0" />
@@ -99,7 +99,7 @@ const Index = () => {
               <span className="w-1 h-1 rounded-full bg-border" />
               <span>Sem cadastro</span>
               <span className="w-1 h-1 rounded-full bg-border" />
-              <span>Grátis</span>
+              <span>A partir de R$9,90</span>
             </div>
           </div>
         </section>
