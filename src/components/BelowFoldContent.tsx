@@ -369,7 +369,7 @@ const BelowFoldContent = ({
                 <span className="uppercase tracking-wide">QUERO O PACK COMPLETO</span>
                 <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
               </a>
-              <p className="text-[10px] text-center mt-2" style={{ color: "hsl(35 90% 60%)" }}>+2.800 jogadores já estão jogando</p>
+              <p className="text-[10px] text-center mt-2 text-muted-foreground">Instale tudo automaticamente e comece a jogar em minutos.</p>
             </div>
           </div>
 
