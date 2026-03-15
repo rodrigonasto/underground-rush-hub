@@ -295,7 +295,7 @@ const BelowFoldContent = ({
             ESCOLHA COMO QUER JOGAR
           </h2>
           <p className="text-muted-foreground text-sm mb-8 max-w-md mx-auto">
-            Duas formas de ter o jogo no seu celular. Escolha a que faz mais sentido pra você.
+            Duas formas de ter o jogo no seu celular. Escolha a que faz mais sentido para você.
           </p>
 
           {/* ── PRICING CARDS SIDE BY SIDE ── */}
