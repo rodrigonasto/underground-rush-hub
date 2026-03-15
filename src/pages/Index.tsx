@@ -116,8 +116,6 @@ const Index = () => {
             navigate={navigate}
           />
         </Suspense>
-      {/* TEMPORARY DEBUG LINK — remove after testing */}
-      <a href="https://checkout.jogosmobileclub.com.br/checkout?p=TESTE" target="_blank" rel="noopener noreferrer">TEST CHECKOUT LINK</a>
       </main>
     </div>
   );
