@@ -443,7 +443,7 @@ const BelowFoldContent = ({
         <div className="absolute inset-0 bg-gradient-to-b from-card/80 to-background/80" />
         <div className="container max-w-lg mx-auto text-center relative z-10">
           <h2 className="inline-flex items-center gap-2 text-xl sm:text-2xl font-bold text-foreground uppercase tracking-wide mb-2">
-            <Download className="w-5 h-5 text-primary" /> Download Básico
+            <Download className="w-5 h-5 text-primary" /> Instalação Manual
           </h2>
           <p className="text-muted-foreground text-sm mb-2">Quer apenas o NFS Underground 2?</p>
           <p className="text-muted-foreground text-sm mb-8">Instale manualmente por apenas <strong className="text-foreground">R$9,90</strong>.</p>
@@ -452,7 +452,7 @@ const BelowFoldContent = ({
             className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border-2 border-primary text-primary font-bold text-base px-12 py-4 rounded-xl hover:bg-primary hover:text-primary-foreground transition-all"
           >
             <Download className="w-5 h-5" />
-            <span className="flex flex-col items-center leading-tight"><span className="uppercase tracking-wide">Comprar por R$9,90</span><span className="text-[10px] font-normal opacity-70">Apenas NFS Underground 2</span></span>
+            <span className="flex flex-col items-center leading-tight"><span className="uppercase tracking-wide">Instalar Manualmente</span><span className="text-[10px] font-normal opacity-70">Apenas NFS Underground 2 • R$9,90</span></span>
             <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
           </button>
           <p className="text-muted-foreground text-[11px] mt-4 flex items-center justify-center gap-1.5">
