@@ -641,7 +641,7 @@ const BelowFoldContent = ({
               <span className="text-gradient-primary italic">+100 JOGOS</span>
             </h2>
             <p className="text-muted-foreground text-sm sm:text-base">Clássicos do PS2 e outros jogos adaptados para rodar direto no celular.</p>
-            <p className="text-muted-foreground text-xs mt-1">Novos jogos são adicionados nas atualizações.</p>
+            <p className="text-muted-foreground text-sm mt-1">Novos jogos são adicionados nas atualizações.</p>
           </div>
           <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-10 max-w-md mx-auto">
             {[
