@@ -1,7 +1,12 @@
-import { useState, useEffect, useRef, useMemo, lazy, Suspense } from "react";
+import { useState, useEffect, useRef, useMemo, useCallback, lazy, Suspense } from "react";
 import { Download, Check, X, Smartphone, ShieldCheck, Zap, Star, Search, ChevronRight, Sparkles } from "lucide-react";
 import GameCover from "@/components/GameCover";
 import { CDN_BASE_URL } from "@/lib/cdn";
+
+/** Opens URL in new tab after a short delay so UTMify pixel captures the click */
+const openWithDelay = (url: string, delayMs = 300) => {
+  setTimeout(() => window.open(url, "_blank", "noopener,noreferrer"), delayMs);
+};
 import {
   Dialog,
   DialogContent,
