@@ -749,7 +749,7 @@ const BelowFoldContent = ({
                     <span className="text-muted-foreground text-lg">,00</span>
                   </div>
                 </div>
-                <p className="text-xs text-center mt-1.5" style={{ color: "hsl(35 90% 60%)" }}>+2.800 jogadores já estão jogando</p>
+                <p className="text-sm text-center mt-1.5" style={{ color: "hsl(35 90% 60%)" }}>+2.800 jogadores já estão jogando</p>
               </div>
 
               {/* CTA */}
