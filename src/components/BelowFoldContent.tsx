@@ -179,7 +179,10 @@ const TutorialSection = () => {
               <VTurbPlayer playerId="69b22b5e005f4e6dada6b831" visible={platform === "android"} />
             </Suspense>
             <p className="text-muted-foreground text-xs text-center">
-              ⚡ Assista ao vídeo e siga o passo a passo mostrado na tela.
+              ⚡ Este método é manual e exige seguir os passos mostrados no vídeo.
+            </p>
+            <p className="text-primary/80 text-xs text-center mt-2 font-medium">
+              Se preferir instalar tudo automaticamente com +100 jogos prontos para jogar, escolha o Pack Completo abaixo.
             </p>
           </div>
         </div>
