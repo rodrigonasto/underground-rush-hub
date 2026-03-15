@@ -510,13 +510,20 @@ const BelowFoldContent = ({
         <div className="absolute inset-0 bg-grid-small opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-b from-card/80 to-background/80" />
         <div className="container max-w-lg mx-auto text-center relative z-10">
-          <p className="text-muted-foreground/50 text-xs uppercase tracking-widest mb-4">ou se preferir instalar manualmente</p>
-          <h2 className="inline-flex items-center gap-2 text-lg sm:text-xl font-bold text-foreground uppercase tracking-wide mb-2">
+          <p className="text-muted-foreground text-sm uppercase tracking-wide mb-3">ou se preferir instalar manualmente</p>
+
+          <h2 className="inline-flex items-center gap-2 text-xl sm:text-2xl font-bold text-foreground uppercase tracking-wide mb-4">
             <Download className="w-5 h-5 text-primary" /> Instalação Manual
           </h2>
-          <p className="text-muted-foreground text-xs mb-1">Para quem quer apenas o Need for Speed Underground 2</p>
-          <p className="text-muted-foreground text-xs mb-6">e prefere fazer a instalação manual seguindo o tutorial.</p>
-          <p className="text-muted-foreground text-sm mb-8">Instale manualmente por apenas <strong className="text-foreground">R$9,90</strong>.</p>
+
+          <p className="text-muted-foreground text-sm mb-2">
+            Para quem quer apenas o Need for Speed Underground 2 e prefere fazer a instalação manual seguindo o tutorial.
+          </p>
+
+          <p className="text-foreground text-base font-semibold mb-6">
+            Instale manualmente por apenas <strong className="text-primary">R$9,90</strong>
+          </p>
+
           <button
             onClick={() => setDownloadModalOpen(true)}
             className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border-2 border-primary text-primary font-bold text-base px-12 py-4 rounded-xl hover:bg-primary hover:text-primary-foreground transition-all"
@@ -525,11 +532,9 @@ const BelowFoldContent = ({
             <span className="uppercase tracking-wide">Instalar Manualmente</span>
             <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
           </button>
-          <p className="text-foreground text-[10px] mt-2">Apenas NFS Underground 2 • Processo manual</p>
-          <p className="text-muted-foreground/60 text-[10px] mt-1.5">⚠️ Requer seguir o tutorial e configurar manualmente.</p>
-          <p className="text-muted-foreground text-[11px] mt-4 flex items-center justify-center gap-1.5">
-            <ShieldCheck className="w-3.5 h-3.5 text-primary/70" /> Pagamento seguro
-          </p>
+
+          <p className="text-muted-foreground text-xs mt-3">Apenas NFS Underground 2 • Processo manual</p>
+          <p className="text-muted-foreground text-xs mt-1.5">⚠️ Requer seguir o tutorial e configurar manualmente.</p>
         </div>
       </section>
 
