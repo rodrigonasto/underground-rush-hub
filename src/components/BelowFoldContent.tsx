@@ -10,21 +10,6 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 
-/** Keeps destination URL on the CTA while delaying navigation for click capture */
-const openCheckoutWithTracking = (event: MouseEvent<HTMLAnchorElement>, delayMs = 300) => {
-  event.preventDefault();
-  const destination = event.currentTarget.href;
-  const newTab = window.open("about:blank", "_blank", "noopener,noreferrer");
-
-  setTimeout(() => {
-    if (newTab) {
-      newTab.location.href = destination;
-      return;
-    }
-
-    window.open(destination, "_blank", "noopener,noreferrer");
-  }, delayMs);
-};
 
 const VTurbPlayer = lazy(() => import("@/components/VTurbPlayer"));
 
