@@ -312,7 +312,7 @@ const BelowFoldContent = ({
       <TutorialSection />
 
       {/* ─── 2. TRANSIÇÃO PARA OFERTA ─── */}
-      <section className="px-5 py-12">
+      <section id="instalacao" className="px-5 py-12">
         <div className="container max-w-lg mx-auto text-center">
           <div className="inline-flex items-center gap-1.5 text-primary text-[11px] font-semibold uppercase tracking-widest mb-4">
             <Zap className="w-3.5 h-3.5" /> Escolha seu plano
