@@ -351,7 +351,6 @@ const BelowFoldContent = ({
                   "Biblioteca com +100 jogos clássicos",
                   "Jogo pronto para rodar, sem configurar",
                   "Atualizações gratuitas com novos jogos",
-                  "Suporte via comunidade VIP",
                   "Acesso vitalício",
                 ].map((t) => (
                   <li key={t} className="flex items-start gap-2 text-xs text-foreground/90">
