@@ -340,7 +340,9 @@ const BelowFoldContent = ({
                 <Zap className="w-4 h-4 text-primary" />
                 <span className="text-xs font-bold text-primary uppercase tracking-wider">Completo</span>
               </div>
-              <p className="text-[10px] font-semibold mt-1 mb-2" style={{ color: "hsl(25 95% 55%)" }}>🔥 Oferta promocional disponível hoje</p>
+              <div className="inline-flex items-center gap-1.5 text-[10px] font-bold px-3 py-1 rounded-full mb-2 border" style={{ color: "hsl(25 95% 60%)", borderColor: "hsl(25 95% 55% / 0.3)", background: "hsl(25 95% 55% / 0.1)" }}>
+                🔥 Oferta promocional disponível hoje
+              </div>
               <div className="flex items-baseline gap-1 mt-1 mb-1">
                 <span className="text-3xl font-extrabold text-gradient-primary">R$27</span>
                 <span className="text-muted-foreground text-lg">,00</span>
