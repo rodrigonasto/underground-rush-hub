@@ -501,7 +501,7 @@ const BelowFoldContent = ({
             <span className="uppercase tracking-wide">INSTALAR EM 1 CLIQUE</span>
             <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
           </a>
-          <p className="text-[10px] text-center mt-2 text-foreground">+100 jogos prontos para jogar no celular</p>
+          <p className="text-xs text-center mt-2 text-foreground">+100 jogos prontos para jogar no celular</p>
         </div>
       </section>
 
