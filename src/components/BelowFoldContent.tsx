@@ -217,11 +217,14 @@ const TutorialSection = () => {
             className="group inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm px-8 py-3.5 rounded-xl hover:brightness-110 transition-all glow-primary"
           >
             <Zap className="w-4 h-4 flex-shrink-0" />
-            <span className="uppercase tracking-wide">QUERO O PACK COMPLETO</span>
+            <span className="uppercase tracking-wide">⚡ QUERO INSTALAR EM 1 CLIQUE</span>
             <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
           </a>
           <p className="text-muted-foreground text-[10px] mt-2">
-            Instalação automática • +100 jogos clássicos • Acesso vitalício
+            +100 jogos prontos para jogar no celular
+          </p>
+          <p className="text-muted-foreground/60 text-[9px] mt-1">
+            Instalação automática • Acesso vitalício • Atualizações gratuitas
           </p>
         </div>
       </div>
@@ -335,7 +338,7 @@ const BelowFoldContent = ({
               </div>
               <div className="flex items-center gap-2 mb-2">
                 <Zap className="w-4 h-4 text-primary" />
-                <span className="text-xs font-bold text-primary uppercase tracking-wider">Pack Completo Gamer</span>
+                <span className="text-xs font-bold text-primary uppercase tracking-wider">Instalação Automática + Biblioteca Gamer</span>
               </div>
               <p className="text-muted-foreground text-xs mb-3">Instalação automática com biblioteca completa de jogos.</p>
               <div className="flex justify-center">
@@ -409,7 +412,7 @@ const BelowFoldContent = ({
           {/* Economia */}
           <div className="inline-flex items-center gap-2 glass-card text-xs font-medium px-5 py-2.5 rounded-full text-foreground/80 border border-primary/20">
             <Sparkles className="w-3.5 h-3.5 text-primary" />
-            <span>O pack completo sai por <strong className="text-primary">menos de R$0,27 por jogo</strong></span>
+            <span>Instalação automática por <strong className="text-primary">menos de R$0,27 por jogo</strong></span>
           </div>
         </div>
       </section>
@@ -418,7 +421,7 @@ const BelowFoldContent = ({
       <section id="comparativo" className="px-5 py-14">
         <div className="container max-w-lg mx-auto">
           <div className="text-center mb-8">
-            <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">Básico vs Pack Completo</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">Manual vs Instalação Automática</h2>
           </div>
           <div className="rounded-2xl overflow-hidden glass-card">
             <div className="grid grid-cols-2">
@@ -464,7 +467,7 @@ const BelowFoldContent = ({
             className="group w-full mt-6 inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm px-6 py-3.5 rounded-xl hover:brightness-110 transition-all glow-primary"
           >
             <Zap className="w-4 h-4 flex-shrink-0" />
-            <span className="flex flex-col items-center leading-tight"><span className="uppercase tracking-wide">QUERO O PACK COMPLETO POR R$27</span><span className="text-[10px] font-normal text-background/80">+100 jogos • Instalação automática</span></span>
+            <span className="flex flex-col items-center leading-tight"><span className="uppercase tracking-wide">⚡ QUERO INSTALAR EM 1 CLIQUE</span><span className="text-[10px] font-normal text-background/80">+100 jogos prontos para jogar no celular</span></span>
             <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
           </a>
         </div>
@@ -533,7 +536,7 @@ const BelowFoldContent = ({
               <div className="relative z-10">
                 <div className="inline-flex items-center gap-2 text-xs font-semibold px-4 py-2 rounded-full mb-4 border border-primary/30 bg-primary/10">
                   <Zap className="w-3.5 h-3.5 text-primary" />
-                  <span className="text-primary">Pack Completo</span>
+                  <span className="text-primary">Instalação Automática</span>
                 </div>
                 <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">
                   +100 JOGOS CLÁSSICOS<br />
@@ -572,12 +575,13 @@ const BelowFoldContent = ({
                   className="group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-3.5 px-6 rounded-xl hover:brightness-110 transition-all glow-primary overflow-hidden"
                 >
                   <Zap className="w-4 h-4 flex-shrink-0" />
-                  <span className="uppercase tracking-wide">QUERO O PACK COMPLETO</span>
+                  <span className="uppercase tracking-wide">⚡ QUERO INSTALAR EM 1 CLIQUE</span>
                   <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
                 </a>
-                <p className="text-muted-foreground text-[9px] mt-2 flex items-center justify-center gap-1">
-                  <ShieldCheck className="w-3 h-3" /> Pagamento único • Acesso imediato
-                </p>
+                 <p className="text-muted-foreground text-[9px] mt-2 flex items-center justify-center gap-1">
+                   <ShieldCheck className="w-3 h-3" /> Pagamento único • Acesso imediato
+                 </p>
+                 <p className="text-muted-foreground/60 text-[9px] mt-1">+100 jogos prontos para jogar no celular</p>
               </div>
             </div>
           </div>
@@ -796,10 +800,10 @@ const BelowFoldContent = ({
           </div>
           <div className="space-y-3">
             {[
-              { q: "Qual a diferença entre Básico e Completo?", a: "O Básico (R$9,90) inclui apenas o NFS Underground 2 com instalação manual. O Completo (R$27) inclui +100 jogos com instalação automática, atualizações e suporte." },
-              { q: "O pack completo vale a pena?", a: "Sim! Por apenas R$17,10 a mais que o básico, você leva +100 jogos, instalação automática e atualizações vitalícias." },
+              { q: "Qual a diferença entre Manual e Automático?", a: "O Manual (R$9,90) inclui apenas o NFS Underground 2 com instalação manual. O Automático (R$27) inclui +100 jogos com instalação em 1 clique, atualizações e suporte." },
+              { q: "A instalação automática vale a pena?", a: "Sim! Por apenas R$17,10 a mais, você leva +100 jogos, instalação em 1 clique e atualizações vitalícias." },
               { q: "O instalador automático é seguro?", a: "Sim, ele apenas automatiza a instalação para facilitar." },
-              { q: "Quais jogos vêm no pack completo?", a: "GTA, God of War, NFS, Dragon Ball, Naruto, Spider-Man, Tekken, e muitos outros clássicos." },
+              { q: "Quais jogos vêm na biblioteca?", a: "GTA, God of War, NFS, Dragon Ball, Naruto, Spider-Man, Tekken, e muitos outros clássicos." },
             ].map(({ q, a }) => (
               <div key={q} className="rounded-xl glass-card p-5">
                 <h3 className="text-sm font-semibold text-foreground mb-1.5">{q}</h3>
