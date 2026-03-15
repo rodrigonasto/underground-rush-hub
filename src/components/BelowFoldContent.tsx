@@ -756,6 +756,7 @@ const BelowFoldContent = ({
               <h3 className="text-lg font-bold text-foreground mb-4">COMECE A JOGAR AGORA</h3>
 
               <a
+                onClick={trackCheckoutClick}
                 href="https://checkout.jogosmobileclub.com.br/checkout?p=168e0566bf495bf16b249a4174a6478c"
                 className="card group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-base py-4 px-6 rounded-xl hover:brightness-110 transition-all glow-primary overflow-hidden"
               >
