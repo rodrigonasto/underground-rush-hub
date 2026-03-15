@@ -436,7 +436,7 @@ const BelowFoldContent = ({
                 <Download className="w-3.5 h-3.5" />
                 <span className="uppercase tracking-wide">Acessar Método Manual</span>
               </button>
-              <p className="text-[10px] text-center mt-2 text-muted-foreground/60">Processo mais demorado</p>
+              <p className="text-xs text-center mt-2 text-muted-foreground/60">Processo mais demorado</p>
             </div>
           </div>
 
