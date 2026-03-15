@@ -339,16 +339,16 @@ const DownloadPage = () => {
                 </div>
               </div>
 
-              <a
-                href="https://checkout.jogosmobileclub.com.br/checkout?p=168e0566bf495bf16b249a4174a6478c"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => {
+                  setTimeout(() => window.open("https://checkout.jogosmobileclub.com.br/checkout?p=168e0566bf495bf16b249a4174a6478c", "_blank", "noopener,noreferrer"), 300);
+                }}
                 className="card group w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-4 px-6 rounded-xl hover:brightness-110 transition-all glow-primary overflow-hidden"
               >
                 <Zap className="w-4 h-4 flex-shrink-0" />
                 <span>QUERO INSTALAR E JOGAR EM 1 CLIQUE</span>
                 <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
-              </a>
+              </button>
 
               <p className="text-muted-foreground text-xs mt-3">
                 Pagamento único • Acesso imediato após o pagamento
