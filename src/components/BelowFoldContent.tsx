@@ -302,25 +302,20 @@ const BelowFoldContent = ({
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
             {/* Card Básico — R$9,90 */}
             <div className="rounded-2xl glass-card p-5 text-left relative border border-border">
-              <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Básico</span>
+              <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Instalação Manual</span>
               <div className="flex items-baseline gap-1 mt-2 mb-3">
                 <span className="text-3xl font-extrabold text-foreground">R$9</span>
                 <span className="text-foreground text-lg font-bold">,90</span>
               </div>
-              <p className="text-muted-foreground text-xs mb-4">Apenas o jogo NFS Underground 2</p>
+              <p className="text-muted-foreground text-xs mb-4">Apenas Need for Speed Underground 2</p>
               <ul className="space-y-2.5 mb-5">
                 {[
-                  { text: "Apenas 1 jogo (NFS Underground 2)", ok: true },
+                  { text: "Apenas Need for Speed Underground 2", ok: true },
                   { text: "Instalação manual passo a passo", ok: true },
-                  { text: "Configuração por conta própria", ok: false },
-                  { text: "Sem suporte ou atualizações", ok: false },
+                  { text: "Seguindo o tutorial acima", ok: true },
                 ].map((item) => (
                   <li key={item.text} className="flex items-start gap-2 text-xs text-muted-foreground">
-                    {item.ok ? (
-                      <Check className="w-3.5 h-3.5 text-muted-foreground flex-shrink-0 mt-0.5" />
-                    ) : (
-                      <X className="w-3.5 h-3.5 text-destructive/60 flex-shrink-0 mt-0.5" />
-                    )}
+                    <Check className="w-3.5 h-3.5 text-muted-foreground flex-shrink-0 mt-0.5" />
                     {item.text}
                   </li>
                 ))}
@@ -330,7 +325,7 @@ const BelowFoldContent = ({
                 className="w-full inline-flex items-center justify-center gap-2 border border-border text-foreground font-semibold text-xs py-3 rounded-xl hover:bg-muted transition-colors"
               >
                 <Download className="w-3.5 h-3.5" />
-                <span className="uppercase tracking-wide">Comprar por R$9,90</span>
+                <span className="uppercase tracking-wide">Instalar Manualmente</span>
               </button>
             </div>
 
