@@ -559,11 +559,12 @@ const BelowFoldContent = ({
         <div className="absolute inset-0 bg-gradient-to-b from-card/90 via-card/70 to-card/90" />
         <div className="container max-w-2xl mx-auto relative z-10">
           <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-foreground mb-2">
-              Escolha Seu Jogo Favorito<br />
-              <span className="text-gradient-primary italic">e Comece a Jogar em 1 Clique</span>
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-foreground mb-2">
+              BIBLIOTECA GAMER COM<br />
+              <span className="text-gradient-primary italic">+100 JOGOS</span>
             </h2>
-            <p className="text-muted-foreground text-sm sm:text-base">+100 jogos prontos para instalar no Android e iPhone</p>
+            <p className="text-muted-foreground text-sm sm:text-base">Clássicos do PS2 e outros jogos adaptados para rodar direto no celular.</p>
+            <p className="text-muted-foreground text-xs mt-1">Novos jogos são adicionados nas atualizações.</p>
           </div>
           <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-10 max-w-md mx-auto">
             {[
