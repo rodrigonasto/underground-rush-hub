@@ -152,7 +152,7 @@ const TutorialSection = () => {
             Assista ao vídeo abaixo e siga o passo a passo para rodar Need for Speed Underground 2 no celular.
           </p>
           <p className="text-muted-foreground/70 text-xs mt-1">
-            A instalação manual é gratuita e funciona em Android e iPhone.
+            Funciona em Android e iPhone.
           </p>
         </div>
 
