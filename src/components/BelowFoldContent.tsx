@@ -465,8 +465,8 @@ const BelowFoldContent = ({
       <Dialog open={downloadModalOpen} onOpenChange={setDownloadModalOpen}>
         <DialogContent className="max-w-md sm:max-w-lg p-0 gap-0 border-border bg-card max-h-[90vh] overflow-y-auto [&>button]:z-20 [&>button]:top-5 [&>button]:right-5 [&>button]:text-muted-foreground">
           <DialogHeader className="p-5 pb-3 text-center bg-card z-10">
-            <DialogTitle className="text-base sm:text-lg font-bold text-foreground mt-6">Escolha seu plano</DialogTitle>
-            <DialogDescription className="text-sm text-muted-foreground">Qual experiência você prefere?</DialogDescription>
+            <DialogTitle className="text-base sm:text-lg font-bold text-foreground mt-6">Escolha como quer jogar</DialogTitle>
+            <DialogDescription className="text-sm text-muted-foreground">Duas formas de ter o jogo no seu celular.</DialogDescription>
           </DialogHeader>
           <div className="px-5 pb-5 space-y-4">
             {/* Card Básico */}
