@@ -536,7 +536,7 @@ const BelowFoldContent = ({
               <div className="relative z-10">
                 <div className="inline-flex items-center gap-2 text-xs font-semibold px-4 py-2 rounded-full mb-4 border border-primary/30 bg-primary/10">
                   <Zap className="w-3.5 h-3.5 text-primary" />
-                  <span className="text-primary">Pack Completo</span>
+                  <span className="text-primary">Instalação Automática</span>
                 </div>
                 <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">
                   +100 JOGOS CLÁSSICOS<br />
