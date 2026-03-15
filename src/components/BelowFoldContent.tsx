@@ -340,7 +340,9 @@ const BelowFoldContent = ({
                 <Zap className="w-4 h-4 text-primary" />
                 <span className="text-xs font-bold text-primary uppercase tracking-wider">Completo</span>
               </div>
-              <p className="text-[10px] font-semibold mt-1 mb-2" style={{ color: "hsl(25 95% 55%)" }}>🔥 Oferta promocional disponível hoje</p>
+              <div className="inline-flex items-center gap-1.5 text-[10px] font-bold px-3 py-1 rounded-full mb-2 border" style={{ color: "hsl(25 95% 60%)", borderColor: "hsl(25 95% 55% / 0.3)", background: "hsl(25 95% 55% / 0.1)" }}>
+                🔥 Oferta promocional disponível hoje
+              </div>
               <div className="flex items-baseline gap-1 mt-1 mb-1">
                 <span className="text-3xl font-extrabold text-gradient-primary">R$27</span>
                 <span className="text-muted-foreground text-lg">,00</span>
@@ -507,7 +509,9 @@ const BelowFoldContent = ({
                   +100 JOGOS CLÁSSICOS<br />
                   <span className="text-gradient-primary">PRONTOS PARA JOGAR</span>
                 </h3>
-                <p className="text-[10px] font-semibold mb-3" style={{ color: "hsl(25 95% 55%)" }}>🔥 Oferta promocional disponível hoje</p>
+                <div className="inline-flex items-center gap-1.5 text-[10px] font-bold px-3 py-1 rounded-full mb-3 border" style={{ color: "hsl(25 95% 60%)", borderColor: "hsl(25 95% 55% / 0.3)", background: "hsl(25 95% 55% / 0.1)" }}>
+                  🔥 Oferta promocional disponível hoje
+                </div>
                 <ul className="text-left space-y-2 mb-4 grid grid-cols-2 gap-x-3 gap-y-2">
                   {["Instalação em 1 clique", "+100 jogos clássicos", "Jogo pronto para jogar", "Atualizações gratuitas", "Acesso vitalício", "Suporte VIP"].map((t) => (
                     <li key={t} className="flex items-start gap-1.5 text-[11px] text-foreground/90">
@@ -615,7 +619,9 @@ const BelowFoldContent = ({
                 <span className="text-gradient-primary">PRONTOS PARA JOGAR NO CELULAR</span>
               </h2>
 
-              <p className="text-xs font-semibold mb-4" style={{ color: "hsl(25 95% 55%)" }}>🔥 Oferta promocional disponível hoje</p>
+              <div className="inline-flex items-center gap-1.5 text-[11px] font-bold px-4 py-1.5 rounded-full mb-4 border" style={{ color: "hsl(25 95% 60%)", borderColor: "hsl(25 95% 55% / 0.3)", background: "hsl(25 95% 55% / 0.1)" }}>
+                🔥 Oferta promocional disponível hoje
+              </div>
 
               <p className="text-muted-foreground text-sm mb-6 max-w-sm mx-auto">
                 Com o instalador automático, o jogo é preparado e configurado para rodar no seu celular sem complicação.
