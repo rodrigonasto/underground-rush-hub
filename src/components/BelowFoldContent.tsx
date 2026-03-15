@@ -542,14 +542,17 @@ const BelowFoldContent = ({
             Instale manualmente por apenas <strong className="text-primary">R$9,90</strong>
           </p>
 
-          <button
-            onClick={() => openWithDelay("https://checkout.jogosmobileclub.com.br/checkout?p=88542131ac5a91c1ded108004e5382ab")}
+          <a
+            href="https://checkout.jogosmobileclub.com.br/checkout?p=88542131ac5a91c1ded108004e5382ab"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={openCheckoutWithTracking}
             className="card group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border-2 border-primary text-primary font-bold text-base px-12 py-4 rounded-xl hover:bg-primary hover:text-primary-foreground transition-all"
           >
             <Download className="w-5 h-5" />
             <span className="uppercase tracking-wide">Instalar Manualmente</span>
             <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-          </button>
+          </a>
 
           <p className="text-muted-foreground text-xs mt-3">Apenas NFS Underground 2 • Processo manual</p>
           <p className="text-muted-foreground text-xs mt-1.5">⚠️ Requer seguir o tutorial e configurar manualmente.</p>
