@@ -338,7 +338,7 @@ const BelowFoldContent = ({
               </div>
               <div className="flex items-center gap-2 mb-2">
                 <Zap className="w-4 h-4 text-primary" />
-                <span className="text-xs font-bold text-primary uppercase tracking-wider">Pack Completo Gamer</span>
+                <span className="text-xs font-bold text-primary uppercase tracking-wider">Instalação Automática + Biblioteca Gamer</span>
               </div>
               <p className="text-muted-foreground text-xs mb-3">Instalação automática com biblioteca completa de jogos.</p>
               <div className="flex justify-center">
