@@ -510,7 +510,7 @@ const BelowFoldContent = ({
                   <span className="text-gradient-primary">PRONTOS PARA JOGAR</span>
                 </h3>
                 <div className="inline-flex items-center gap-1.5 text-[10px] font-bold px-3 py-1 rounded-full mb-3 border" style={{ color: "hsl(25 95% 60%)", borderColor: "hsl(25 95% 55% / 0.3)", background: "hsl(25 95% 55% / 0.1)" }}>
-                  🔥 Oferta promocional disponível hoje
+                  Oferta promocional disponível hoje
                 </div>
                 <ul className="text-left space-y-2 mb-4 grid grid-cols-2 gap-x-3 gap-y-2">
                   {["Instalação em 1 clique", "+100 jogos clássicos", "Jogo pronto para jogar", "Atualizações gratuitas", "Acesso vitalício", "Suporte VIP"].map((t) => (
