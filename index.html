@@ -27,6 +27,23 @@
     <link rel="dns-prefetch" href="https://scripts.converteai.net" />
     <link rel="preconnect" href="https://scripts.converteai.net" crossorigin />
     <link rel="dns-prefetch" href="https://images.converteai.net" />
+
+    <!-- UTMify performance hints -->
+    <link rel="preconnect" href="https://cdn.utmify.com.br" crossorigin />
+    <link rel="dns-prefetch" href="https://cdn.utmify.com.br" />
+    <link rel="preload" as="script" href="https://cdn.utmify.com.br/scripts/pixel/pixel.js" />
+    <link rel="preload" as="script" href="https://cdn.utmify.com.br/scripts/utms/latest.js" />
+
+    <!-- UTMify Pixel -->
+    <script>window.pixelId = "69b2692bc0943879db0c1359";</script>
+    <script src="https://cdn.utmify.com.br/scripts/pixel/pixel.js"></script>
+
+    <!-- UTMify UTM tracking -->
+    <script
+      src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+      data-utmify-prevent-xcod-sck
+      data-utmify-prevent-subids
+    ></script>
     <link rel="dns-prefetch" href="https://api.vturb.com.br" />
 
     <title>Jogos Mobile Club</title>
@@ -55,21 +72,5 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
 
-    <!-- UTMify -->
-    <script>
-      window.pixelId = "69b2692bc0943879db0c1359";
-      var a = document.createElement("script");
-      a.setAttribute("async", "");
-      a.setAttribute("defer", "");
-      a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-      document.head.appendChild(a);
-    </script>
-    <script
-      src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-      data-utmify-prevent-xcod-sck
-      data-utmify-prevent-subids
-      async
-      defer
-    ></script>
   </body>
 </html>
