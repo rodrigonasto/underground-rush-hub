@@ -737,7 +737,7 @@ const BelowFoldContent = ({
           <div className="grid grid-cols-3 gap-3">
             {[
               { value: "2.847", label: "Instalações", icon: "📲" },
-              { value: "4.9★", label: "Avaliação", icon: "⭐" },
+              { value: "4.9/5", label: "Avaliação", icon: "⭐" },
               { value: "100+", label: "Jogos", icon: "🎮" },
             ].map((stat) => (
               <div key={stat.label} className="glass-card rounded-xl p-3 text-center border border-border/50">
