@@ -525,7 +525,7 @@ const BelowFoldContent = ({
           </p>
 
           <a
-            href="https://pay.lowify.com.br/checkout?product_id=KHWzbI"
+            href="https://checkout.jogosmobileclub.com.br/checkout?p=88542131ac5a91c1ded108004e5382ab"
             target="_blank"
             rel="noopener noreferrer"
             className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border-2 border-primary text-primary font-bold text-base px-12 py-4 rounded-xl hover:bg-primary hover:text-primary-foreground transition-all"
