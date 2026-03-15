@@ -524,16 +524,14 @@ const BelowFoldContent = ({
             Instale manualmente por apenas <strong className="text-primary">R$9,90</strong>
           </p>
 
-          <a
-            href="https://pay.lowify.com.br/checkout?product_id=KHWzbI"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => setDownloadModalOpen(true)}
             className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border-2 border-primary text-primary font-bold text-base px-12 py-4 rounded-xl hover:bg-primary hover:text-primary-foreground transition-all"
           >
             <Download className="w-5 h-5" />
             <span className="uppercase tracking-wide">Instalar Manualmente</span>
             <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-          </a>
+          </button>
 
           <p className="text-muted-foreground text-xs mt-3">Apenas NFS Underground 2 • Processo manual</p>
           <p className="text-muted-foreground text-xs mt-1.5">⚠️ Requer seguir o tutorial e configurar manualmente.</p>
@@ -565,9 +563,9 @@ const BelowFoldContent = ({
                 ))}
               </ul>
               <div className="mb-3"><span className="text-lg font-bold text-foreground">R$9,90</span></div>
-              <a href="https://pay.lowify.com.br/checkout?product_id=KHWzbI" target="_blank" rel="noopener noreferrer" className="w-full inline-flex items-center justify-center gap-2 border border-border text-foreground font-semibold text-xs py-2.5 rounded-lg hover:bg-muted transition-colors">
+              <button onClick={() => { sessionStorage.setItem("dl_auth", "1"); navigate("/download"); }} className="w-full inline-flex items-center justify-center gap-2 border border-border text-foreground font-semibold text-xs py-2.5 rounded-lg hover:bg-muted transition-colors">
                 <span className="uppercase text-[10px]">Instalar Manualmente</span>
-              </a>
+              </button>
             </div>
 
             {/* Card Premium */}
