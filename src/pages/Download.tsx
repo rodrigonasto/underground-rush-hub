@@ -140,11 +140,7 @@ const DownloadPage = () => {
     return /iPhone|iPad|iPod/i.test(ua) ? "ios" : "android";
   });
 
-  useEffect(() => {
-    if (!sessionStorage.getItem("dl_auth")) {
-      navigate("/", { replace: true });
-    }
-  }, [navigate]);
+  // Acesso livre — sem proteção por sessionStorage
 
   const steps = platform === "android" ? androidSteps : iosSteps;
 
