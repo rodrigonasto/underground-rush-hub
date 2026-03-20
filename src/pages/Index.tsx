@@ -7,8 +7,8 @@ const BelowFoldContent = lazy(() => import("@/components/BelowFoldContent"));
 
 const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
-const VTURB_PLAYER_ID = "69b3dd6efaf9397e233276d8";
-const VTURB_COMPANY_ID = "a57aea77-33e9-4609-ae0f-96bf93c595a1";
+const VTURB_PLAYER_ID = "69bcade3423ef7939ca380ba";
+const VTURB_COMPANY_ID = "96d39e4a-f943-48d2-b660-6adc0b409f4e";
 
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
