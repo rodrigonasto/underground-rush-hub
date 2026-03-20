@@ -181,7 +181,7 @@ const TutorialSection = () => {
           <div className="space-y-4">
             <h3 className="text-base font-bold text-foreground text-center">Instalação no Android</h3>
             <Suspense fallback={<div className="w-full bg-muted animate-pulse rounded-2xl" style={{ aspectRatio: "16/9" }} />}>
-              <VTurbPlayer playerId="69b22b5e005f4e6dada6b831" visible={platform === "android"} />
+              <VTurbPlayer playerId="69bcad4b6ced9201ea5168ad" visible={platform === "android"} />
             </Suspense>
             <p className="text-muted-foreground text-sm text-center">
               ⚡ Este vídeo mostra como funciona o processo de instalação.
@@ -196,7 +196,7 @@ const TutorialSection = () => {
           <div className="space-y-4">
             <h3 className="text-base font-bold text-foreground text-center">Instalação no iPhone (iOS)</h3>
             <Suspense fallback={<div className="w-full bg-muted animate-pulse rounded-2xl" style={{ aspectRatio: "888/1920" }} />}>
-              <VTurbPlayer playerId="69aa29eea584f1a405f84d6b" visible={platform === "ios"} vertical />
+              <VTurbPlayer playerId="69bcad03596c6131b739d688" visible={platform === "ios"} vertical />
             </Suspense>
             <p className="text-muted-foreground text-sm text-center">
               ⚡ Este vídeo mostra como funciona o processo de instalação.

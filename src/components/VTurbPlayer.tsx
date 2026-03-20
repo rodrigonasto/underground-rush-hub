@@ -6,7 +6,7 @@ interface VTurbPlayerProps {
   vertical?: boolean;
 }
 
-const COMPANY_ID = "a57aea77-33e9-4609-ae0f-96bf93c595a1";
+const COMPANY_ID = "96d39e4a-f943-48d2-b660-6adc0b409f4e";
 
 const VTurbPlayer = ({ playerId, visible, vertical }: VTurbPlayerProps) => {
   const [loaded, setLoaded] = useState(false);
