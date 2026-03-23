@@ -2,45 +2,64 @@ import { useState, useEffect, useRef } from "react";
 
 interface VTurbPlayerProps {
   playerId: string;
+  companyId: string;
   visible: boolean;
   vertical?: boolean;
+  maxWidth?: string;
 }
 
-const COMPANY_ID = "96d39e4a-f943-48d2-b660-6adc0b409f4e";
-
-const VTurbPlayer = ({ playerId, visible, vertical }: VTurbPlayerProps) => {
+const VTurbPlayer = ({ playerId, companyId, visible, vertical, maxWidth }: VTurbPlayerProps) => {
   const [loaded, setLoaded] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
-  // Only load iframe when component becomes visible (lazy load)
   useEffect(() => {
     if (visible && !loaded) {
       setLoaded(true);
     }
   }, [visible, loaded]);
 
-  const src = `https://scripts.converteai.net/${COMPANY_ID}/players/${playerId}/embed.html`;
+  // Load SDK script once
+  useEffect(() => {
+    if (!loaded) return;
+    const id = "vturb-sdk";
+    if (!document.getElementById(id)) {
+      const s = document.createElement("script");
+      s.id = id;
+      s.src = "https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js";
+      s.async = true;
+      document.head.appendChild(s);
+    }
+  }, [loaded]);
+
+  const embedUrl = `https://scripts.converteai.net/${companyId}/players/${playerId}/v4/embed.html`;
+  const padding = vertical ? "216.21621621621622%" : "56.25%";
 
   return (
     <div
-      ref={ref}
       className={`w-full rounded-2xl overflow-hidden ${visible ? "block" : "hidden"}`}
+      style={{ maxWidth: maxWidth || "100%", margin: "0 auto" }}
     >
       {loaded ? (
-        <iframe
-          src={src}
-          allow="autoplay; fullscreen"
-          allowFullScreen
-          referrerPolicy="origin"
-          className="w-full border-none block"
-          style={{ aspectRatio: vertical ? "888/1920" : "16/9" }}
-          title="Tutorial de instalação"
-          loading="lazy"
-        />
+        <div style={{ position: "relative", padding: `${padding} 0 0 0` }}>
+          <iframe
+            id={`ifr_${playerId}`}
+            src="about:blank"
+            frameBorder="0"
+            allowFullScreen
+            referrerPolicy="origin"
+            style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+            onLoad={(e) => {
+              const iframe = e.currentTarget;
+              if (iframe.src === "about:blank") {
+                iframe.src = embedUrl + (window.location.search || "?") + "&vl=" + encodeURIComponent(window.location.href);
+              }
+            }}
+          />
+        </div>
       ) : (
         <div
           className="w-full bg-muted animate-pulse rounded-2xl"
-          style={{ aspectRatio: vertical ? "888/1920" : "16/9" }}
+          style={{ paddingTop: padding }}
         />
       )}
     </div>
