@@ -121,14 +121,15 @@ const IosStepCard = ({ item }: { item: StepItem }) => (
       href={item.link}
       target="_blank"
       rel="noopener noreferrer"
-      className={`ml-11 flex items-center gap-2 font-bold text-xs sm:text-sm px-4 sm:px-5 py-3 rounded-xl transition-all w-fit ${
+      className={`flex items-center justify-center gap-2.5 font-bold text-xs sm:text-sm px-4 sm:px-5 py-3 rounded-xl transition-all ${
         item.isMain
-          ? "bg-primary text-primary-foreground hover:brightness-110 shadow-[0_0_16px_-2px_hsl(var(--primary)/0.4)]"
-          : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+          ? "font-extrabold sm:text-base px-8 py-4 bg-primary text-primary-foreground hover:brightness-110 shadow-[0_0_24px_-2px_hsl(var(--primary)/0.45)] w-full sm:w-auto"
+          : "ml-11 bg-secondary text-secondary-foreground hover:bg-secondary/80 w-fit"
       }`}
     >
-      <Download className="w-4 h-4 shrink-0" />
-      <span>{item.buttonLabel}</span>
+      <Download className={`shrink-0 ${item.isMain ? "w-5 h-5" : "w-4 h-4"}`} />
+      <span>{item.isMain ? "Baixar jogo completo" : item.buttonLabel}</span>
+      {item.isMain && <ChevronRight className="w-4 h-4 shrink-0" />}
     </a>
   </div>
 );
