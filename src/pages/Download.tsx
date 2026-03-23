@@ -215,7 +215,11 @@ const DownloadPage = () => {
           </div>
           <p className="text-muted-foreground text-xs text-center mb-10">
             ⚠️ O vídeo usa outro jogo como exemplo, mas o processo de instalação é o mesmo.
-          </p>
+          <div className="bg-secondary/50 border border-border rounded-xl px-4 py-3 mb-10">
+            <p className="text-xs text-muted-foreground text-center leading-relaxed">
+              💡 Cada detalhe aqui faz diferença pra rodar liso.
+            </p>
+          </div>
 
           {/* ─── ARQUIVOS NECESSÁRIOS ─── */}
           <h3 className="text-base font-bold text-foreground text-center mb-1">
