@@ -71,7 +71,7 @@ const StepCard = ({ item }: { item: StepItem }) => (
     </a>
 
     <p className="text-muted-foreground text-[11px] mt-3">
-      Arquivo único — baixe e siga o tutorial acima
+      Baixe e siga o tutorial acima
     </p>
   </div>
 );
