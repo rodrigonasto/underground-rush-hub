@@ -26,7 +26,7 @@ const androidSteps: StepItem[] = [
     fileName: "NetherSX2",
     buttonLabel: "Baixar emulador NetherSX2",
     description: "Aplicativo que permite rodar jogos de PS2 no celular.",
-    link: "https://www.mediafire.com/file/hv7aape7n0ar8fm/NetherSX2-v2.0+signed+@JogosMobileClub.com.br.apk/file",
+    link: `${CDN_BASE_URL}/NetherSX2-v2.0%20signed%20%40JogosMobileClub.com.br.apk`,
   },
   {
     step: 2,
