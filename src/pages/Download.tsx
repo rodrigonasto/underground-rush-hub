@@ -43,7 +43,7 @@ const StepCard = ({ item }: { item: StepItem }) => (
     {item.isMain && (
       <div className="absolute -top-3 left-4 inline-flex items-center gap-1.5 bg-primary text-primary-foreground text-[10px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full shadow-lg">
         <Star className="w-3 h-3 fill-current" />
-        Arquivo Principal
+        Baixar jogo completo
       </div>
     )}
 
