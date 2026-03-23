@@ -19,58 +19,14 @@ interface StepItem {
   isMain?: boolean;
 }
 
-const androidSteps: StepItem[] = [
+const downloadSteps: StepItem[] = [
   {
     step: 1,
-    title: "Baixar o emulador",
-    fileName: "NetherSX2",
-    buttonLabel: "Baixar emulador NetherSX2",
-    description: "Aplicativo que permite rodar jogos de PS2 no celular.",
-    link: `${CDN_BASE_URL}/NetherSX2-v2.0%20signed%20%40JogosMobileClub.com.br.apk`,
-  },
-  {
-    step: 2,
-    title: "Baixar BIOS",
-    fileName: "BIOS PS2",
-    buttonLabel: "Baixar BIOS",
-    description: "Arquivo necessário para o funcionamento do emulador.",
-    link: `${CDN_BASE_URL}/Bios%20%40JogosMobileClub.com.br.rar`,
-  },
-  {
-    step: 3,
-    title: "Baixar o jogo (principal)",
+    title: "Baixar o jogo completo",
     fileName: "Need for Speed Underground 2",
-    buttonLabel: "Baixar o jogo (arquivo principal)",
-    description: "Arquivo do jogo para rodar no emulador.",
-    link: "https://www.mediafire.com/file/pwoqlz2zyl6myvs/NEED+FOR+SPEED+UND+2.rar/file",
-    isMain: true,
-  },
-];
-
-const iosSteps: StepItem[] = [
-  {
-    step: 1,
-    title: "Baixar aplicativo de extração",
-    fileName: "iRAR",
-    buttonLabel: "Baixar iRAR",
-    description: "Necessário para extrair os arquivos do jogo.",
-    link: "https://apps.apple.com/br/app/irar-descompactar-arquivo/id989212129",
-  },
-  {
-    step: 2,
-    title: "Baixar o emulador",
-    fileName: "PPSSPP",
-    buttonLabel: "Baixar emulador PPSSPP",
-    description: "Aplicativo que permite rodar o jogo no celular.",
-    link: "https://apps.apple.com/br/app/ppsspp-psp-emulator/id6496972903",
-  },
-  {
-    step: 3,
-    title: "Baixar o jogo (principal)",
-    fileName: "Need for Speed Underground 2",
-    buttonLabel: "Baixar o jogo (arquivo principal)",
-    description: "Arquivo do jogo para rodar no emulador.",
-    link: "https://drive.google.com/file/d/1VeYjk3UQhaeg6cBHXQO5NMFGa-ekTpwz/view",
+    buttonLabel: "Baixar o jogo",
+    description: "Pacote completo com emulador, BIOS e jogo. Tudo que você precisa para jogar.",
+    link: "https://www.transfernow.net/dl/nfs-und2-pack-completo",
     isMain: true,
   },
 ];
