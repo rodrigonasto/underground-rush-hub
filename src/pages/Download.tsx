@@ -213,8 +213,9 @@ const DownloadPage = () => {
             <VTurbPlayer playerId="69bcad4b6ced9201ea5168ad" visible={platform === "android"} />
             <VTurbPlayer playerId="69bcad03596c6131b739d688" visible={platform === "ios"} vertical />
           </div>
-          <p className="text-muted-foreground text-xs text-center mb-10">
+          <p className="text-muted-foreground text-xs text-center mb-4">
             ⚠️ O vídeo usa outro jogo como exemplo, mas o processo de instalação é o mesmo.
+          </p>
           <div className="bg-secondary/50 border border-border rounded-xl px-4 py-3 mb-10">
             <p className="text-xs text-muted-foreground text-center leading-relaxed">
               💡 Cada detalhe aqui faz diferença pra rodar liso.
