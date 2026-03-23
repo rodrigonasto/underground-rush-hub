@@ -34,7 +34,7 @@ const androidSteps: StepItem[] = [
     fileName: "BIOS PS2",
     buttonLabel: "Baixar BIOS",
     description: "Arquivo necessário para o funcionamento do emulador.",
-    link: "https://www.mediafire.com/file/ndivybmtt3pb27w/Bios+@JogosMobileClub.com.br.rar/file",
+    link: `${CDN_BASE_URL}/Bios%20%40JogosMobileClub.com.br.rar`,
   },
   {
     step: 3,
