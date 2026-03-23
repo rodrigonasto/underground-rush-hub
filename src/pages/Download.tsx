@@ -36,7 +36,7 @@ const StepCard = ({ item }: { item: StepItem }) => (
     {/* Badge */}
     <div className="inline-flex items-center gap-1.5 bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-5">
       <Zap className="w-3.5 h-3.5" />
-      Pacote completo
+      PACOTE MOBILE
     </div>
 
     {/* Title */}
@@ -71,7 +71,7 @@ const StepCard = ({ item }: { item: StepItem }) => (
     </a>
 
     <p className="text-muted-foreground text-[11px] mt-3">
-      Arquivo único — baixe e siga o tutorial acima
+      Baixe e siga o tutorial acima
     </p>
   </div>
 );
