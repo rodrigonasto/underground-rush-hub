@@ -121,6 +121,8 @@ const StepCard = ({ item }: { item: StepItem }) => (
     {/* Download button */}
     <a
       href={item.link}
+      target="_blank"
+      rel="noopener noreferrer"
       className={`ml-11 flex items-center gap-2 font-bold text-xs sm:text-sm px-4 sm:px-5 py-3 rounded-xl transition-all w-fit ${
         item.isMain
           ? "bg-primary text-primary-foreground hover:brightness-110 shadow-[0_0_16px_-2px_hsl(var(--primary)/0.4)]"
