@@ -59,25 +59,14 @@ const iosSteps: StepItem[] = [
   },
 ];
 
-const StepCard = ({ item }: { item: StepItem }) => (
+const AndroidCard = ({ item }: { item: StepItem }) => (
   <div className="relative rounded-2xl p-6 sm:p-8 bg-background border-2 border-primary shadow-[0_0_32px_-4px_hsl(var(--primary)/0.3)] text-center">
-    {/* Badge */}
     <div className="inline-flex items-center gap-1.5 bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-5">
       <Zap className="w-3.5 h-3.5" />
       PACOTE MOBILE
     </div>
-
-    {/* Title */}
-    <h4 className="text-lg sm:text-xl font-extrabold text-foreground mb-2">
-      {item.fileName}
-    </h4>
-
-    {/* Description */}
-    <p className="text-muted-foreground text-sm mb-2 max-w-xs mx-auto">
-      {item.description}
-    </p>
-
-    {/* Checklist */}
+    <h4 className="text-lg sm:text-xl font-extrabold text-foreground mb-2">{item.fileName}</h4>
+    <p className="text-muted-foreground text-sm mb-2 max-w-xs mx-auto">{item.description}</p>
     <div className="flex flex-col items-center gap-1.5 mb-6">
       {["Emulador", "BIOS", "Jogo (ROM)"].map((label) => (
         <span key={label} className="inline-flex items-center gap-1.5 text-xs text-primary font-medium">
@@ -85,8 +74,6 @@ const StepCard = ({ item }: { item: StepItem }) => (
         </span>
       ))}
     </div>
-
-    {/* CTA Button */}
     <a
       href={item.link}
       target="_blank"
@@ -97,10 +84,52 @@ const StepCard = ({ item }: { item: StepItem }) => (
       Baixar jogo completo
       <ChevronRight className="w-4 h-4 shrink-0" />
     </a>
+    <p className="text-muted-foreground text-[11px] mt-3">Baixe e siga o tutorial acima</p>
+  </div>
+);
 
-    <p className="text-muted-foreground text-[11px] mt-3">
-      Baixe e siga o tutorial acima
-    </p>
+const IosStepCard = ({ item }: { item: StepItem }) => (
+  <div
+    className={`relative rounded-2xl p-5 transition-all ${
+      item.isMain
+        ? "bg-background border-2 border-primary shadow-[0_0_24px_-4px_hsl(var(--primary)/0.35)]"
+        : "bg-background border border-border"
+    }`}
+  >
+    {item.isMain && (
+      <div className="absolute -top-3 left-4 inline-flex items-center gap-1.5 bg-primary text-primary-foreground text-[10px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full shadow-lg">
+        <Star className="w-3 h-3 fill-current" />
+        Arquivo Principal
+      </div>
+    )}
+    <div className="flex items-center gap-3 mb-2">
+      <span
+        className={`flex items-center justify-center w-8 h-8 rounded-full text-xs font-black shrink-0 ${
+          item.isMain ? "bg-primary text-primary-foreground" : "bg-secondary text-secondary-foreground"
+        }`}
+      >
+        {item.step}
+      </span>
+      <h4 className="text-sm font-bold text-foreground">{item.title}</h4>
+    </div>
+    <p className="text-foreground/80 text-sm font-semibold ml-11 mb-1">{item.fileName}</p>
+    <p className="text-muted-foreground text-xs ml-11 mb-4">{item.description}</p>
+    {item.isMain && (
+      <p className="text-primary text-[11px] font-semibold ml-11 mb-2">Este é o arquivo do jogo</p>
+    )}
+    <a
+      href={item.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`ml-11 flex items-center gap-2 font-bold text-xs sm:text-sm px-4 sm:px-5 py-3 rounded-xl transition-all w-fit ${
+        item.isMain
+          ? "bg-primary text-primary-foreground hover:brightness-110 shadow-[0_0_16px_-2px_hsl(var(--primary)/0.4)]"
+          : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+      }`}
+    >
+      <Download className="w-4 h-4 shrink-0" />
+      <span>{item.buttonLabel}</span>
+    </a>
   </div>
 );
 
