@@ -166,6 +166,11 @@ const DownloadPage = () => {
           <p className="text-muted-foreground text-sm">
             Siga os passos abaixo para instalar e começar a jogar no celular.
           </p>
+          <div className="mt-4 space-y-0.5">
+            <p className="text-muted-foreground/60 text-[11px] text-center">segue exatamente o passo a passo</p>
+            <p className="text-muted-foreground/60 text-[11px] text-center">se pular alguma parte ou fizer diferente</p>
+            <p className="text-muted-foreground/60 text-[11px] text-center">pode não funcionar direito no seu celular</p>
+          </div>
         </div>
       </section>
 
