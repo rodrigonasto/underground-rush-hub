@@ -167,8 +167,10 @@ const DownloadPage = () => {
             Siga os passos abaixo para instalar e começar a jogar no celular.
           </p>
           <div className="mt-5 bg-secondary/50 border border-border rounded-xl px-4 py-3">
-            <p className="text-xs text-muted-foreground text-center leading-relaxed">
-              ⚠️ Segue exatamente o passo a passo — se pular alguma parte ou fizer diferente, pode não funcionar direito no seu celular.
+            <p className="text-xs text-muted-foreground text-center leading-loose">
+              ⚠️ Segue exatamente o passo a passo<br />
+              se pular alguma parte ou fizer diferente<br />
+              pode não funcionar direito no seu celular
             </p>
           </div>
         </div>
