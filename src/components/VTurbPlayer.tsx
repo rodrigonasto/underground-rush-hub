@@ -31,7 +31,15 @@ const VTurbPlayer = ({ playerId, companyId, visible, vertical, maxWidth }: VTurb
     }
   }, [loaded]);
 
-  const embedUrl = `https://scripts.converteai.net/${companyId}/players/${playerId}/v4/embed.html`;
+  // Set iframe src after mount
+  useEffect(() => {
+    if (!loaded || !iframeRef.current) return;
+    const embedUrl = `https://scripts.converteai.net/${companyId}/players/${playerId}/v4/embed.html`;
+    const search = window.location.search || "?";
+    const vl = encodeURIComponent(window.location.href);
+    iframeRef.current.src = `${embedUrl}${search}&vl=${vl}`;
+  }, [loaded, playerId, companyId]);
+
   const padding = vertical ? "216.21621621621622%" : "56.25%";
 
   return (
@@ -42,18 +50,12 @@ const VTurbPlayer = ({ playerId, companyId, visible, vertical, maxWidth }: VTurb
       {loaded ? (
         <div style={{ position: "relative", padding: `${padding} 0 0 0` }}>
           <iframe
+            ref={iframeRef}
             id={`ifr_${playerId}`}
-            src="about:blank"
             frameBorder="0"
             allowFullScreen
             referrerPolicy="origin"
             style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-            onLoad={(e) => {
-              const iframe = e.currentTarget;
-              if (iframe.src === "about:blank") {
-                iframe.src = embedUrl + (window.location.search || "?") + "&vl=" + encodeURIComponent(window.location.href);
-              }
-            }}
           />
         </div>
       ) : (
