@@ -181,7 +181,7 @@ const TutorialSection = () => {
           <div className="space-y-4">
             <h3 className="text-base font-bold text-foreground text-center">Instalação no Android</h3>
             <Suspense fallback={<div className="w-full bg-muted animate-pulse rounded-2xl" style={{ aspectRatio: "16/9" }} />}>
-              <VTurbPlayer playerId="69bcad4b6ced9201ea5168ad" visible={platform === "android"} />
+              <VTurbPlayer playerId="69c19e85423ef7939cad0afc" companyId="76f6c68e-3618-4699-939f-e5a7caced4e1" visible={platform === "android"} />
             </Suspense>
             <p className="text-muted-foreground text-sm text-center">
               ⚡ Este vídeo mostra como funciona o processo de instalação.
