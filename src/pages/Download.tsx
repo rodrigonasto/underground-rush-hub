@@ -213,9 +213,14 @@ const DownloadPage = () => {
             <VTurbPlayer playerId="69bcad4b6ced9201ea5168ad" visible={platform === "android"} />
             <VTurbPlayer playerId="69bcad03596c6131b739d688" visible={platform === "ios"} vertical />
           </div>
-          <p className="text-muted-foreground text-xs text-center mb-10">
+          <p className="text-muted-foreground text-xs text-center mb-4">
             ⚠️ O vídeo usa outro jogo como exemplo, mas o processo de instalação é o mesmo.
           </p>
+          <div className="bg-secondary/50 border border-border rounded-xl px-4 py-3 mb-10">
+            <p className="text-xs text-muted-foreground text-center leading-relaxed">
+              💡 Cada detalhe aqui faz diferença pra rodar liso.
+            </p>
+          </div>
 
           {/* ─── ARQUIVOS NECESSÁRIOS ─── */}
           <h3 className="text-base font-bold text-foreground text-center mb-1">
@@ -238,6 +243,12 @@ const DownloadPage = () => {
             {steps.map((item) => (
               <StepCard key={item.step} item={item} />
             ))}
+          </div>
+
+          <div className="mt-6 bg-secondary/50 border border-border rounded-xl px-4 py-3">
+            <p className="text-xs text-muted-foreground text-center leading-relaxed">
+              ⚠️ Se não ajustar certinho, pode travar ou nem abrir.
+            </p>
           </div>
 
           {/* Toggle link */}
