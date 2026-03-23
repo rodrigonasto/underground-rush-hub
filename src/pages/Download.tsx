@@ -216,7 +216,8 @@ const DownloadPage = () => {
             <VTurbPlayer playerId="69bcad03596c6131b739d688" visible={platform === "ios"} vertical />
           </div>
           <p className="text-muted-foreground text-xs text-center mb-4">
-            ⚠️ O vídeo usa outro jogo como exemplo, mas o processo de instalação é o mesmo.
+            OBS: O TUTORIAL É DE OUTRO JOGO,<br />
+            POREM É O MESMO FORMATO DE INSTALAÇÃO
           </p>
           <div className="bg-secondary/50 border border-border rounded-xl px-4 py-3 mb-10">
             <p className="text-xs text-muted-foreground text-center leading-relaxed">
