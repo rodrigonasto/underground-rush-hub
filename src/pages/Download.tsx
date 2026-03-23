@@ -244,6 +244,12 @@ const DownloadPage = () => {
             ))}
           </div>
 
+          <div className="mt-6 bg-secondary/50 border border-border rounded-xl px-4 py-3">
+            <p className="text-xs text-muted-foreground text-center leading-relaxed">
+              ⚠️ Se não ajustar certinho, pode travar ou nem abrir.
+            </p>
+          </div>
+
           {/* Toggle link */}
           <button
             onClick={() => setPlatform(platform === "android" ? "ios" : "android")}
