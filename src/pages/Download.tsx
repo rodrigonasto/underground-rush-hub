@@ -142,7 +142,7 @@ const DownloadPage = () => {
 
   // Acesso livre — sem proteção por sessionStorage
 
-  const steps = downloadSteps;
+  const steps = platform === "android" ? androidSteps : iosSteps;
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
