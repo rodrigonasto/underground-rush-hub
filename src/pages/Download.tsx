@@ -243,9 +243,10 @@ const DownloadPage = () => {
 
           {/* Step cards */}
           <div className="space-y-5">
-            {steps.map((item) => (
-              <StepCard key={item.step} item={item} />
-            ))}
+            {platform === "android"
+              ? steps.map((item) => <AndroidCard key={item.step} item={item} />)
+              : steps.map((item) => <IosStepCard key={item.step} item={item} />)
+            }
           </div>
 
           <div className="mt-6 bg-secondary/50 border border-border rounded-xl px-4 py-3">
