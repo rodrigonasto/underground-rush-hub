@@ -161,7 +161,7 @@ const DownloadPage = () => {
           </div>
 
           <h1 className="text-2xl sm:text-3xl font-extrabold text-foreground leading-tight mb-2">
-            🎮 Need for Speed Underground 2 pronto para baixar
+            👉 Need for Speed Underground 2 rodando no celular 📱
           </h1>
           <p className="text-muted-foreground text-sm">
             Siga os passos abaixo para instalar e começar a jogar no celular.
