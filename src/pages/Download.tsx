@@ -19,7 +19,7 @@ interface StepItem {
   isMain?: boolean;
 }
 
-const downloadSteps: StepItem[] = [
+const androidSteps: StepItem[] = [
   {
     step: 1,
     title: "Baixar o jogo completo",
@@ -27,6 +27,34 @@ const downloadSteps: StepItem[] = [
     buttonLabel: "Baixar o jogo",
     description: "Pacote completo com emulador, BIOS e jogo. Tudo que você precisa para jogar.",
     link: "https://www.transfernow.net/dl/nfs-und2-pack-completo",
+    isMain: true,
+  },
+];
+
+const iosSteps: StepItem[] = [
+  {
+    step: 1,
+    title: "Baixar aplicativo de extração",
+    fileName: "iRAR",
+    buttonLabel: "Baixar iRAR",
+    description: "Necessário para extrair os arquivos do jogo.",
+    link: "https://apps.apple.com/br/app/irar-descompactar-arquivo/id989212129",
+  },
+  {
+    step: 2,
+    title: "Baixar o emulador",
+    fileName: "PPSSPP",
+    buttonLabel: "Baixar emulador PPSSPP",
+    description: "Aplicativo que permite rodar o jogo no celular.",
+    link: "https://apps.apple.com/br/app/ppsspp-psp-emulator/id6496972903",
+  },
+  {
+    step: 3,
+    title: "Baixar o jogo (principal)",
+    fileName: "Need for Speed Underground 2",
+    buttonLabel: "Baixar o jogo (arquivo principal)",
+    description: "Arquivo do jogo para rodar no emulador.",
+    link: "https://drive.google.com/file/d/1VeYjk3UQhaeg6cBHXQO5NMFGa-ekTpwz/view",
     isMain: true,
   },
 ];
