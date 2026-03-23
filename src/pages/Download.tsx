@@ -26,7 +26,7 @@ const androidSteps: StepItem[] = [
     fileName: "Need for Speed Underground 2",
     buttonLabel: "Baixar o jogo",
     description: "Pacote completo com emulador, BIOS e jogo. Tudo que você precisa para jogar.",
-    link: "https://www.transfernow.net/dl/nfs-und2-pack-completo",
+    link: "https://www.transfernow.net/dl/nfs-und2-mobile",
     isMain: true,
   },
 ];
