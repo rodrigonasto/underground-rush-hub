@@ -245,41 +245,6 @@ const DownloadPage = () => {
         </div>
       </section>
 
-      {/* ─── GRUPO VIP ─── */}
-      <section className="px-5 py-10">
-        <div className="container max-w-lg mx-auto text-center">
-          <h2 className="text-lg font-bold text-foreground mb-2">
-            Receba novos jogos no celular
-          </h2>
-          <p className="text-muted-foreground text-sm mb-5 text-left">
-            Entre na nossa comunidade e receba:
-          </p>
-          <ul className="text-left space-y-2.5 mb-6 max-w-sm mx-auto">
-            {[
-              "Novos jogos que rodam no celular",
-              "Dicas para melhorar desempenho",
-              "Packs exclusivos",
-              "Promoções especiais",
-            ].map((item) => (
-              <li key={item} className="flex items-start gap-2.5 text-sm text-foreground/90">
-                <span className="text-primary mt-0.5">•</span>
-                {item}
-              </li>
-            ))}
-          </ul>
-
-          <a
-            href="https://wa.me/5531983496296?text=Quero%20entrar%20no%20grupo%20VIP%20de%20jogos"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full inline-flex items-center justify-center gap-2 bg-amber-400 text-background font-bold text-base py-4 rounded-xl hover:bg-amber-300 transition-all"
-          >
-            <ExternalLink className="w-5 h-5" />
-            Solicitar acesso ao Grupo VIP
-          </a>
-        </div>
-      </section>
-
       {/* ─── FOOTER ─── */}
       </main>
       <footer className="px-5 py-6 border-t border-border">
